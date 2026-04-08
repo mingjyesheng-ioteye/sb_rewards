@@ -5,6 +5,7 @@ from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
+import os
 
 # Brand colors
 DARK_BLUE = RGBColor(0x1B, 0x2A, 0x4A)
@@ -93,6 +94,12 @@ def section_header_bar(slide, text):
     add_shape_bg(slide, Inches(0), Inches(0), SLIDE_W, Inches(1.1), DARK_BLUE)
     add_textbox(slide, Inches(0.8), Inches(0.2), Inches(11), Inches(0.7),
                 text, font_size=32, color=WHITE, bold=True)
+
+
+def add_picture(slide, filename, left, top, width):
+    """Add an image to a slide; height is auto-calculated to preserve aspect ratio."""
+    img_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+    return slide.shapes.add_picture(img_path, left, top, width=width)
 
 
 # ─── SLIDE 1: Title ───
@@ -234,30 +241,32 @@ slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Program-Based Competition Engine")
 
-add_textbox(slide, Inches(0.8), Inches(1.4), Inches(5.5), Inches(0.5),
-            "Nominations", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.8), Inches(2.0), Inches(5.5), Inches(4),
-                 "", font_size=15, color=DARK_GRAY)
+# Left column: Nominations
+add_textbox(slide, Inches(0.4), Inches(1.3), Inches(5.5), Inches(0.45),
+            "Nominations", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(1.85), Inches(5.5), Inches(2.2),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
     "3 award types: Employee of the Month, Rising Star, Team Impact",
     "Step-by-step guided form with large buttons",
-    "Auto-populated nominee list by program",
-    "Limit: 1 nomination per candidate/month, 5 total/month",
+    "1 nomination per candidate/month, 5 total/month",
     "Friendly feedback when limits reached",
-], font_size=15, spacing=Pt(10))
+], font_size=14, spacing=Pt(8))
 
-add_textbox(slide, Inches(7), Inches(1.4), Inches(5.5), Inches(0.5),
-            "QA Queue & Programs", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7), Inches(2.0), Inches(5.5), Inches(4),
-                 "", font_size=15, color=DARK_GRAY)
+# Left column: QA Queue
+add_textbox(slide, Inches(0.4), Inches(4.1), Inches(5.5), Inches(0.45),
+            "QA Queue & Programs", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(4.6), Inches(5.5), Inches(2.5),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "Admin dashboard: Approve / Return for Edits / Decline",
+    "Approve / Return for Edits / Decline",
     "Points awarded only upon admin approval",
-    "Batch operations for high-volume periods",
     "Filter by program, award type, date, status",
-    "Hierarchical grouping: Residential → Group Homes, Day Programs → Campus, Senior, OTC, Janitorial",
     "Programs synced from Paycom automatically",
-], font_size=15, spacing=Pt(10))
+], font_size=14, spacing=Pt(8))
+
+# Right: screenshot of Nomination Center
+add_picture(slide, "reward_2.png", Inches(6.1), Inches(1.5), Inches(6.8))
 
 
 # ─── SLIDE 7: Points & Engagement ───
@@ -313,30 +322,34 @@ slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Rewards Marketplace")
 
-add_textbox(slide, Inches(0.8), Inches(1.4), Inches(5.5), Inches(0.5),
-            "Digital Storefront", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.8), Inches(2.0), Inches(5.5), Inches(4),
-                 "", font_size=16, color=DARK_GRAY)
+# Left column: Digital Storefront
+add_textbox(slide, Inches(0.4), Inches(1.3), Inches(5.5), Inches(0.45),
+            "Digital Storefront", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(1.85), Inches(5.5), Inches(2.2),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Visual catalog with images, point costs, descriptions",
-    "Categories: Branded Merchandise, Cafeteria Meals, Digital Gift Cards",
-    "Real-time point balance displayed during browsing",
+    "Categories: Merchandise, Cafeteria Meals, Gift Cards",
+    "Real-time point balance during browsing",
     "One-tap redemption with confirmation",
     "Order history for employees",
-], font_size=16, spacing=Pt(10))
+], font_size=14, spacing=Pt(8))
 
-add_textbox(slide, Inches(7), Inches(1.4), Inches(5.5), Inches(0.5),
-            "Admin Fulfillment Tools", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7), Inches(2.0), Inches(5.5), Inches(4),
-                 "", font_size=16, color=DARK_GRAY)
+# Left column: Admin Fulfillment
+add_textbox(slide, Inches(0.4), Inches(4.1), Inches(5.5), Inches(0.45),
+            "Admin Fulfillment Tools", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(4.6), Inches(5.5), Inches(2.5),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Inventory management (add/edit items, stock levels)",
     "Low-stock alerts, out-of-stock auto-hiding",
     "Order queue: Pending → Processing → Fulfilled",
-    "Employee notifications on status changes",
     "Digital gift card: API-based instant delivery",
     "Gift card fees: 3-5% vendor markup (pass-through)",
-], font_size=16, spacing=Pt(10))
+], font_size=14, spacing=Pt(8))
+
+# Right: screenshot of Rewards Marketplace
+add_picture(slide, "reward_4.png", Inches(6.1), Inches(1.5), Inches(6.8))
 
 
 # ─── SLIDE 9: Paycom & SSO ───
@@ -422,42 +435,44 @@ slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Dashboards — Employee & Leadership")
 
-add_textbox(slide, Inches(0.8), Inches(1.4), Inches(5.5), Inches(0.5),
-            "Employee Dashboard", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.8), Inches(2.0), Inches(5.5), Inches(4),
-                 "", font_size=16, color=DARK_GRAY)
-add_bullet_list(tf, [
-    "Points balance — large, centered display",
-    "Recent point activity feed",
-    "Nomination status tracker",
-    "\"Quick Nominate\" action button",
-    "Birthday/Anniversary recognition feed",
-], font_size=16, spacing=Pt(12))
+# Column labels
+add_textbox(slide, Inches(0.15), Inches(1.15), Inches(6.0), Inches(0.38),
+            "Employee Dashboard", font_size=18, color=ACCENT_BLUE, bold=True,
+            alignment=PP_ALIGN.CENTER)
+add_textbox(slide, Inches(7.15), Inches(1.15), Inches(6.0), Inches(0.38),
+            "Leadership Console", font_size=18, color=ACCENT_BLUE, bold=True,
+            alignment=PP_ALIGN.CENTER)
 
-add_textbox(slide, Inches(7), Inches(1.4), Inches(5.5), Inches(0.5),
-            "Leadership Dashboard", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7), Inches(2.0), Inches(5.5), Inches(4),
-                 "", font_size=16, color=DARK_GRAY)
-add_bullet_list(tf, [
-    "Participation metrics by program",
-    "Trend charts (weekly/monthly activity)",
-    "QA queue status — pending nominations count",
-    "Top nominators & nominees leaderboard",
-    "Point economy: issued vs. redeemed",
-], font_size=16, spacing=Pt(12))
+# Screenshots side by side (1456×816 px → ratio 1.784; width 6.0" → height ≈3.36")
+add_picture(slide, "reward_1.png", Inches(0.15), Inches(1.55), Inches(6.0))
+add_picture(slide, "reward_3.png", Inches(7.15), Inches(1.55), Inches(6.0))
+
+# Captions below screenshots (bottom ≈ 1.55 + 3.36 = 4.91")
+add_textbox(slide, Inches(0.15), Inches(5.05), Inches(6.0), Inches(0.35),
+            "Points Balance  •  Wall of Fame  •  Quick Nominate",
+            font_size=13, color=MED_GRAY, alignment=PP_ALIGN.CENTER)
+add_textbox(slide, Inches(7.15), Inches(5.05), Inches(6.0), Inches(0.35),
+            "Total Points  •  Engagement Rate  •  QA Pending Review",
+            font_size=13, color=MED_GRAY, alignment=PP_ALIGN.CENTER)
+
+# Bottom summary bar
+add_shape_bg(slide, Inches(0), Inches(5.55), SLIDE_W, Inches(0.7), LIGHT_BLUE)
+add_textbox(slide, Inches(0.5), Inches(5.6), Inches(12), Inches(0.6),
+            "All dashboards are real-time  •  Mobile-first  •  Accessible on any device  •  Role-based visibility",
+            font_size=15, color=DARK_BLUE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
 # ─── SLIDE 12: Phased Timeline ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Phased Implementation — 26 Weeks")
+section_header_bar(slide, "Phased Implementation — 36 Weeks")
 
 phases = [
-    ("Phase 1: Foundation", "Weeks 1–10", "Nominations, Paycom sync, SSO, manual points, QA queue",
+    ("Phase 1: Foundation", "Weeks 1–12", "Nominations, Paycom sync, SSO, manual points, QA queue",
      ACCENT_BLUE, Inches(1.5), Inches(4.8)),
-    ("Phase 2: Engagement", "Weeks 11–18", "Employee & leadership dashboards, automated tracking, notifications",
+    ("Phase 2: Engagement", "Weeks 13–24", "Employee & leadership dashboards, automated tracking, notifications",
      RGBColor(0x14, 0x73, 0x5A), Inches(5.3), Inches(3.5)),
-    ("Phase 3: Marketplace", "Weeks 19–26", "Rewards store, gift card integration, fulfillment tools",
+    ("Phase 3: Marketplace", "Weeks 25–36", "Rewards store, gift card integration, fulfillment tools",
      ORANGE, Inches(8.8), Inches(3.5)),
 ]
 
@@ -518,8 +533,8 @@ add_textbox(slide, Inches(0.8), Inches(1.3), Inches(11), Inches(0.5),
 headers = [("Phase", Inches(4)), ("Hours", Inches(1.5)), ("Cost", Inches(1.5))]
 rows_data = [
     ("Phase 1: Nominations, Paycom, SSO, Infrastructure", "~480 hrs", "$45,000"),
-    ("Phase 2: Dashboards, Tracking, Notifications", "~310 hrs", "$30,000"),
-    ("Phase 3: Marketplace, Gift Cards, Fulfillment", "~280 hrs", "$35,000"),
+    ("Phase 2: Dashboards, Tracking, Notifications", "~310 hrs", "$35,000"),
+    ("Phase 3: Marketplace, Gift Cards, Fulfillment", "~280 hrs", "$30,000"),
     ("Total Implementation", "~1,070 hrs", "$110,000"),
 ]
 
@@ -596,7 +611,7 @@ add_textbox(slide, Inches(7.2), Inches(2.1), Inches(4.5), Inches(0.5),
 tf = add_textbox(slide, Inches(7.2), Inches(2.7), Inches(4.5), Inches(1.8),
                  "", font_size=16, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "All 3 phases (same 26-week timeline)",
+    "All 3 phases (same 36-week timeline)",
     "Hosting, maintenance, security updates",
     "Ongoing support & platform updates",
     "No per-user fees",
@@ -647,7 +662,7 @@ tf = add_textbox(slide, Inches(0.8), Inches(2.1), Inches(5.5), Inches(4),
                  "", font_size=16, color=WHITE)
 add_bullet_list(tf, [
     "5+ years in special care software — we know your workforce",
-    "Arc Mercer is already a SpringBoard customer",
+    "Arc Mercer is an existing SpringBoard & Guardian customer",
     "Production platforms: SpringBoard, BrainBook, Guardian",
     "Same tech stack (React, Supabase, Python, AWS) — proven",
     "Mobile-first, accessible design as a core competency",
@@ -664,7 +679,7 @@ add_bullet_list(tf, [
     "Schedule kickoff & discovery workshop",
     "Initiate Paycom SFTP access setup",
     "Configure Google Workspace SSO",
-    "Phase One live in 10 weeks",
+    "Phase One live in 12 weeks",
 ], font_size=16, color=WHITE, spacing=Pt(12))
 
 # Contact box

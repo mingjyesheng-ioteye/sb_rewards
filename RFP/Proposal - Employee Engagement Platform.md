@@ -196,6 +196,9 @@ We recommend a **custom-built SaaS solution** rather than an off-the-shelf produ
 - Filter and sort by program, award type, date, and status.
 - Points are only awarded upon admin approval — never automatically on submission.
 
+![Nomination Center — step-by-step award submission with award category selection](reward_2.png)
+*Nomination Center: Guided step-by-step form with award category selection (Employee of the Month, Team Player Award, Rising Star) and real-time nomination feedback.*
+
 ### B. Point Allocation & Engagement Tracking
 
 **Top-Down Bestowal:**
@@ -240,6 +243,9 @@ Points are earned through multiple configurable streams:
 - One-tap redemption with confirmation dialog to prevent accidental spending.
 - Order history view for employees.
 
+![Rewards Marketplace — visual product catalog with point-based redemption](reward_4.png)
+*Rewards Marketplace: Point balance displayed at a glance, curated product catalog with category badges (Hot Reward, Best Seller, Experiences), and one-tap Redeem buttons.*
+
 **Fulfillment Tools:**
 
 - Admin inventory management dashboard:
@@ -281,6 +287,9 @@ Points are earned through multiple configurable streams:
 - "Quick Nominate" action button.
 - Birthday/Anniversary recognition feed.
 
+![Employee Dashboard — point balance, Wall of Fame peer nominations, Celebrate a Peer](reward_1.png)
+*Employee Dashboard: Points balance prominently displayed, Wall of Fame showing peer nominations with point awards, and a "Celebrate a Peer" quick-nominate shortcut.*
+
 *Leadership Dashboard:*
 
 - Participation metrics by program (nomination counts, engagement rates).
@@ -288,6 +297,9 @@ Points are earned through multiple configurable streams:
 - QA queue status (pending nominations count).
 - Top nominators and nominees leaderboard.
 - Point economy overview (points issued vs. redeemed).
+
+![Leadership Console — total points awarded, engagement rate, pending QA review queue](reward_3.png)
+*Leadership Console: Total points awarded (128.4k, +12% quarter-over-quarter), 89% engagement rate gauge, and Pending Review QA queue with approve/reject actions for nominations.*
 
 ---
 
