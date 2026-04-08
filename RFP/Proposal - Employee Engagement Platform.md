@@ -2,7 +2,7 @@
 
 **Prepared for:** The Arc Mercer
 **Prepared by:** IoTeye Inc.
-**Date:** March 22, 2026
+**Date:** April 8, 2026
 **In Response To:** Request for Proposal — Employee Engagement & Recognition Platform (February 2026)
 
 ---
@@ -64,6 +64,11 @@ IoTeye's portfolio spans multiple domains directly relevant to The Arc Mercer's 
 - **SpringBoard** — IoTeye's flagship multi-agency route management and operations platform. SpringBoard provides a comprehensive admin portal for special care transportation organizations, including route optimization, fleet management (OBD and camera integration), vehicle maintenance tracking, scheduling (cron-based automation), and Twilio-powered SMS/conversational communication. The platform features a multi-tenant architecture supporting multiple agencies (e.g., Arc Mercer, Easter Seals), a React-based admin dashboard, REST APIs for mobile and web clients, and a robust security framework with role-based access control. SpringBoard demonstrates IoTeye's proven ability to build and operate complex, data-driven SaaS platforms for the special care sector.
 - **BrainBook** — An AI-powered platform built with Next.js 14 (React/TypeScript), Supabase authentication, and Tauri for cross-platform desktop deployment. BrainBook features local AI model management and inference, an interactive chat interface with streaming responses, AI-driven note generation, voice I/O (text-to-speech and speech-to-text), an agent system with a standalone Node.js agent server, Node-RED workflow automation integration, and OAuth/SSO authentication. The platform runs as both a web application and a native desktop app, demonstrating IoTeye's expertise in React, TypeScript, Supabase, and modern full-stack architecture — the same technology stack proposed for this project.
 - **Guardian** — A multi-agency, multi-department notification and communication system. Guardian provides SMS messaging (via Twilio), mobile push notifications (via Expo), reply tracking, confirmation workflows, and location-aware alerts — all organized by agency and department. The system includes a server backend (Node.js/Docker/Supabase) and a cross-platform mobile app (React Native/Expo) published to both iOS and Android app stores. Guardian's multi-tenant architecture and real-time notification capabilities directly parallel the engagement and notification features required for this project.
+- **BrainClaw (AI Agent Gateway)** — IoTeye's production AI agent runtime, built on BrainBook's infrastructure and powered by GPT-4.1 via GitHub Copilot. BrainClaw hosts domain-specific Python skill agents accessed through a structured JSON protocol. Currently running two agents in production for **The Arc Mercer**:
+  - **SpringBoard Agent (37 tools):** fleet management, route optimization, consumer management, scheduling, SMS/push notifications, real-time GPS telemetry, emergency SOS, and daily manifest/invoice generation. Arc Mercer staff (`arcmercer.ioteyeinc.com`) manage paratransit operations through natural language today.
+  - **Samsara Agent (57 tools):** vehicle telematics, driver management, Hours of Service (HOS) compliance, safety events, Driver Vehicle Inspection Reports (DVIRs), equipment/trailer tracking, geofencing, fuel/energy reporting, and fleet-wide GPS.
+  
+  The same BrainClaw framework will be extended to the recognition platform, giving Arc Mercer a unified AI workspace spanning operations and employee engagement.
 
 ### Why IoTeye for This Project
 
@@ -75,6 +80,8 @@ IoTeye's **special care industry expertise** is a direct match for The Arc Merce
 - **User diversity** — designing for staff with varying levels of technical literacy is a core competency, not an afterthought.
 
 Having built and operated SaaS products like SpringBoard, Guardian, and BrainBook, IoTeye brings proven experience in the full lifecycle: design, development, cloud deployment, and ongoing support. **The Arc Mercer is already a SpringBoard and Guardian customer**, giving IoTeye direct familiarity with your organization's operational environment and needs.
+
+> **BrainClaw AI agents are already in production at Arc Mercer today.** IoTeye's SpringBoard Agent (37 tools) and Samsara Agent (57 tools) power Arc Mercer's transportation operations — staff manage routes, fleet, and driver compliance through natural language conversation. The same BrainClaw AI agent framework extends into the recognition platform, giving Arc Mercer a unified AI workspace for operations and employee engagement — a capability no general-purpose recognition vendor can offer.
 
 ### IoTeye Platform Ecosystem — Total Agency Services for Special Care
 
@@ -138,6 +145,14 @@ We recommend a **custom-built SaaS solution** rather than an off-the-shelf produ
 │   S3 (Static Assets)       │ RDS (if needed)            │
 │   Secrets Manager          │ CloudWatch (Monitoring)    │
 │   WAF (Security)           │ Route 53 (DNS)             │
+└─────────────────────────────────────────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────────────────┐
+│     BrainClaw AI Agent Layer (Optional Add-On)          │
+│   GPT-4.1 Powered  │  Python Skill Protocol             │
+│   • Natural Language Analytics  • Smart Anomaly Alerts  │
+│   • Nomination Coaching         • Ad-hoc HR Reports     │
+│   Already running at Arc Mercer: SpringBoard + Samsara  │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -300,6 +315,28 @@ Points are earned through multiple configurable streams:
 
 ![Leadership Console — total points awarded, engagement rate, pending QA review queue](reward_3.png)
 *Leadership Console: Total points awarded (128.4k, +12% quarter-over-quarter), 89% engagement rate gauge, and Pending Review QA queue with approve/reject actions for nominations.*
+
+### E. AI Agent Assistant (Optional Add-On)
+
+IoTeye's **BrainClaw** AI agent framework — already in production for The Arc Mercer's SpringBoard and Samsara integrations — can be extended to provide a conversational AI assistant directly within the recognition platform.
+
+**Natural language capabilities for HR and leadership:**
+
+| Query | What the Agent Does |
+| ----- | ------------------- |
+| "Which program had the most nominations last month?" | Queries the engagement database, returns ranked results by program |
+| "Which employees haven't been recognized in 60+ days?" | Scans all records, flags at-risk staff by department |
+| "Flag any unusual point bestowals this week" | Runs anomaly detection across the full point ledger |
+| "Generate a nominator activity report for Q1" | Assembles and exports a formatted CSV/summary |
+| "What's our overall engagement score this month?" | Calculates real-time KPIs and highlights trends |
+
+**Technical Implementation:**
+- A new BrainClaw skill (`recognition_agent`) with tools bound to the recognition platform's Supabase database via role-scoped queries.
+- Accessible from the same **BrainBook** interface Arc Mercer already uses for SpringBoard and Samsara — one unified AI workspace.
+- No new infrastructure required — deployed on the existing BrainClaw gateway.
+- Role-aware: HR directors see org-wide data; program managers see their programs only.
+
+**Arc Mercer Advantage:** Arc Mercer staff already use BrainClaw AI agents to manage transportation operations today. Adding a recognition agent gives leadership a single conversational AI interface for fleet operations, driver compliance, and employee engagement — a capability unique to IoTeye.
 
 ---
 
@@ -615,6 +652,7 @@ Under this option, **IoTeye Inc. retains ownership of the platform and source co
 
 | Add-On                                                    | Cost           |
 | --------------------------------------------------------- | -------------- |
+| Recognition AI Agent (BrainClaw skill + BrainBook integration) | $8,000 one-time + $3,600/year |
 | Additional Paycom integration fields or custom sync logic | $3,000–$5,000 |
 | Custom reporting / BI dashboard integration               | $5,000         |
 | Additional training sessions (per session)                | $500           |

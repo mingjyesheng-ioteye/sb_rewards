@@ -114,7 +114,7 @@ add_textbox(slide, Inches(1), Inches(2.7), Inches(11), Inches(1.2),
 add_textbox(slide, Inches(1), Inches(4.2), Inches(11), Inches(0.5),
             "Proposal for The Arc Mercer", font_size=24, color=WHITE, bold=False)
 add_textbox(slide, Inches(1), Inches(6.2), Inches(11), Inches(0.5),
-            "March 2026  |  Basking Ridge, NJ  |  www.ioteyeinc.com", font_size=16, color=LIGHT_BLUE)
+            "April 2026  |  Basking Ridge, NJ  |  www.ioteyeinc.com", font_size=16, color=LIGHT_BLUE)
 
 
 # ─── SLIDE 2: Agenda ───
@@ -123,15 +123,16 @@ add_bg(slide, WHITE)
 section_header_bar(slide, "Agenda")
 
 items = [
-    "1.  About IoTeye Inc.",
-    "2.  Understanding Your Challenge",
-    "3.  Our Solution — Platform Overview",
-    "4.  Key Features Deep Dive",
-    "5.  Paycom Integration & SSO",
-    "6.  Accessibility & Mobile-First Design",
-    "7.  Phased Implementation Timeline",
-    "8.  Pricing Options",
-    "9.  Why IoTeye — Next Steps",
+    "1.  About IoTeye Inc. & Platform Ecosystem",
+    "2.  BrainClaw AI Agents \u2014 Already at Arc Mercer",
+    "3.  Understanding Your Challenge",
+    "4.  Our Solution \u2014 Platform Overview",
+    "5.  Key Features Deep Dive",
+    "6.  Paycom Integration & SSO",
+    "7.  Accessibility & Mobile-First Design",
+    "8.  Phased Implementation Timeline",
+    "9.  Pricing Options",
+    "10. Why IoTeye \u2014 Next Steps",
 ]
 tf = add_textbox(slide, Inches(1.5), Inches(1.6), Inches(10), Inches(5),
                  "", font_size=22, color=DARK_GRAY)
@@ -169,13 +170,104 @@ add_textbox(slide, Inches(7), Inches(1.4), Inches(5.5), Inches(0.5),
 tf = add_textbox(slide, Inches(7), Inches(2.0), Inches(5.8), Inches(4.8),
                  "", font_size=15, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "SpringBoard: Multi-agency route management & operations platform (route optimization, fleet mgmt, Twilio SMS, multi-tenant)",
-    "BrainBook: AI-powered platform with Next.js/React/TypeScript, Supabase auth, AI agents, voice I/O, desktop & web",
-    "Guardian: Multi-agency notification system — SMS, push notifications, reply tracking, iOS & Android apps",
-], font_size=15, bold_prefix=False, spacing=Pt(14))
+    "SpringBoard: Multi-agency route management & operations (route opt., fleet, Twilio SMS, multi-tenant)",
+    "BrainBook: AI platform \u2014 Next.js/React/TypeScript, Supabase, AI agents, voice I/O, desktop & web",
+    "Guardian: Notification system \u2014 SMS, push notifications, reply tracking, iOS & Android",
+    "BrainClaw: AI agent gateway (GPT-4.1) \u2014 37-tool SpringBoard agent & 57-tool Samsara agent live at Arc Mercer",
+], font_size=14, bold_prefix=False, spacing=Pt(10))
 
 
-# ─── SLIDE 4: Understanding the Challenge ───
+# \u2500\u2500\u2500 SLIDE 4: Total Agency Services for Special Care \u2500\u2500\u2500
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+add_bg(slide, DARK_BLUE)
+
+add_textbox(slide, Inches(0.8), Inches(0.3), Inches(11), Inches(0.65),
+            "Total Agency Services for Special Care", font_size=30, color=WHITE, bold=True)
+
+# Left panel
+add_shape_bg(slide, Inches(0.4), Inches(1.1), Inches(5.9), Inches(5.8), RGBColor(0x12, 0x1D, 0x35))
+add_textbox(slide, Inches(0.65), Inches(1.2), Inches(5.3), Inches(0.45),
+            "Special Care Cloud (AWS)", font_size=18, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.65), Inches(1.75), Inches(5.3), Inches(4.8),
+                 "", font_size=13, color=WHITE)
+add_bullet_list(tf, [
+    "Market: 6,000+ special care agencies in the USA",
+    "Agentic AI Platform \u2014 Cloud, Desktop, Mobile, IoT",
+    "Personal AI assistants for agency workflows",
+    "Apps for Parent/Guardian, Consumer/Patient, Staff/Driver",
+    "IoT: OBD, DashCam, Minew Proximity, Home Assistant Green",
+    "Samsara App Partner \u2014 fleet telematics",
+    "HIPAA-compliant AI inference servers",
+], font_size=13, color=WHITE, spacing=Pt(8))
+
+# Right panel
+add_shape_bg(slide, Inches(7.0), Inches(1.1), Inches(5.9), Inches(5.8), RGBColor(0x12, 0x1D, 0x35))
+add_textbox(slide, Inches(7.25), Inches(1.2), Inches(5.4), Inches(0.45),
+            "Platform Products", font_size=18, color=ACCENT_BLUE, bold=True)
+products_info = [
+    ("SpringBoard", "Route/Fleet \u2014 paratransit ops, multi-tenant"),
+    ("Guardian", "Notifications \u2014 SMS, push, reply tracking"),
+    ("BrainBook", "AI Platform \u2014 desktop, web, mobile, voice I/O"),
+    ("BrainClaw", "AI Agents \u2014 94+ tools, GPT-4.1, Arc Mercer live"),
+]
+y_p = Inches(1.85)
+for pname, pdesc in products_info:
+    add_textbox(slide, Inches(7.25), y_p, Inches(5.4), Inches(0.3),
+                pname, font_size=15, color=ACCENT_BLUE, bold=True)
+    add_textbox(slide, Inches(7.25), y_p + Inches(0.3), Inches(5.4), Inches(0.35),
+                pdesc, font_size=13, color=WHITE)
+    y_p += Inches(0.85)
+
+
+# \u2500\u2500\u2500 SLIDE 5: BrainClaw AI Agents \u2500\u2500\u2500
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+add_bg(slide, WHITE)
+section_header_bar(slide, "BrainClaw AI Agents \u2014 Already at Arc Mercer")
+
+# Left column: In production today
+add_textbox(slide, Inches(0.5), Inches(1.25), Inches(6.0), Inches(0.45),
+            "In Production at Arc Mercer Today", font_size=20, color=ACCENT_BLUE, bold=True)
+add_textbox(slide, Inches(0.5), Inches(1.8), Inches(6.0), Inches(0.35),
+            "Powered by BrainClaw + GPT-4.1 (GitHub Copilot)", font_size=14, color=MED_GRAY)
+tf = add_textbox(slide, Inches(0.5), Inches(2.25), Inches(6.0), Inches(2.1),
+                 "", font_size=14, color=DARK_GRAY)
+add_bullet_list(tf, [
+    "SpringBoard Agent \u2014 37 tools",
+    "  Routes, fleet, consumers, optimization, SMS, GPS, SOS",
+    "Samsara Agent \u2014 57 tools",
+    "  Vehicles, drivers, HOS, safety events, DVIRs, GPS",
+], font_size=14, spacing=Pt(5))
+
+add_textbox(slide, Inches(0.5), Inches(4.45), Inches(6.0), Inches(0.4),
+            "Arc Mercer staff use natural language today:", font_size=14, color=DARK_GRAY, bold=True)
+add_shape_bg(slide, Inches(0.5), Inches(4.9), Inches(6.0), Inches(2.0), LIGHT_GRAY)
+add_textbox(slide, Inches(0.65), Inches(4.95), Inches(5.7), Inches(1.8),
+            '"Optimize routes for Weekday AM"\n"Where is vehicle 147 right now?"\n"SMS all Residential drivers \u2014 10 min delay"\n"Generate daily manifest for Arc Mercer"',
+            font_size=13, color=DARK_GRAY, font_name="Consolas")
+
+# Right column: Extension to Recognition Platform
+add_shape_bg(slide, Inches(6.9), Inches(1.2), Inches(6.1), Inches(5.8), LIGHT_BLUE)
+add_textbox(slide, Inches(7.1), Inches(1.3), Inches(5.7), Inches(0.45),
+            "Extending to Recognition Platform", font_size=20, color=DARK_BLUE, bold=True)
+add_textbox(slide, Inches(7.1), Inches(1.85), Inches(5.7), Inches(0.4),
+            "Natural language for HR & leadership:", font_size=15, color=DARK_GRAY, bold=True)
+tf = add_textbox(slide, Inches(7.1), Inches(2.35), Inches(5.7), Inches(3.2),
+                 "", font_size=14, color=DARK_GRAY)
+add_bullet_list(tf, [
+    '"Which program had most nominations last month?"',
+    '"Who hasn\'t been recognized in 60+ days?"',
+    '"Flag unusual point bestowals this week"',
+    '"Generate Q1 engagement report as CSV"',
+    '"What\'s our engagement score this month?"',
+], font_size=14, spacing=Pt(10))
+
+add_shape_bg(slide, Inches(7.0), Inches(5.8), Inches(5.8), Inches(0.8), ACCENT_BLUE)
+add_textbox(slide, Inches(7.2), Inches(5.85), Inches(5.4), Inches(0.65),
+            "\u2605 Optional add-on \u2014 same BrainBook UI Arc Mercer already uses",
+            font_size=14, color=WHITE, bold=True)
+
+
+# \u2500\u2500\u2500 SLIDE 6: Understanding the Challenge \u2500\u2500\u2500
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Understanding Your Challenge")
@@ -658,17 +750,17 @@ add_textbox(slide, Inches(0.8), Inches(0.5), Inches(11), Inches(0.7),
 
 add_textbox(slide, Inches(0.8), Inches(1.5), Inches(5.5), Inches(0.5),
             "Why We're the Right Partner", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.8), Inches(2.1), Inches(5.5), Inches(4),
+tf = add_textbox(slide, Inches(0.8), Inches(2.1), Inches(5.5), Inches(4.5),
                  "", font_size=16, color=WHITE)
 add_bullet_list(tf, [
-    "5+ years in special care software — we know your workforce",
+    "5+ years in special care software \u2014 we know your workforce",
     "Arc Mercer is an existing SpringBoard & Guardian customer",
-    "Production platforms: SpringBoard, BrainBook, Guardian",
-    "Same tech stack (React, Supabase, Python, AWS) — proven",
+    "BrainClaw AI agents already running at Arc Mercer (37+57 tools)",
+    "Production platforms: SpringBoard, BrainBook, Guardian, BrainClaw",
+    "Same tech stack (React, Supabase, Python, AWS) \u2014 proven",
     "Mobile-first, accessible design as a core competency",
-    "No per-user fees — scales with your organization",
     "Flexible pricing: own the code or pay-as-you-go SaaS",
-], font_size=16, color=WHITE, spacing=Pt(10))
+], font_size=15, color=WHITE, spacing=Pt(9))
 
 add_textbox(slide, Inches(7), Inches(1.5), Inches(5.5), Inches(0.5),
             "Next Steps", font_size=24, color=ACCENT_BLUE, bold=True)
@@ -697,5 +789,11 @@ add_textbox(slide, Inches(0.8), Inches(6.2), Inches(5), Inches(0.8),
 
 # Save
 output_path = r"c:\Users\mingj\Documents\GitHub\sb_rewards\RFP\IoTeye - Arc Mercer Pitch.pptx"
-prs.save(output_path)
+output_path_tmp = r"c:\Users\mingj\Documents\GitHub\sb_rewards\RFP\IoTeye - Arc Mercer Pitch - new.pptx"
+try:
+    prs.save(output_path)
+    print(f"Saved: {output_path}")
+except PermissionError:
+    prs.save(output_path_tmp)
+    print(f"File locked — saved to: {output_path_tmp}")
 print(f"Saved: {output_path}")
