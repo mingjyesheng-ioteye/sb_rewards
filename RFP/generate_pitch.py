@@ -674,6 +674,12 @@ add_textbox(slide, Inches(8.7), Inches(5.1), Inches(3.6), Inches(0.4),
 add_textbox(slide, Inches(8.7), Inches(5.5), Inches(3.6), Inches(0.4),
             "Year 2+: $21,200/year", font_size=18, color=DARK_BLUE, bold=True)
 
+# Add-ons callout banner
+add_shape_bg(slide, Inches(0), Inches(6.5), SLIDE_W, Inches(0.7), GREEN)
+add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
+            "★  All add-ons INCLUDED at $0  —  only AI LLM usage fee applies (billed at cost, pass-through)",
+            font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
+
 
 # ─── SLIDE 14: Pricing — Option B ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -707,7 +713,14 @@ add_bullet_list(tf, [
     "Hosting, maintenance, security updates",
     "Ongoing support & platform updates",
     "No per-user fees",
-], font_size=16, spacing=Pt(10))
+    "All add-ons: $0 (AI LLM usage only)",
+], font_size=15, spacing=Pt(8))
+
+# Add-ons promo badge
+add_shape_bg(slide, Inches(7.0), Inches(4.55), Inches(5.0), Inches(0.5), GREEN)
+add_textbox(slide, Inches(7.15), Inches(4.6), Inches(4.7), Inches(0.4),
+            "★ AI Agents, Reports, Training — all at $0",
+            font_size=14, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 # Comparison table
 add_textbox(slide, Inches(0.8), Inches(4.8), Inches(11), Inches(0.5),
@@ -759,8 +772,9 @@ add_bullet_list(tf, [
     "Production platforms: SpringBoard, BrainBook, Guardian, BrainClaw",
     "Same tech stack (React, Supabase, Python, AWS) \u2014 proven",
     "Mobile-first, accessible design as a core competency",
+    "All add-ons FREE — pay only AI LLM usage (pass-through)",
     "Flexible pricing: own the code or pay-as-you-go SaaS",
-], font_size=15, color=WHITE, spacing=Pt(9))
+], font_size=14, color=WHITE, spacing=Pt(8))
 
 add_textbox(slide, Inches(7), Inches(1.5), Inches(5.5), Inches(0.5),
             "Next Steps", font_size=24, color=ACCENT_BLUE, bold=True)
