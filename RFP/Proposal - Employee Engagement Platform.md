@@ -1,4 +1,4 @@
-# Proposal: Employee Engagement & Recognition Platform
+# 0Proposal: Employee Engagement & Recognition Platform
 
 **Prepared for:** The Arc Mercer
 **Prepared by:** IoTeye Inc.
@@ -65,9 +65,10 @@ IoTeye's portfolio spans multiple domains directly relevant to The Arc Mercer's 
 - **BrainBook** — An AI-powered platform built with Next.js 14 (React/TypeScript), Supabase authentication, and Tauri for cross-platform desktop deployment. BrainBook features local AI model management and inference, an interactive chat interface with streaming responses, AI-driven note generation, voice I/O (text-to-speech and speech-to-text), an agent system with a standalone Node.js agent server, Node-RED workflow automation integration, and OAuth/SSO authentication. The platform runs as both a web application and a native desktop app, demonstrating IoTeye's expertise in React, TypeScript, Supabase, and modern full-stack architecture — the same technology stack proposed for this project.
 - **Guardian** — A multi-agency, multi-department notification and communication system. Guardian provides SMS messaging (via Twilio), mobile push notifications (via Expo), reply tracking, confirmation workflows, and location-aware alerts — all organized by agency and department. The system includes a server backend (Node.js/Docker/Supabase) and a cross-platform mobile app (React Native/Expo) published to both iOS and Android app stores. Guardian's multi-tenant architecture and real-time notification capabilities directly parallel the engagement and notification features required for this project.
 - **BrainClaw (AI Agent Gateway)** — IoTeye's production AI agent runtime, built on BrainBook's infrastructure and powered by GPT-4.1 via GitHub Copilot. BrainClaw hosts domain-specific Python skill agents accessed through a structured JSON protocol. Currently running two agents in production for **The Arc Mercer**:
+
   - **SpringBoard Agent (37 tools):** fleet management, route optimization, consumer management, scheduling, SMS/push notifications, real-time GPS telemetry, emergency SOS, and daily manifest/invoice generation. Arc Mercer staff (`arcmercer.ioteyeinc.com`) manage paratransit operations through natural language today.
   - **Samsara Agent (57 tools):** vehicle telematics, driver management, Hours of Service (HOS) compliance, safety events, Driver Vehicle Inspection Reports (DVIRs), equipment/trailer tracking, geofencing, fuel/energy reporting, and fleet-wide GPS.
-  
+
   The same BrainClaw framework will be extended to the recognition platform, giving Arc Mercer a unified AI workspace spanning operations and employee engagement.
 
 ### Why IoTeye for This Project
@@ -322,15 +323,16 @@ IoTeye's **BrainClaw** AI agent framework — already in production for The Arc 
 
 **Natural language capabilities for HR and leadership:**
 
-| Query | What the Agent Does |
-| ----- | ------------------- |
-| "Which program had the most nominations last month?" | Queries the engagement database, returns ranked results by program |
-| "Which employees haven't been recognized in 60+ days?" | Scans all records, flags at-risk staff by department |
-| "Flag any unusual point bestowals this week" | Runs anomaly detection across the full point ledger |
-| "Generate a nominator activity report for Q1" | Assembles and exports a formatted CSV/summary |
-| "What's our overall engagement score this month?" | Calculates real-time KPIs and highlights trends |
+| Query                                                  | What the Agent Does                                                |
+| ------------------------------------------------------ | ------------------------------------------------------------------ |
+| "Which program had the most nominations last month?"   | Queries the engagement database, returns ranked results by program |
+| "Which employees haven't been recognized in 60+ days?" | Scans all records, flags at-risk staff by department               |
+| "Flag any unusual point bestowals this week"           | Runs anomaly detection across the full point ledger                |
+| "Generate a nominator activity report for Q1"          | Assembles and exports a formatted CSV/summary                      |
+| "What's our overall engagement score this month?"      | Calculates real-time KPIs and highlights trends                    |
 
 **Technical Implementation:**
+
 - A new BrainClaw skill (`recognition_agent`) with tools bound to the recognition platform's Supabase database via role-scoped queries.
 - Accessible from the same **BrainBook** interface Arc Mercer already uses for SpringBoard and Samsara — one unified AI workspace.
 - No new infrastructure required — deployed on the existing BrainClaw gateway.
@@ -442,7 +444,7 @@ We design for the **least technically experienced user first**. Every interface 
 
 | Week  | Milestone                                                                                                                                          |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1–2  | **Kickoff & Discovery** — Requirements workshops with stakeholders, Paycom SFTP access setup, environment provisioning                       |
+| 1–2  | **Kickoff & Discovery** — Requirements workshops with stakeholders, Paycom SFTP access setup, environment provisioning                      |
 | 3–5  | **Core Infrastructure** — AWS deployment pipeline, Supabase schema design, authentication/SSO configuration, Paycom integration development |
 | 6–8  | **Nomination Engine** — Submission portal, QA queue, program hierarchy, nomination business rules                                           |
 | 9–10 | **Point System (Manual)** — Admin point bestowal, point balance views, audit trail, leadership dashboard                                    |
@@ -650,13 +652,15 @@ Under this option, **IoTeye Inc. retains ownership of the platform and source co
 
 ### 8.4 Optional Add-Ons (Both Options)
 
-| Add-On                                                    | Cost           |
-| --------------------------------------------------------- | -------------- |
-| Recognition AI Agent (BrainClaw skill + BrainBook integration) | $8,000 one-time + $3,600/year |
-| Additional Paycom integration fields or custom sync logic | $3,000–$5,000 |
-| Custom reporting / BI dashboard integration               | $5,000         |
-| Additional training sessions (per session)                | $500           |
-| Annual feature enhancement package (8 hours/month)        | $15,000/year   |
+All add-ons below are included at **no additional cost** — the only charge is the AI LLM usage fee incurred (billed at cost, pass-through only).
+
+| Add-On                                                         | Cost                                      |
+| -------------------------------------------------------------- | ----------------------------------------- |
+| Recognition AI Agent (BrainClaw skill + BrainBook integration) | $0 — AI LLM usage fee only (pass-through) |
+| Additional Paycom integration fields or custom sync logic      | $0 — AI LLM usage fee only (pass-through) |
+| Custom reporting / BI dashboard integration                    | $0 — AI LLM usage fee only (pass-through) |
+| Additional training sessions (per session)                     | $0 — AI LLM usage fee only (pass-through) |
+| Annual feature enhancement package (8 hours/month)             | $0 — AI LLM usage fee only (pass-through) |
 
 ---
 
