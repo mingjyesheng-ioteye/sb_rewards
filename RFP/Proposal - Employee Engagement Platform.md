@@ -19,6 +19,10 @@
 8. [Cost Proposal](#8-cost-proposal)
 9. [Evaluation Criteria Alignment](#9-evaluation-criteria-alignment)
 10. [Appendices](#10-appendices)
+    - [Appendix A: Technology Stack Detail](#appendix-a-technology-stack-detail)
+    - [Appendix B: Data Security Summary](#appendix-b-data-security-summary)
+    - [Appendix C: Support & Maintenance](#appendix-c-support--maintenance)
+    - [Appendix D: Competitive Feature Matrix & Revision Log](#appendix-d-competitive-feature-matrix--revision-log)
 
 ---
 
@@ -212,6 +216,28 @@ We recommend a **custom-built SaaS solution** rather than an off-the-shelf produ
 - Filter and sort by program, award type, date, and status.
 - Points are only awarded upon admin approval — never automatically on submission.
 
+**Selection Committee Voting:**
+
+After nominations pass the QA queue, approved nominations advance to the selection committee for evaluation:
+
+- **Configurable committee membership:** Admin assigns committee members per award type (e.g., different committees for Employee of the Month vs. Team Impact).
+- **Ranked-choice voting:** Committee members review all approved nominations for the current period and rank them using a **drag-and-drop interface** — ordering nominees from strongest to weakest.
+- **Private ballots:** Each committee member's ranking is recorded independently. Ballots are not visible to other members until the voting window closes.
+- **Automated tally:** When the voting window closes, the system calculates the winner using ranked-choice scoring (configurable: weighted rank, Borda count, or simple majority).
+- **Per-voter audit trail:** Every ballot is logged with voter identity, timestamp, and full ranking — queryable by admin for transparency.
+- **Historical ballot archive:** Past voting rounds are retained for audit and trend analysis.
+- **Winner announcement workflow:** Once the committee selects a winner, admin confirms and the platform triggers point awards, notifications, and the Wall of Fame update.
+
+**Nomination Revise-and-Resubmit Workflow:**
+
+When a nomination is returned for edits, a structured resubmission loop ensures nominations are not lost:
+
+- **Status tracking:** Each nomination carries a visible status: **Submitted → Under Review → Returned for Edits → Revised → Resubmitted → Approved / Declined**.
+- **Admin comments:** When returning a nomination, the admin includes specific feedback (e.g., "Please add more detail about the impact").
+- **Nominator notification:** The original nominator receives a push/email notification with the admin's comments and a direct link to edit and resubmit.
+- **Edit window:** Nominators have a configurable number of days (default: 7) to revise and resubmit before the nomination expires.
+- **Resubmission re-enters QA:** Revised nominations return to the QA queue for a fresh review, maintaining the approval gate.
+
 ![Nomination Center — step-by-step award submission with award category selection](reward_2.png)
 *Nomination Center: Guided step-by-step form with award category selection (Employee of the Month, Team Player Award, Rising Star) and real-time nomination feedback.*
 
@@ -232,13 +258,49 @@ Points are earned through multiple configurable streams:
 | Rising Star of the Month (Approved) | Configurable by admin | QA queue approval                   |
 | Team Impact Award (Approved)        | Configurable by admin | QA queue approval                   |
 | TAC Meeting Attendance              | Configurable by admin | Admin check-in or attendance import |
+| TAC Meeting Role Completion         | Configurable by admin | Role fulfilled confirmation         |
 | Newsletter Trivia                   | Configurable by admin | Correct answer submission           |
+| Culture Group Participation         | Configurable by admin | Group leader/admin attendance log   |
+| Volunteer / Event Help              | Configurable by admin | Admin post-event confirmation       |
+| Social Media Engagement             | Configurable by admin | Screenshot review approval          |
 | Birthday Milestone                  | Configurable by admin | Automated (Paycom DOB sync)         |
 | Work Anniversary Milestone          | Configurable by admin | Automated (Paycom hire date sync)   |
 | Leadership Bestowal                 | Variable              | Manual award by leadership          |
 
 - All point values are administrator-configurable — no code changes needed to adjust values.
 - Milestone points (birthdays, anniversaries) are triggered automatically via scheduled jobs synced with Paycom data.
+
+**TAC Meeting RSVP & Role Sign-Ups:**
+
+Beyond attendance tracking for points, the platform provides a full TAC meeting management module:
+
+- **Event scheduling:** Admin creates upcoming TAC meetings with date, time, location, and agenda.
+- **RSVP workflow:** Employees receive a push/email notification and can RSVP (Attending / Not Attending) directly from the app.
+- **Role sign-ups:** Each meeting offers configurable roles — **Setup**, **Check-In**, **Cleanup**, **Leadership** — that employees can volunteer for on a first-come, first-served basis with capacity limits.
+- **Automated reminders:** Configurable reminders sent 48 hours and 2 hours before the meeting to confirmed attendees.
+- **Attendance confirmation:** Admin marks attendees as present at the meeting; points are awarded automatically upon confirmation.
+- **Role completion points:** Additional bonus points for employees who fulfilled a signed-up role (configurable by admin).
+
+**Culture Group Sign-Ups & Participation Tracking:**
+
+- **Culture group directory:** Admin creates and manages culture groups (e.g., Wellness Committee, Diversity Council, Social Events Team) with descriptions and meeting schedules.
+- **Sign-up portal:** Employees browse available culture groups and join with one tap. Capacity limits and approval gates are configurable per group.
+- **Participation logging:** Group leaders or admin log attendance at culture group activities. Points are awarded automatically per participation event.
+- **Activity feed:** Culture group activities appear on the employee dashboard and recognition feed, increasing visibility and encouraging participation.
+
+**Volunteer & Event Help Forms:**
+
+- **Event help request board:** Admin posts upcoming events needing volunteers (e.g., fundraisers, holiday parties, community outreach) with descriptions, dates, and role slots.
+- **Volunteer sign-up:** Employees sign up for volunteer slots directly from the app with one-tap enrollment.
+- **Completion tracking:** Admin confirms volunteer participation after the event; points are awarded automatically.
+- **Volunteer history:** Each employee's volunteer record is visible on their profile and contributes to their engagement score.
+
+**Social Media Engagement:**
+
+- **Engagement submission form:** Employees submit evidence of social media engagement (e.g., sharing an Arc Mercer post, participating in an awareness campaign) via a simple form with **screenshot upload** capability.
+- **Admin review queue:** Submitted screenshots are reviewed by admin for approval before points are awarded — preventing fraudulent submissions.
+- **Point award on approval:** Approved social media engagement submissions automatically award configurable points.
+- **Campaign tracking:** Admin can create specific social media campaigns with start/end dates and track participation rates.
 
 **Audit Trails:**
 
@@ -275,6 +337,23 @@ Points are earned through multiple configurable streams:
   - API-based delivery for instant digital gift card fulfillment (e.g., via a vendor such as Tango Card or similar).
   - Automated delivery via email with tracking.
 
+**Cafeteria Meal Redemption (Cashier-Facing Screen):**
+
+- **Dedicated cashier interface:** A simplified, tablet-friendly screen for cafeteria staff to process point-based meal redemptions.
+- **Employee lookup:** Cashier searches by name, badge ID, or scans the employee's QR code to pull up the employee's account.
+- **Balance display & confirmation:** The employee's current point balance is displayed prominently. Cashier selects the meal item, confirms the point cost, and the employee approves the deduction.
+- **Instant point deduction:** Points are deducted in real-time upon confirmation. The employee and cashier both see a success confirmation.
+- **Transaction logging:** Every cafeteria redemption is logged in the audit trail with timestamp, employee, cashier, item, and point amount.
+- **No POS integration required:** The cafeteria redemption screen operates independently — the cashier rings up the meal at $0 on their existing POS and processes the point deduction through the platform.
+
+**In-Person Store & QR Code Redemption:**
+
+- **Employee QR code:** Each employee has a unique QR code accessible from their profile or home screen in the app.
+- **Store attendant scanning:** At the in-person rewards store, a store attendant scans the employee's QR code using a tablet or phone running the platform's admin interface.
+- **Browse & select:** The attendant selects the physical item being redeemed. The employee's point balance and the item's point cost are displayed for confirmation.
+- **Point deduction on scan:** Points are deducted instantly upon confirmation. The employee receives a push notification confirming the redemption.
+- **Inventory sync:** Physical store inventory levels are updated in real-time, keeping the digital storefront and physical store in sync.
+
 ### D. User Experience (UX) & Accessibility
 
 **Universal Design Principles:**
@@ -292,6 +371,13 @@ Points are earned through multiple configurable streams:
 - **Responsive layout:** Designed for 320px+ screens, scaling gracefully to tablets and desktops.
 - **Touch-optimized:** Swipe gestures, pull-to-refresh, and haptic-style feedback.
 - **Low-bandwidth friendly:** Lazy-loaded images, compressed assets, and optional offline mode for unreliable connectivity.
+
+**Dark Mode / Light Mode:**
+
+- **Toggle switch:** Users can switch between light and dark themes from their profile or via a persistent toggle in the navigation bar.
+- **Night-shift optimized:** Dark mode provides a low-glare interface for staff working overnight shifts at group homes, reducing eye strain in low-light environments.
+- **System preference detection:** The app automatically defaults to the user's device system preference (light or dark) on first load.
+- **CSS variable theming:** Implemented via CSS custom properties — ensuring consistent dark mode across all components with minimal performance overhead.
 
 **Dashboards:**
 
@@ -393,13 +479,30 @@ Paycom HRIS
 - Admin notifications for sync errors or data discrepancies.
 - Monthly sync health reports.
 
-### 5.2 Single Sign-On (SSO)
+### 5.2 Single Sign-On (SSO) & Frontline Authentication
+
+We recognize that The Arc Mercer's workforce includes a significant number of frontline direct-support professionals who may not have organizational email addresses. Our authentication strategy provides **three login paths** to ensure every employee can access the platform:
+
+**Path 1: Badge ID + PIN (Frontline Staff)**
+
+For frontline DSPs and staff without Arc Mercer email addresses:
+
+- **Paycom Badge ID login:** Employees sign in using their **Paycom employee badge ID** — the identifier they already carry and use daily.
+- **Self-set PIN:** On first login (provisioned automatically via Paycom sync), the employee sets a **4-6 digit PIN** as their credential. No email address required.
+- **Simple login flow:** Enter badge ID → enter PIN → authenticated. Designed for speed and simplicity on a smartphone.
+- **PIN reset:** Admin can trigger a PIN reset for any employee. The employee sets a new PIN on next login.
+- **Security:** PINs are hashed and salted in the database. Failed login attempts trigger a lockout after 5 tries (configurable) with admin notification.
+
+**Path 2: Google Workspace SSO (Admin & Management Staff)**
 
 - **Supabase Auth** natively supports SAML 2.0, OAuth 2.0, and OIDC — enabling flexible identity provider configuration without code changes.
-- **Initial Deployment: Google Workspace SSO** — We will configure SSO with The Arc Mercer's current Google Workspace identity provider. Employees sign in with their existing Google organizational accounts.
+- **Initial Deployment: Google Workspace SSO** — We will configure SSO with The Arc Mercer's current Google Workspace identity provider. Admin and management staff sign in with their existing Google organizational accounts.
 - **Future Migration Path: Microsoft Entra ID (Azure AD)** — Supabase Auth supports multiple identity providers simultaneously. When The Arc Mercer migrates to Microsoft, we can add Microsoft Entra ID as an SSO provider with zero downtime — both providers can run in parallel during the transition period.
-- **Employee experience:** Click "Sign In" → redirect to familiar Google (or future Microsoft) login → automatically authenticated and returned to the platform.
-- **Fallback:** Email/password login for users without SSO credentials (e.g., part-time or seasonal staff), with secure password policies enforced.
+- **Employee experience:** Click "Sign In with Google" → redirect to familiar Google (or future Microsoft) login → automatically authenticated and returned to the platform.
+
+**Path 3: Email/Password Fallback**
+
+- **Fallback:** Email/password login for users who prefer traditional credentials or have email addresses but are not on the SSO identity provider (e.g., part-time or seasonal staff), with secure password policies enforced.
 
 ---
 
@@ -440,13 +543,13 @@ We design for the **least technically experienced user first**. Every interface 
 
 ### Phase One: Foundation (Weeks 1–12)
 
-> *Centralized nominations, Paycom sync, and manual point support*
+> *Centralized nominations, selection committee voting, Paycom sync, and manual point support*
 
 | Week  | Milestone                                                                                                                                          |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1–2  | **Kickoff & Discovery** — Requirements workshops with stakeholders, Paycom SFTP access setup, environment provisioning                      |
-| 3–5  | **Core Infrastructure** — AWS deployment pipeline, Supabase schema design, authentication/SSO configuration, Paycom integration development |
-| 6–8  | **Nomination Engine** — Submission portal, QA queue, program hierarchy, nomination business rules                                           |
+| 3–5  | **Core Infrastructure** — AWS deployment pipeline, Supabase schema design, authentication configuration (Badge ID + PIN, Google SSO), Paycom integration development |
+| 6–8  | **Nomination Engine & Voting** — Submission portal, QA queue with revise-and-resubmit workflow, selection committee ranked-choice voting module, program hierarchy, nomination business rules |
 | 9–10 | **Point System (Manual)** — Admin point bestowal, point balance views, audit trail, leadership dashboard                                    |
 | 11    | **User Acceptance Testing (UAT)** — Testing with selected staff across programs, accessibility audit                                        |
 | 12    | **Phase One Launch** — Production deployment, staff onboarding, admin training                                                              |
@@ -454,22 +557,24 @@ We design for the **least technically experienced user first**. Every interface 
 **Phase One Deliverables:**
 
 - Nomination submission portal (Employee of the Month, Rising Star, Team Impact)
-- QA queue with approve/return/decline workflow
+- QA queue with approve/return/decline workflow and formalized revise-and-resubmit loop
+- Selection committee ranked-choice voting module with drag-and-drop ranking, private ballots, and automated tally
 - Paycom user sync (automated provisioning)
-- SSO login
+- Badge ID + PIN login for frontline staff
+- Google Workspace SSO for admin/management staff
 - Manual point bestowal by leadership
 - Basic point balance display
 - Admin audit trail
 
 ### Phase Two: Engagement (Weeks 13–24)
 
-> *Individual dashboards and automated activity tracking*
+> *Individual dashboards, automated activity tracking, and community engagement modules*
 
 | Week   | Milestone                                                                                                                 |
 | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| 13–15 | **Employee Dashboards** — Personalized point history, nomination tracker, activity feed                            |
-| 16–18 | **Leadership Dashboards** — Participation metrics, trend charts, program comparisons                               |
-| 19–21 | **Automated Tracking** — TAC meeting attendance logging, newsletter trivia module, birthday/anniversary automation |
+| 13–15 | **Employee Dashboards** — Personalized point history, nomination tracker, activity feed, dark mode toggle          |
+| 16–18 | **Leadership Dashboards** — Participation metrics, trend charts, program comparisons, leaderboards                |
+| 19–21 | **Automated Tracking & Engagement Modules** — TAC meeting RSVP/role sign-ups/attendance, newsletter trivia, birthday/anniversary automation, culture group sign-ups, volunteer/event forms, social media engagement with screenshot upload |
 | 22–23 | **UAT & Refinement** — User testing, performance optimization                                                      |
 | 24     | **Phase Two Launch** — Feature rollout, updated training materials                                                 |
 
@@ -477,19 +582,23 @@ We design for the **least technically experienced user first**. Every interface 
 
 - Full employee dashboards with point history and progress
 - Leadership analytics dashboards with trends
+- Dark mode / light mode toggle for night-shift staff
 - Automated birthday and anniversary point awards
-- TAC meeting attendance tracking
+- TAC meeting RSVP, role sign-ups (setup, check-in, cleanup, leadership), attendance tracking with automated reminders
+- Culture group sign-ups and participation tracking
+- Volunteer / event help forms with sign-up and completion tracking
+- Social media engagement form with screenshot upload and admin review
 - Newsletter trivia integration
 - Push/email notifications
 
 ### Phase Three: Marketplace (Weeks 25–36)
 
-> *Full Store activation and fulfillment workflows*
+> *Full Store activation, in-person redemption, and fulfillment workflows*
 
 | Week   | Milestone                                                                                    |
 | ------ | -------------------------------------------------------------------------------------------- |
 | 25–27 | **Storefront Development** — Product catalog, category browsing, point-based checkout |
-| 28–30 | **Fulfillment System** — Order management, status tracking, admin inventory tools     |
+| 28–30 | **Fulfillment & In-Person Redemption** — Order management, status tracking, admin inventory tools, cafeteria cashier-facing redemption screen, in-person store QR code scanning |
 | 31–33 | **Gift Card Integration** — Vendor API integration, automated digital delivery        |
 | 34–35 | **UAT & Load Testing** — End-to-end testing, security audit                           |
 | 36     | **Phase Three Launch & Full Platform Go-Live**                                         |
@@ -499,7 +608,9 @@ We design for the **least technically experienced user first**. Every interface 
 - Digital rewards storefront
 - Physical merchandise ordering and fulfillment tracking
 - Digital gift card instant delivery
-- Inventory management tools
+- Cafeteria meal redemption with cashier-facing lookup screen (search by name, badge ID, or QR scan; confirm balance; deduct points)
+- In-person rewards store QR code scanning (employee QR code on profile, attendant scans to redeem)
+- Inventory management tools with real-time sync between digital and physical store
 - Complete platform with all features active
 
 ### Overall Timeline Summary
@@ -526,12 +637,12 @@ Under this option, The Arc Mercer **owns the source code and all intellectual pr
 
 #### 8.1 Implementation Fees (One-Time)
 
-| Phase                          | Description                                                       | Est. Hours           | Cost               |
-| ------------------------------ | ----------------------------------------------------------------- | -------------------- | ------------------ |
-| Phase One                      | Nominations, Paycom Sync, Manual Points, SSO, Core Infrastructure | ~480 hrs             | $45,000            |
-| Phase Two                      | Dashboards, Automated Tracking, Notifications                     | ~310 hrs             | $35,000            |
-| Phase Three                    | Rewards Marketplace, Gift Card Integration, Fulfillment           | ~280 hrs             | $30,000            |
-| **Total Implementation** |                                                                   | **~1,070 hrs** | **$110,000** |
+| Phase                          | Description                                                                          | Est. Hours           | Cost               |
+| ------------------------------ | ------------------------------------------------------------------------------------ | -------------------- | ------------------ |
+| Phase One                      | Nominations, Selection Committee Voting, Paycom Sync, Badge ID + PIN Auth, SSO, Manual Points, Core Infrastructure | ~480 hrs             | $45,000            |
+| Phase Two                      | Dashboards, Engagement Modules (TAC RSVP, Culture Groups, Volunteer, Social Media), Dark Mode, Notifications | ~310 hrs             | $35,000            |
+| Phase Three                    | Rewards Marketplace, Cafeteria Redemption, In-Person QR Store, Gift Card Integration, Fulfillment | ~280 hrs             | $30,000            |
+| **Total Implementation** |                                                                                      | **~1,070 hrs** | **$110,000** |
 
 *Includes: discovery, design, development, testing, deployment, training, and documentation.*
 
@@ -541,33 +652,34 @@ Under this option, The Arc Mercer **owns the source code and all intellectual pr
 
 | Task                                                                         | Hours |
 | ---------------------------------------------------------------------------- | ----- |
-| Discovery & requirements workshops                                           | ~40   |
-| AWS infrastructure setup (ECS, CloudFront, CI/CD pipeline)                   | ~40   |
-| Supabase schema design, RLS policies, auth/SSO configuration                 | ~40   |
-| Paycom integration service (API + SFTP fallback, error handling, monitoring) | ~80   |
-| Nomination engine (submission portal, business rules, guided flows)          | ~80   |
-| QA queue (admin dashboard, approve/return/decline workflow)                  | ~60   |
-| Manual point bestowal + audit trail                                          | ~40   |
-| UI/UX design (mobile-first, WCAG AAA, icon-driven, accessibility)            | ~60   |
+| Discovery & requirements workshops                                           | ~35   |
+| AWS infrastructure setup (ECS, CloudFront, CI/CD pipeline)                   | ~35   |
+| Supabase schema design, RLS policies, auth configuration (Badge ID + PIN, Google SSO) | ~50   |
+| Paycom integration service (SFTP + optional API, error handling, monitoring) | ~75   |
+| Nomination engine + selection committee voting (submission portal, ranked-choice drag-and-drop, ballots, tally, business rules) | ~90   |
+| QA queue (admin dashboard, approve/return/decline, revise-and-resubmit workflow) | ~65   |
+| Manual point bestowal + audit trail                                          | ~35   |
+| UI/UX design (mobile-first, WCAG AAA, icon-driven, accessibility)            | ~55   |
 | UAT, accessibility audit, deployment, staff training                         | ~40   |
 
 **Phase Two — $35,000 (~310 hours, Weeks 13–24)**
 
 | Task                                                                   | Hours |
 | ---------------------------------------------------------------------- | ----- |
-| Employee dashboards (point history, nomination tracker, activity feed) | ~80   |
-| Leadership dashboards (analytics, trend charts, program comparisons)   | ~80   |
-| Automated tracking (attendance, trivia, birthday/anniversary jobs)     | ~80   |
-| Notification system (push + email)                                     | ~40   |
+| Employee dashboards (point history, nomination tracker, activity feed) | ~70   |
+| Leadership dashboards (analytics, trend charts, program comparisons)   | ~65   |
+| Engagement modules (TAC RSVP/role sign-ups, culture groups, volunteer/event forms, social media engagement with screenshot upload, birthday/anniversary automation, newsletter trivia) | ~100  |
+| Dark mode / light mode (CSS variable theming, system preference detection) | ~10   |
+| Notification system (push + email)                                     | ~35   |
 | UAT & refinement                                                       | ~30   |
 
 **Phase Three — $30,000 (~280 hours, Weeks 25–36)**
 
 | Task                                                                    | Hours |
 | ----------------------------------------------------------------------- | ----- |
-| Rewards storefront (catalog, browsing, point-based checkout)            | ~80   |
-| Fulfillment system (order queue, status tracking, inventory management) | ~80   |
-| Gift card vendor API integration + automated delivery                   | ~60   |
+| Rewards storefront (catalog, browsing, point-based checkout)            | ~70   |
+| Fulfillment system + cafeteria redemption + in-person QR store (order queue, status tracking, inventory management, cashier-facing screen, QR code scanning) | ~95   |
+| Gift card vendor API integration + automated delivery                   | ~55   |
 | Load testing, security audit, final deployment                          | ~40   |
 | Documentation & admin training                                          | ~20   |
 
@@ -669,25 +781,29 @@ All add-ons below are included at **no additional cost** — the only charge is 
 ### Ease of Use
 
 - Mobile-first PWA — no app download, works on any smartphone.
+- **Badge ID + PIN login for frontline staff** — no email address required, no password to remember.
 - Icon-driven navigation with large touch targets.
 - Step-by-step guided nomination flows.
 - Designed and tested with non-technical frontline staff.
 - One-tap actions for all common tasks.
+- Dark mode for night-shift staff in low-light environments.
 
 ### Integration Robustness
 
 - Dual-channel Paycom integration (SFTP primary + REST API optional).
 - Automated user provisioning with discrepancy reporting.
-- SSO via SAML 2.0 / OAuth 2.0 — employees use existing credentials.
+- **Three authentication paths:** Badge ID + PIN (frontline), Google Workspace SSO (admin), email/password (fallback).
 - Nightly sync with real-time status monitoring.
 
 ### Administrative Control
 
-- Full QA queue with approve/return/decline workflow.
+- Full QA queue with approve/return/decline workflow and **formalized revise-and-resubmit loop**.
+- **Selection committee ranked-choice voting** with drag-and-drop ranking, private ballots, and automated tally.
 - Configurable point values — no code changes needed.
 - Comprehensive audit trails for every point transaction.
 - Leader dashboards with participation trends and program-level analytics.
 - Inventory and fulfillment management tools.
+- **Cafeteria cashier-facing redemption screen** and **in-person store QR code scanning**.
 
 ### Total Cost of Ownership
 
@@ -739,6 +855,105 @@ All add-ons below are included at **no additional cost** — the only charge is 
 | High     | Major feature unavailable      | 4 hours         | 24 hours               |
 | Medium   | Non-critical bug / UI issue    | 1 business day  | 5 business days        |
 | Low      | Enhancement request / question | 2 business days | Next scheduled release |
+
+### Appendix D: Competitive Feature Matrix & Revision Log
+
+This appendix provides a comprehensive feature-by-feature comparison of the three proposals submitted for The Arc Mercer's Employee Engagement & Recognition Platform RFP, followed by a detailed log of all features added to this proposal during the competitive revision process.
+
+**Legend:** ✅ = Included | 🆕 = Newly added in this revision | — = Not included | ⚠️ = Partial
+
+#### Part 1: Feature Comparison Matrix
+
+**Nomination & Recognition**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 1 | Peer-to-Peer Nominations | ✅ | ✅ | ✅ | 1 | Core RFP requirement; all vendors include |
+| 2 | Manager / Supervisor Nominations | ✅ | ✅ | ✅ | 1 | Role-based nomination paths |
+| 3 | Category-Based Awards (quarterly, annual, spot) | ✅ | ✅ | ✅ | 1 | IoTeye includes customizable categories with admin controls |
+| 4 | Nomination Templates & Guided Forms | ✅ | ⚠️ Partial | ✅ | 1 | IoTeye offers structured templates; P1 has basic form fields |
+| 5 | Batch QA Queue Operations | ✅ | — | — | 1 | IoTeye-exclusive for high-volume nomination periods |
+| 6 | Formalized Revise-and-Resubmit Loop | 🆕 | ✅ | — | 1 | Status tracking through full revision cycle; previously implicit |
+
+**Selection & Voting**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 7 | Selection Committee Voting | 🆕 | ✅ | ✅ | 1 | Private ballots with configurable committee membership |
+| 8 | Ranked-Choice Drag-and-Drop Voting | 🆕 | ⚠️ Partial | ✅ | 1 | P2 identified Arc Mercer uses ranked-choice today |
+| 9 | Automated Vote Tally & Winner Declaration | 🆕 | ✅ | ✅ | 1 | Ties resolved by committee chair; results audit-logged |
+
+**Authentication & Access Control**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 10 | SSO (Google Workspace / Microsoft Entra ID) | ✅ | — | — | 1 | IoTeye includes multi-IDP with zero-downtime migration path |
+| 11 | Email / Password Fallback | ✅ | — | — | 1 | Standard credential-based login |
+| 12 | Badge ID + PIN Login (frontline staff) | 🆕 | — | ✅ | 1 | Critical for DSPs lacking company email addresses |
+| 13 | Magic Link Authentication | — | ✅ | — | — | P1 approach; IoTeye addresses gap via badge ID + PIN instead |
+| 14 | Multi-IDP Migration Path (Google → Microsoft) | ✅ | — | — | 1 | Both providers run in parallel during transition |
+
+**Engagement & Participation Modules**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 15 | TAC Meeting Attendance Logging & Points | ✅ | ✅ | ⚠️ Partial | 2 | IoTeye: admin check-in or CSV import with auto-points |
+| 16 | TAC RSVP & Role Sign-Ups | 🆕 | ✅ | — | 2 | RSVP workflow with role selection (setup, check-in, cleanup, leadership) |
+| 17 | Culture Group Sign-Ups & Participation | 🆕 | ✅ | — | 2 | Self-service sign-up with attendance tracking and auto-points |
+| 18 | Volunteer / Event Help Forms | 🆕 | ✅ | — | 2 | Form builder for event volunteering with approval workflow |
+| 19 | Social Media Engagement (Screenshot Upload) | 🆕 | ✅ | — | 2 | Upload proof of social media engagement for point awards |
+| 20 | Anniversary & Milestone Automation | ✅ | ✅ | ✅ | 2 | Automated recognition for work anniversaries and tenure milestones |
+
+**Rewards Marketplace & Redemption**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 21 | Digital Storefront (browse, filter, redeem) | ✅ | ✅ | ✅ | 3 | Points-based online catalog |
+| 22 | Gift Card Integration (Amazon Business) | ✅ | ⚠️ Partial | ✅ | 3 | IoTeye: Amazon Business API; P1 mentions gift cards generically |
+| 23 | Cafeteria Cashier Redemption Screen | 🆕 | ✅ | — | 3 | Dedicated cashier-facing lookup, balance check, and point deduction |
+| 24 | In-Person Store QR Code Scanning | 🆕 | — | ✅ | 3 | QR code scanning for physical reward store redemption |
+| 25 | Swag / Merchandise Fulfillment | ✅ | ✅ | ⚠️ Partial | 3 | Admin order management with shipping tracking |
+
+**Analytics, AI & Reporting**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 26 | BrainClaw AI Agent (NLP analytics) | ✅ | — | — | 2 | IoTeye-exclusive; 94+ tools already in production at Arc Mercer |
+| 27 | Leadership Dashboards & Reports | ✅ | ✅ | ✅ | 2 | Department-level participation, point balance, and trend analytics |
+| 28 | Anomaly Detection & Flagging | ✅ | — | — | 2 | Automatic flagging of unusual point bestowals |
+| 29 | Immutable Audit Trail & CSV Export | ✅ | ⚠️ Partial | ⚠️ Partial | 1 | Full field detail: timestamp, actor, action, amount, source |
+
+**Technical & Infrastructure**
+
+| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
+|---|---------|--------|------------|------------|-------|-------|
+| 30 | Dark Mode / Light Mode Toggle | 🆕 | — | ✅ | 2 | Critical for night-shift staff at group homes |
+| 31 | Offline Capability | ✅ | — | — | 1 | Lazy-loaded images, compressed assets for low-connectivity |
+| 32 | Push Notifications (Mobile + Email + SMS) | ✅ | ⚠️ Partial | — | 2 | IoTeye: Twilio SMS + Expo push + email; P1: email + in-app only |
+| 33 | WCAG AAA Accessibility (7:1 contrast) | ✅ | — | ⚠️ Partial | All | IoTeye targets AAA; P2 mentions "high-contrast" generically |
+| 34 | Screen Reader & Keyboard Navigation | ✅ | — | — | All | Semantic HTML, ARIA labels, NVDA/VoiceOver tested |
+| 35 | Severity-Based SLA Tiers | ✅ | — | — | Post | Critical 2hr / High 4hr / Medium 1 day / Low 2 days |
+| 36 | AWS HIPAA-Eligible Infrastructure (99.9% uptime) | ✅ | — | — | All | WAF, VPC isolation, Secrets Manager, CloudWatch |
+| 37 | Source Code Ownership Option | ✅ | ⚠️ Partial | — | — | Option A: full IP and source code transfer to Arc Mercer |
+
+**Summary:** IoTeye covers **36 of 37** features (including 10 newly added). Proposal 1 covers 21. Proposal 2 covers 18.
+
+#### Part 2: Revision Change Log
+
+The following 10 features were added to this proposal after competitive analysis. All features are absorbed into the existing **$110,000 budget** (1,070 hours) through redistribution of phase-level estimates. Phase costs remain unchanged at $45,000 / $35,000 / $30,000.
+
+| # | Feature Added | Section(s) Modified | Phase | Competitor Source | Before → After |
+|---|---------------|---------------------|-------|-------------------|----------------|
+| 1 | Selection Committee Voting (ranked-choice drag-and-drop) | 4A, 7, 9 | Phase 1 | P1, P2 | QA queue supported approve/return/decline only → Full committee voting with ranked-choice drag-and-drop ballots, configurable committee membership, and automated tally with tie-breaking |
+| 2 | Formalized Revise-and-Resubmit Loop | 4A, 7 | Phase 1 | P1 | Implicit "Return for Edits" with comment field → Explicit revision workflow with status tracking (Submitted → Under Review → Revisions Requested → Revised → Approved/Declined), revision counter, and full history |
+| 3 | Badge ID + PIN Authentication | 5.2, 7, 9 | Phase 1 | P2 | SSO + email/password only → Three login paths: (1) Paycom badge ID + self-set PIN, (2) Google/Microsoft SSO, (3) email/password. Addresses frontline DSPs lacking company email |
+| 4 | TAC RSVP & Role Sign-Ups | 4B, 7 | Phase 2 | P1 | TAC attendance logging only → Full RSVP workflow with role selection (setup, check-in, cleanup, leadership), automated reminders, and role-based point bonuses |
+| 5 | Culture Group Sign-Ups & Participation | 4B, 7 | Phase 2 | P1 | Not addressed → Self-service group directory, sign-up forms, attendance tracking, and automated participation points |
+| 6 | Volunteer / Event Help Forms | 4B, 7 | Phase 2 | P1 | Not addressed → Configurable volunteer sign-up forms with admin approval workflow, shift management, and participation point awards |
+| 7 | Social Media Engagement (screenshot upload) | 4B, 7 | Phase 2 | P1 | Not addressed → Screenshot upload form for social media engagement proof, admin review queue, and point awards upon approval |
+| 8 | Cafeteria Cashier Redemption Screen | 4C, 7 | Phase 3 | P1 | "Cafeteria meals" listed as reward category with internal tracking → Dedicated cashier-facing interface: employee lookup (name/badge), real-time point balance display, meal item selection, confirmation prompt, and automatic point deduction |
+| 9 | In-Person Store QR Code Scanning | 4C, 7, 9 | Phase 3 | P2 | Digital storefront only → QR code generation per reward item, staff scan via mobile app camera, balance verification, and real-time deduction for physical in-person store |
+| 10 | Dark Mode / Light Mode Toggle | 4D, 7 | Phase 2 | P2 | Not addressed → System-preference-aware dark/light mode toggle, persisted per user, with WCAG AAA contrast maintained in both themes. Supports night-shift staff at group homes |
 
 ---
 

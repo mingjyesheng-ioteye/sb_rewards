@@ -127,12 +127,15 @@ items = [
     "2.  BrainClaw AI Agents \u2014 Already at Arc Mercer",
     "3.  Understanding Your Challenge",
     "4.  Our Solution \u2014 Platform Overview",
-    "5.  Key Features Deep Dive",
-    "6.  Paycom Integration & SSO",
-    "7.  Accessibility & Mobile-First Design",
-    "8.  Phased Implementation Timeline",
-    "9.  Pricing Options",
-    "10. Why IoTeye \u2014 Next Steps",
+    "5.  Nominations, Voting & QA Engine",
+    "6.  Points, Engagement & Community Modules",
+    "7.  Rewards Marketplace \u2014 Digital, Caf\u00e9 & In-Person Store",
+    "8.  Paycom Integration & Authentication (SSO + Badge ID)",
+    "9.  Accessibility, Dark Mode & Mobile-First Design",
+    "10. Dashboards \u2014 Employee & Leadership",
+    "11. Phased Implementation Timeline",
+    "12. Pricing Options",
+    "13. Why IoTeye \u2014 Next Steps",
 ]
 tf = add_textbox(slide, Inches(1.5), Inches(1.6), Inches(10), Inches(5),
                  "", font_size=22, color=DARK_GRAY)
@@ -280,6 +283,8 @@ add_bullet_list(tf, [
     "Manual recognition processes — inconsistent, hard to track",
     "Multiple programs (Residential, Day Programs) operating in silos",
     "Frontline staff with varying technical literacy",
+    "Many frontline DSPs lack company email addresses",
+    "Selection committee uses ranked-choice voting — no digital tool",
     "No centralized system for nominations or point tracking",
     "No connection to Paycom HRIS for employee data",
 ], font_size=16, spacing=Pt(10))
@@ -290,11 +295,12 @@ tf = add_textbox(slide, Inches(7), Inches(2.1), Inches(5.5), Inches(4),
                  "", font_size=16, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Centralized, web-based recognition platform",
-    "Program-based competition engine",
+    "Program-based competition engine with committee voting",
     "Multi-stream point system with audit trails",
-    "Rewards marketplace for merchandise & gift cards",
-    "Paycom integration & SSO",
-    "Mobile-first, accessible to all staff",
+    "Rewards marketplace — digital, caf\u00e9, and in-person store",
+    "Paycom integration & flexible auth (SSO + Badge ID + PIN)",
+    "Community engagement: TAC, culture groups, volunteering",
+    "Mobile-first, accessible to all staff (incl. dark mode)",
 ], font_size=16, spacing=Pt(10))
 
 
@@ -331,31 +337,41 @@ add_textbox(slide, Inches(0.8), Inches(6.5), Inches(11), Inches(0.5),
 # ─── SLIDE 6: Nomination Engine ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Program-Based Competition Engine")
+section_header_bar(slide, "Nominations, Voting & QA Engine")
 
 # Left column: Nominations
 add_textbox(slide, Inches(0.4), Inches(1.3), Inches(5.5), Inches(0.45),
             "Nominations", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.4), Inches(1.85), Inches(5.5), Inches(2.2),
+tf = add_textbox(slide, Inches(0.4), Inches(1.85), Inches(5.5), Inches(1.6),
                  "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
     "3 award types: Employee of the Month, Rising Star, Team Impact",
     "Step-by-step guided form with large buttons",
     "1 nomination per candidate/month, 5 total/month",
-    "Friendly feedback when limits reached",
-], font_size=14, spacing=Pt(8))
+], font_size=14, spacing=Pt(6))
 
-# Left column: QA Queue
-add_textbox(slide, Inches(0.4), Inches(4.1), Inches(5.5), Inches(0.45),
-            "QA Queue & Programs", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.4), Inches(4.6), Inches(5.5), Inches(2.5),
+# Left column: Selection Committee Voting
+add_textbox(slide, Inches(0.4), Inches(3.4), Inches(5.5), Inches(0.45),
+            "Selection Committee Voting", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(3.9), Inches(5.5), Inches(1.5),
                  "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "Approve / Return for Edits / Decline",
-    "Points awarded only upon admin approval",
-    "Filter by program, award type, date, status",
-    "Programs synced from Paycom automatically",
-], font_size=14, spacing=Pt(8))
+    "Ranked-choice drag-and-drop voting interface",
+    "Private ballots \u2014 not visible until window closes",
+    "Automated tally (Borda count / weighted rank)",
+    "Per-voter audit trail & historical ballot archive",
+], font_size=14, spacing=Pt(6))
+
+# Left column: QA Queue + Revise-and-Resubmit
+add_textbox(slide, Inches(0.4), Inches(5.4), Inches(5.5), Inches(0.45),
+            "QA Queue & Revise-Resubmit", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(5.9), Inches(5.5), Inches(1.4),
+                 "", font_size=14, color=DARK_GRAY)
+add_bullet_list(tf, [
+    "Approve / Return for Edits / Decline with batch operations",
+    "Formal resubmission loop: status tracking through full cycle",
+    "Admin comments \u2192 nominator notification \u2192 edit & resubmit",
+], font_size=14, spacing=Pt(6))
 
 # Right: screenshot of Nomination Center
 add_picture(slide, "reward_2.png", Inches(6.1), Inches(1.5), Inches(6.8))
@@ -364,7 +380,7 @@ add_picture(slide, "reward_2.png", Inches(6.1), Inches(1.5), Inches(6.8))
 # ─── SLIDE 7: Points & Engagement ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Point Allocation & Engagement Tracking")
+section_header_bar(slide, "Points, Engagement & Community Modules")
 
 # Point streams table
 add_textbox(slide, Inches(0.8), Inches(1.4), Inches(6), Inches(0.5),
@@ -374,8 +390,12 @@ streams = [
     ("Point Stream", "Trigger"),
     ("Employee / Rising Star / Team Impact (Approved)", "QA queue approval"),
     ("TAC Meeting Attendance", "Admin check-in"),
+    ("TAC Meeting Role Completion", "Role fulfilled"),
+    ("Culture Group Participation", "Leader/admin log"),
+    ("Volunteer / Event Help", "Post-event confirmation"),
+    ("Social Media Engagement", "Screenshot review"),
     ("Newsletter Trivia", "Correct answer"),
-    ("Birthday / Anniversary", "Automated (Paycom sync)"),
+    ("Birthday / Anniversary", "Automated (Paycom)"),
     ("Leadership Bestowal", "Manual award"),
 ]
 
@@ -383,62 +403,70 @@ y = Inches(2.0)
 for i, (stream, trigger) in enumerate(streams):
     bg_color = ACCENT_BLUE if i == 0 else (LIGHT_GRAY if i % 2 == 0 else WHITE)
     txt_color = WHITE if i == 0 else DARK_GRAY
-    add_shape_bg(slide, Inches(0.8), y, Inches(7), Inches(0.45), bg_color)
-    add_textbox(slide, Inches(0.9), y + Inches(0.02), Inches(4.5), Inches(0.4),
-                stream, font_size=13, color=txt_color, bold=(i == 0))
-    add_textbox(slide, Inches(5.5), y + Inches(0.02), Inches(2.2), Inches(0.4),
-                trigger, font_size=13, color=txt_color, bold=(i == 0))
-    y += Inches(0.45)
+    add_shape_bg(slide, Inches(0.8), y, Inches(7), Inches(0.38), bg_color)
+    add_textbox(slide, Inches(0.9), y + Inches(0.01), Inches(4.5), Inches(0.35),
+                stream, font_size=12, color=txt_color, bold=(i == 0))
+    add_textbox(slide, Inches(5.5), y + Inches(0.01), Inches(2.2), Inches(0.35),
+                trigger, font_size=12, color=txt_color, bold=(i == 0))
+    y += Inches(0.38)
 
-add_textbox(slide, Inches(0.8), y + Inches(0.2), Inches(7), Inches(0.4),
-            "All point values are admin-configurable — no code changes needed",
+add_textbox(slide, Inches(0.8), y + Inches(0.15), Inches(7), Inches(0.4),
+            "All point values are admin-configurable \u2014 no code changes needed",
             font_size=14, color=GREEN, bold=True)
 
-# Audit
+# Community Engagement Modules
 add_textbox(slide, Inches(8.5), Inches(1.4), Inches(4.5), Inches(0.5),
-            "Audit & Transparency", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(8.5), Inches(2.0), Inches(4.5), Inches(4),
-                 "", font_size=15, color=DARK_GRAY)
+            "Community Engagement", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(8.5), Inches(2.0), Inches(4.5), Inches(5),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "Immutable transaction log for every point change",
-    "Timestamp, actor, action, amount, reason",
-    "Filterable by employee, program, date, type",
-    "Export to CSV for external review",
-    "Anomaly highlighting for oversight",
-    "Top-down bestowal with instant notifications",
-], font_size=15, spacing=Pt(10))
+    "TAC RSVP & Role Sign-Ups: RSVP workflow, role selection (setup, check-in, cleanup), automated reminders",
+    "Culture Groups: Self-service directory, one-tap sign-up, attendance tracking, participation points",
+    "Volunteer Forms: Event help board, volunteer slots, completion tracking, engagement score",
+    "Social Media: Screenshot upload, admin review queue, campaign tracking",
+    "Audit & Transparency: Immutable transaction log, anomaly detection, CSV export",
+], font_size=13, bold_prefix=True, spacing=Pt(10))
 
 
 # ─── SLIDE 8: Rewards Marketplace ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Rewards Marketplace")
+section_header_bar(slide, "Rewards Marketplace \u2014 Digital, Caf\u00e9 & In-Person Store")
 
 # Left column: Digital Storefront
 add_textbox(slide, Inches(0.4), Inches(1.3), Inches(5.5), Inches(0.45),
             "Digital Storefront", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.4), Inches(1.85), Inches(5.5), Inches(2.2),
+tf = add_textbox(slide, Inches(0.4), Inches(1.85), Inches(5.5), Inches(1.5),
                  "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Visual catalog with images, point costs, descriptions",
     "Categories: Merchandise, Cafeteria Meals, Gift Cards",
     "Real-time point balance during browsing",
     "One-tap redemption with confirmation",
-    "Order history for employees",
-], font_size=14, spacing=Pt(8))
+], font_size=14, spacing=Pt(6))
 
-# Left column: Admin Fulfillment
-add_textbox(slide, Inches(0.4), Inches(4.1), Inches(5.5), Inches(0.45),
-            "Admin Fulfillment Tools", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.4), Inches(4.6), Inches(5.5), Inches(2.5),
+# Left column: Cafe Cashier Redemption
+add_textbox(slide, Inches(0.4), Inches(3.35), Inches(5.5), Inches(0.45),
+            "Caf\u00e9 Cashier Redemption Screen", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(3.85), Inches(5.5), Inches(1.3),
                  "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "Inventory management (add/edit items, stock levels)",
-    "Low-stock alerts, out-of-stock auto-hiding",
-    "Order queue: Pending → Processing → Fulfilled",
-    "Digital gift card: API-based instant delivery",
-    "Gift card fees: 3-5% vendor markup (pass-through)",
-], font_size=14, spacing=Pt(8))
+    "Tablet-friendly cashier interface for meal redemptions",
+    "Employee lookup by name, badge ID, or QR code",
+    "Balance display \u2192 meal selection \u2192 point deduction",
+    "No POS integration required \u2014 standalone operation",
+], font_size=14, spacing=Pt(6))
+
+# Left column: In-Person Store QR
+add_textbox(slide, Inches(0.4), Inches(5.15), Inches(5.5), Inches(0.45),
+            "In-Person Store & QR Redemption", font_size=22, color=ACCENT_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.4), Inches(5.65), Inches(5.5), Inches(1.3),
+                 "", font_size=14, color=DARK_GRAY)
+add_bullet_list(tf, [
+    "Employee QR code on profile / home screen",
+    "Store attendant scans QR \u2192 select item \u2192 confirm",
+    "Inventory sync: physical store + digital storefront",
+], font_size=14, spacing=Pt(6))
 
 # Right: screenshot of Rewards Marketplace
 add_picture(slide, "reward_4.png", Inches(6.1), Inches(1.5), Inches(6.8))
@@ -447,7 +475,7 @@ add_picture(slide, "reward_4.png", Inches(6.1), Inches(1.5), Inches(6.8))
 # ─── SLIDE 9: Paycom & SSO ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Paycom Integration & SSO")
+section_header_bar(slide, "Paycom Integration & Authentication")
 
 add_textbox(slide, Inches(0.8), Inches(1.4), Inches(5.5), Inches(0.5),
             "Paycom HRIS Integration", font_size=24, color=ACCENT_BLUE, bold=True)
@@ -465,27 +493,54 @@ add_bullet_list(tf, [
 # Architecture mini-diagram as text
 add_shape_bg(slide, Inches(0.8), Inches(4.8), Inches(5.5), Inches(2.2), LIGHT_GRAY)
 add_textbox(slide, Inches(1.0), Inches(4.9), Inches(5.2), Inches(2.0),
-            "Paycom → SFTP Export → AWS S3 → Python ETL\n          ↓\n    Supabase (PostgreSQL)\n          ↓\n    React Front End (Live Data)",
+            "Paycom \u2192 SFTP Export \u2192 AWS S3 \u2192 Python ETL\n          \u2193\n    Supabase (PostgreSQL)\n          \u2193\n    React Front End (Live Data)",
             font_size=13, color=DARK_GRAY, font_name="Consolas")
 
 add_textbox(slide, Inches(7), Inches(1.4), Inches(5.5), Inches(0.5),
-            "Single Sign-On (SSO)", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7), Inches(2.0), Inches(5.5), Inches(4.5),
-                 "", font_size=15, color=DARK_GRAY)
+            "Three Login Paths", font_size=24, color=ACCENT_BLUE, bold=True)
+
+# Path 1: Badge ID + PIN
+add_shape_bg(slide, Inches(7), Inches(2.0), Inches(5.5), Inches(1.35), LIGHT_BLUE)
+add_textbox(slide, Inches(7.15), Inches(2.05), Inches(5.2), Inches(0.35),
+            "\u2780  Badge ID + PIN (Frontline Staff)", font_size=16, color=DARK_BLUE, bold=True)
+tf = add_textbox(slide, Inches(7.15), Inches(2.4), Inches(5.2), Inches(0.9),
+                 "", font_size=13, color=DARK_GRAY)
+add_bullet_list(tf, [
+    "Paycom badge ID \u2014 the ID they already carry daily",
+    "Self-set 4\u20136 digit PIN, no email required",
+    "Hashed/salted PINs, lockout after 5 failed attempts",
+], font_size=13, spacing=Pt(4))
+
+# Path 2: Google SSO
+add_shape_bg(slide, Inches(7), Inches(3.5), Inches(5.5), Inches(1.2), LIGHT_GRAY)
+add_textbox(slide, Inches(7.15), Inches(3.55), Inches(5.2), Inches(0.35),
+            "\u2781  Google Workspace SSO (Admin & Mgmt)", font_size=16, color=DARK_BLUE, bold=True)
+tf = add_textbox(slide, Inches(7.15), Inches(3.9), Inches(5.2), Inches(0.7),
+                 "", font_size=13, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Supabase Auth: SAML 2.0, OAuth 2.0, OIDC",
-    "Initial: Google Workspace SSO (current provider)",
-    "Future: Microsoft Entra ID — zero-downtime migration",
-    "Both providers can run in parallel during transition",
-    "Fallback: email/password for part-time staff",
-    "Employee clicks 'Sign In' → Google login → done",
-], font_size=15, spacing=Pt(10))
+    "Future: Microsoft Entra ID \u2014 zero-downtime migration",
+], font_size=13, spacing=Pt(4))
+
+# Path 3: Email/Password
+add_shape_bg(slide, Inches(7), Inches(4.85), Inches(5.5), Inches(0.7), LIGHT_GRAY)
+add_textbox(slide, Inches(7.15), Inches(4.9), Inches(5.2), Inches(0.35),
+            "\u2782  Email / Password Fallback", font_size=16, color=DARK_BLUE, bold=True)
+add_textbox(slide, Inches(7.15), Inches(5.25), Inches(5.2), Inches(0.3),
+            "For part-time or seasonal staff with email but not on SSO",
+            font_size=13, color=DARK_GRAY)
+
+# Key callout
+add_shape_bg(slide, Inches(7), Inches(5.8), Inches(5.5), Inches(0.8), GREEN)
+add_textbox(slide, Inches(7.15), Inches(5.85), Inches(5.2), Inches(0.65),
+            "\u2605 Every employee can access the platform \u2014\nno matter their tech level or email situation",
+            font_size=14, color=WHITE, bold=True)
 
 
 # ─── SLIDE 10: Accessibility & UX ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Accessibility & Mobile-First Design")
+section_header_bar(slide, "Accessibility, Dark Mode & Mobile-First Design")
 
 add_textbox(slide, Inches(0.8), Inches(1.3), Inches(11), Inches(0.5),
             'Design philosophy: "Could someone who only uses their phone for calls and texts do this?"',
@@ -493,19 +548,19 @@ add_textbox(slide, Inches(0.8), Inches(1.3), Inches(11), Inches(0.5),
 
 # Two columns
 col1_items = [
-    "Large touch targets: 48×48px minimum",
+    "Large touch targets: 48\u00d748px minimum",
     "WCAG AAA contrast (7:1 ratio)",
-    "Icon-driven navigation — not text-dependent",
+    "Icon-driven navigation \u2014 not text-dependent",
     "6th grade reading level for all text",
-    "Progressive disclosure — one action per screen",
+    "Progressive disclosure \u2014 one action per screen",
     "Keyboard navigable, screen reader compatible",
 ]
 col2_items = [
-    "Progressive Web App (PWA) — no app store needed",
+    "Progressive Web App (PWA) \u2014 no app store needed",
     "Works on any smartphone, 320px+ screens",
     "Low-bandwidth friendly, lazy-loaded images",
-    "Bottom nav: Home, Nominate, Store, Points, Profile",
-    "Touch-optimized: swipe, pull-to-refresh",
+    "Dark mode / light mode toggle for night shifts",
+    "System preference detection, persisted per user",
     "Accessibility audit before each phase launch",
 ]
 
@@ -560,11 +615,11 @@ add_bg(slide, WHITE)
 section_header_bar(slide, "Phased Implementation — 36 Weeks")
 
 phases = [
-    ("Phase 1: Foundation", "Weeks 1–12", "Nominations, Paycom sync, SSO, manual points, QA queue",
+    ("Phase 1: Foundation", "Weeks 1\u201312", "Nominations, committee voting, Paycom sync, Badge ID + PIN auth, SSO, QA queue",
      ACCENT_BLUE, Inches(1.5), Inches(4.8)),
-    ("Phase 2: Engagement", "Weeks 13–24", "Employee & leadership dashboards, automated tracking, notifications",
+    ("Phase 2: Engagement", "Weeks 13\u201324", "Dashboards, TAC RSVP, culture groups, volunteer/social media, dark mode, notifications",
      RGBColor(0x14, 0x73, 0x5A), Inches(5.3), Inches(3.5)),
-    ("Phase 3: Marketplace", "Weeks 25–36", "Rewards store, gift card integration, fulfillment tools",
+    ("Phase 3: Marketplace", "Weeks 25\u201336", "Digital store, caf\u00e9 cashier screen, in-person QR store, gift cards, fulfillment",
      ORANGE, Inches(8.8), Inches(3.5)),
 ]
 
@@ -581,24 +636,27 @@ y_detail = Inches(4.8)
 details = [
     ("Phase 1 Deliverables", [
         "Nomination portal (3 award types)",
-        "QA queue (approve/return/decline)",
+        "Selection committee ranked-choice voting",
+        "QA queue + revise-and-resubmit workflow",
         "Paycom SFTP sync",
+        "Badge ID + PIN auth (frontline staff)",
         "Google Workspace SSO",
         "Manual point bestowal + audit trail",
     ], ACCENT_BLUE),
     ("Phase 2 Deliverables", [
-        "Employee dashboards",
-        "Leadership analytics",
-        "Automated birthday/anniversary awards",
-        "TAC attendance & trivia tracking",
+        "Employee & leadership dashboards",
+        "Dark mode / light mode toggle",
+        "TAC RSVP & role sign-ups",
+        "Culture groups, volunteer forms",
+        "Social media engagement (screenshot)",
         "Push/email notifications",
     ], RGBColor(0x14, 0x73, 0x5A)),
     ("Phase 3 Deliverables", [
         "Digital rewards storefront",
-        "Physical & digital fulfillment",
+        "Caf\u00e9 cashier redemption screen",
+        "In-person store QR code scanning",
         "Gift card instant delivery",
-        "Inventory management",
-        "Complete platform go-live",
+        "Inventory management & fulfillment",
     ], ORANGE),
 ]
 
@@ -624,9 +682,9 @@ add_textbox(slide, Inches(0.8), Inches(1.3), Inches(11), Inches(0.5),
 # Implementation cost table
 headers = [("Phase", Inches(4)), ("Hours", Inches(1.5)), ("Cost", Inches(1.5))]
 rows_data = [
-    ("Phase 1: Nominations, Paycom, SSO, Infrastructure", "~480 hrs", "$45,000"),
-    ("Phase 2: Dashboards, Tracking, Notifications", "~310 hrs", "$35,000"),
-    ("Phase 3: Marketplace, Gift Cards, Fulfillment", "~280 hrs", "$30,000"),
+    ("Phase 1: Nominations, Voting, Paycom, Badge ID Auth, SSO", "~480 hrs", "$45,000"),
+    ("Phase 2: Dashboards, Engagement Modules, Dark Mode, Notifications", "~310 hrs", "$35,000"),
+    ("Phase 3: Marketplace, Caf\u00e9 Redemption, QR Store, Gift Cards", "~280 hrs", "$30,000"),
     ("Total Implementation", "~1,070 hrs", "$110,000"),
 ]
 
@@ -769,12 +827,14 @@ add_bullet_list(tf, [
     "5+ years in special care software \u2014 we know your workforce",
     "Arc Mercer is an existing SpringBoard & Guardian customer",
     "BrainClaw AI agents already running at Arc Mercer (37+57 tools)",
-    "Production platforms: SpringBoard, BrainBook, Guardian, BrainClaw",
-    "Same tech stack (React, Supabase, Python, AWS) \u2014 proven",
-    "Mobile-first, accessible design as a core competency",
-    "All add-ons FREE — pay only AI LLM usage (pass-through)",
-    "Flexible pricing: own the code or pay-as-you-go SaaS",
-], font_size=14, color=WHITE, spacing=Pt(8))
+    "Badge ID + PIN login for frontline staff without email",
+    "Ranked-choice committee voting \u2014 matching your current process",
+    "Full engagement suite: TAC RSVP, culture groups, volunteering",
+    "Caf\u00e9 cashier screen + in-person store QR redemption",
+    "Dark mode for night-shift staff at group homes",
+    "WCAG AAA accessibility \u2014 7:1 contrast, screen reader tested",
+    "All add-ons FREE \u2014 pay only AI LLM usage (pass-through)",
+], font_size=14, color=WHITE, spacing=Pt(7))
 
 add_textbox(slide, Inches(7), Inches(1.5), Inches(5.5), Inches(0.5),
             "Next Steps", font_size=24, color=ACCENT_BLUE, bold=True)
@@ -784,7 +844,7 @@ add_bullet_list(tf, [
     "Select pricing option (A or B)",
     "Schedule kickoff & discovery workshop",
     "Initiate Paycom SFTP access setup",
-    "Configure Google Workspace SSO",
+    "Configure Google Workspace SSO + Badge ID mapping",
     "Phase One live in 12 weeks",
 ], font_size=16, color=WHITE, spacing=Pt(12))
 
@@ -802,12 +862,12 @@ add_textbox(slide, Inches(0.8), Inches(6.2), Inches(5), Inches(0.8),
 
 
 # Save
-output_path = r"c:\Users\mingj\Documents\GitHub\sb_rewards\RFP\IoTeye - Arc Mercer Pitch.pptx"
-output_path_tmp = r"c:\Users\mingj\Documents\GitHub\sb_rewards\RFP\IoTeye - Arc Mercer Pitch - new.pptx"
+output_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(output_dir, "IoTeye - Arc Mercer Pitch.pptx")
+output_path_tmp = os.path.join(output_dir, "IoTeye - Arc Mercer Pitch - new.pptx")
 try:
     prs.save(output_path)
     print(f"Saved: {output_path}")
 except PermissionError:
     prs.save(output_path_tmp)
     print(f"File locked — saved to: {output_path_tmp}")
-print(f"Saved: {output_path}")
