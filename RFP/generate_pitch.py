@@ -123,19 +123,16 @@ add_bg(slide, WHITE)
 section_header_bar(slide, "Agenda")
 
 items = [
-    "1.  About IoTeye Inc. & Platform Ecosystem",
+    "1.  About IoTeye & Platform Ecosystem",
     "2.  BrainClaw AI Agents \u2014 Already at Arc Mercer",
     "3.  Understanding Your Challenge",
-    "4.  Our Solution \u2014 Platform Overview",
-    "5.  Nominations, Voting & QA Engine",
-    "6.  Points, Engagement & Community Modules",
-    "7.  Rewards Marketplace \u2014 Digital, Caf\u00e9 & In-Person Store",
-    "8.  Paycom Integration & Authentication (SSO + Badge ID)",
-    "9.  Accessibility, Dark Mode & Mobile-First Design",
-    "10. Dashboards \u2014 Employee & Leadership",
-    "11. Phased Implementation Timeline",
-    "12. Pricing Options",
-    "13. Why IoTeye \u2014 Next Steps",
+    "4.  Platform Overview & Architecture",
+    "5.  Key Features (Nominations \u2192 Engagement \u2192 Marketplace)",
+    "6.  Integration, Authentication & Accessibility",
+    "7.  Dashboards \u2014 Employee & Leadership",
+    "8.  Implementation Timeline & Pricing",
+    "9.  Feature Comparison \u2014 How We Stack Up",
+    "10. Why IoTeye \u2014 Next Steps",
 ]
 tf = add_textbox(slide, Inches(1.5), Inches(1.6), Inches(10), Inches(5),
                  "", font_size=22, color=DARK_GRAY)
@@ -635,19 +632,15 @@ for label, weeks, desc, color, x_start, width in phases:
 y_detail = Inches(4.8)
 details = [
     ("Phase 1 Deliverables", [
-        "Nomination portal (3 award types)",
-        "Selection committee ranked-choice voting",
-        "QA queue + revise-and-resubmit workflow",
-        "Paycom SFTP sync",
-        "Badge ID + PIN auth (frontline staff)",
-        "Google Workspace SSO",
-        "Manual point bestowal + audit trail",
+        "Nomination engine + ranked-choice committee voting",
+        "QA queue with revise-and-resubmit workflow",
+        "Paycom SFTP sync + audit trail",
+        "Auth: Badge ID + PIN, Google SSO, email fallback",
     ], ACCENT_BLUE),
     ("Phase 2 Deliverables", [
         "Employee & leadership dashboards",
         "Dark mode / light mode toggle",
-        "TAC RSVP & role sign-ups",
-        "Culture groups, volunteer forms",
+        "TAC RSVP, culture groups, volunteer forms",
         "Social media engagement (screenshot)",
         "Push/email notifications",
     ], RGBColor(0x14, 0x73, 0x5A)),
@@ -812,7 +805,112 @@ for i, (label, a, b) in enumerate(comp_rows):
     y += Inches(0.35)
 
 
-# ─── SLIDE 15: Why IoTeye & Next Steps ───
+# ─── SLIDE 15: Feature Comparison Summary ───
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+add_bg(slide, WHITE)
+section_header_bar(slide, "Feature Comparison \u2014 How We Stack Up")
+
+add_textbox(slide, Inches(0.8), Inches(1.25), Inches(8), Inches(0.45),
+            "37 features evaluated across all 3 proposals submitted for this RFP",
+            font_size=16, color=MED_GRAY)
+
+# Category scorecard table
+cat_headers = [
+    ("Category", Inches(3.8)),
+    ("IoTeye", Inches(1.2)),
+    ("Proposal 1", Inches(1.4)),
+    ("Proposal 2", Inches(1.4)),
+]
+cat_rows = [
+    ("Nomination & Recognition (6)", "6", "5", "4"),
+    ("Selection & Voting (3)", "3", "2", "3"),
+    ("Authentication & Access (5)", "4", "1", "1"),
+    ("Engagement & Participation (6)", "6", "5", "2"),
+    ("Rewards & Redemption (5)", "5", "4", "4"),
+    ("Analytics, AI & Reporting (4)", "4", "2", "2"),
+    ("Technical & Infrastructure (8)", "8", "2", "2"),
+    ("TOTAL", "36 / 37", "21 / 37", "18 / 37"),
+]
+
+y_t = Inches(1.8)
+x_base_t = Inches(0.6)
+
+# Header row
+for j, (h, w) in enumerate(cat_headers):
+    x = x_base_t + sum(hw[1] for hw in cat_headers[:j])
+    add_shape_bg(slide, x, y_t, w, Inches(0.42), DARK_BLUE)
+    add_textbox(slide, x + Inches(0.1), y_t + Inches(0.02), w - Inches(0.2), Inches(0.38),
+                h, font_size=13, color=WHITE, bold=True)
+y_t += Inches(0.42)
+
+# Data rows
+for i, (cat, iot, p1, p2) in enumerate(cat_rows):
+    is_total = (i == len(cat_rows) - 1)
+    row_h = Inches(0.42)
+
+    # Category label
+    cat_bg = DARK_BLUE if is_total else (LIGHT_GRAY if i % 2 == 0 else WHITE)
+    cat_txt = WHITE if is_total else DARK_GRAY
+    x = x_base_t
+    w = cat_headers[0][1]
+    add_shape_bg(slide, x, y_t, w, row_h, cat_bg)
+    add_textbox(slide, x + Inches(0.1), y_t + Inches(0.02), w - Inches(0.2), Inches(0.38),
+                cat, font_size=12, color=cat_txt, bold=is_total)
+
+    # IoTeye column — green tint
+    x = x_base_t + cat_headers[0][1]
+    w = cat_headers[1][1]
+    iot_bg = RGBColor(0x1B, 0x7A, 0x43) if is_total else RGBColor(0xE8, 0xF5, 0xE9)
+    iot_txt = WHITE if is_total else RGBColor(0x1B, 0x7A, 0x43)
+    add_shape_bg(slide, x, y_t, w, row_h, iot_bg)
+    add_textbox(slide, x + Inches(0.1), y_t + Inches(0.02), w - Inches(0.2), Inches(0.38),
+                iot, font_size=13, color=iot_txt, bold=True, alignment=PP_ALIGN.CENTER)
+
+    # P1 column
+    x = x_base_t + cat_headers[0][1] + cat_headers[1][1]
+    w = cat_headers[2][1]
+    p1_bg = ACCENT_BLUE if is_total else (LIGHT_GRAY if i % 2 == 0 else WHITE)
+    p1_txt = WHITE if is_total else DARK_GRAY
+    add_shape_bg(slide, x, y_t, w, row_h, p1_bg)
+    add_textbox(slide, x + Inches(0.1), y_t + Inches(0.02), w - Inches(0.2), Inches(0.38),
+                p1, font_size=12, color=p1_txt, bold=is_total, alignment=PP_ALIGN.CENTER)
+
+    # P2 column
+    x = x_base_t + cat_headers[0][1] + cat_headers[1][1] + cat_headers[2][1]
+    w = cat_headers[3][1]
+    p2_bg = ACCENT_BLUE if is_total else (LIGHT_GRAY if i % 2 == 0 else WHITE)
+    p2_txt = WHITE if is_total else DARK_GRAY
+    add_shape_bg(slide, x, y_t, w, row_h, p2_bg)
+    add_textbox(slide, x + Inches(0.1), y_t + Inches(0.02), w - Inches(0.2), Inches(0.38),
+                p2, font_size=12, color=p2_txt, bold=is_total, alignment=PP_ALIGN.CENTER)
+
+    y_t += row_h
+
+# Right side: IoTeye Exclusive Advantages callout
+add_shape_bg(slide, Inches(8.6), Inches(1.8), Inches(4.4), Inches(4.5), LIGHT_BLUE)
+add_textbox(slide, Inches(8.8), Inches(1.9), Inches(4.0), Inches(0.45),
+            "IoTeye-Exclusive Advantages", font_size=18, color=DARK_BLUE, bold=True)
+tf = add_textbox(slide, Inches(8.8), Inches(2.4), Inches(4.0), Inches(3.7),
+                 "", font_size=13, color=DARK_GRAY)
+add_bullet_list(tf, [
+    "BrainClaw AI \u2014 94+ tools already in production at Arc Mercer",
+    "Badge ID + PIN login for frontline staff without email",
+    "WCAG AAA accessibility (7:1 contrast, screen reader tested)",
+    "AWS HIPAA-eligible infrastructure, 99.9% uptime SLA",
+    "Severity-based SLAs (Critical: 2hr response)",
+    "Source code ownership option (Option A)",
+    "Multi-IDP SSO migration path (Google \u2192 Microsoft)",
+    "Anomaly detection & immutable audit trails",
+], font_size=12, spacing=Pt(7))
+
+# Bottom green banner
+add_shape_bg(slide, Inches(0), Inches(6.5), SLIDE_W, Inches(0.7), GREEN)
+add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
+            "\u2605  IoTeye covers 36 of 37 features \u2014 10 added after competitive analysis, all within the original $110K budget",
+            font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
+
+
+# ─── SLIDE 16: Why IoTeye & Next Steps ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, DARK_BLUE)
 
