@@ -741,7 +741,7 @@ Under this option, **IoTeye Inc. retains ownership of the platform and source co
 
 Under this option, The Arc Mercer pays **half of the implementation fee** and receives **shared ownership (50/50) of the recognition platform source code** — the new application built specifically for this project. The Arc Mercer retains **sole ownership** of the database schema, data, and deployment configuration. IoTeye's existing products (**BrainBook**, **SpringBoard**, **Guardian**, and the **BrainClaw** AI agent gateway) are **excluded from the ownership transfer** and remain IoTeye intellectual property. Specific terms governing shared code ownership (usage rights, licensing, distribution) will be documented in a separate legal agreement between the parties.
 
-IoTeye continues to host and maintain the platform as a managed service, identical to Option B.
+IoTeye commits to hosting and maintaining the platform as a managed service for a minimum of 3 years, identical to Option B.
 
 #### Implementation Fee (One-Time)
 
@@ -780,7 +780,7 @@ IoTeye continues to host and maintain the platform as a managed service, identic
 | Annual Platform Fee        | $30,000                                    | $30,000/year           |
 | **Total**            | **$85,000**                          | **$30,000/year** |
 
-**What you co-own:** 50/50 shared ownership of the recognition platform source code (nomination engine, point system, rewards marketplace, dashboards, engagement modules) — specific terms (usage rights, licensing, distribution) deferred to legal agreement. **Sole ownership** of database schema, data, and deployment configuration. The Arc Mercer can hire other developers to modify or extend the recognition platform independently.
+**What you co-own:** 50/50 shared ownership of the recognition platform source code (nomination engine, point system, rewards marketplace, dashboards, engagement modules) — specific terms (usage rights, licensing, distribution) deferred to legal agreement. **Sole ownership** of database schema, data, and deployment configuration. IoTeye hosts and maintains the platform for a minimum of 3 years; after the initial term, The Arc Mercer can hire other developers to modify or extend the recognition platform independently.
 
 **What IoTeye retains:** BrainBook, SpringBoard, Guardian, and BrainClaw gateway — these existing products remain IoTeye intellectual property and are not included in the ownership transfer.
 
@@ -801,7 +801,7 @@ IoTeye continues to host and maintain the platform as a managed service, identic
 | Vendor Independence   | ✅ Can self-host or hire other devs | ❌ Dependent on IoTeye               | ⚠️ Shared recognition code; IoTeye products require IoTeye |
 | Customization Freedom | ✅ Unlimited modifications          | ⚠️ Customizations by request       | ⚠️ Recognition platform modifiable per legal terms; IoTeye products by request |
 | Platform Updates      | ⚠️ Paid separately                | ✅ Included in subscription          | ✅ Included in annual fee                      |
-| Best For              | Long-term control & independence    | Lower upfront risk & managed service | Balanced cost & partial ownership              |
+| Best For              | Long-term control & independence    | Lower upfront risk & managed service | Balanced cost & flexibility              |
 
 ---
 
