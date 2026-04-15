@@ -739,7 +739,7 @@ Under this option, **IoTeye Inc. retains ownership of the platform and source co
 
 ### Option C: Shared Ownership (Hybrid)
 
-Under this option, The Arc Mercer pays **half of the implementation fee** and receives **ownership of the recognition platform source code** — the new application built specifically for this project. IoTeye's existing products (**BrainBook**, **SpringBoard**, **Guardian**, and the **BrainClaw** AI agent gateway) are **excluded from the ownership transfer** and remain IoTeye intellectual property.
+Under this option, The Arc Mercer pays **half of the implementation fee** and receives **shared ownership (50/50) of the recognition platform source code** — the new application built specifically for this project. The Arc Mercer retains **sole ownership** of the database schema, data, and deployment configuration. IoTeye's existing products (**BrainBook**, **SpringBoard**, **Guardian**, and the **BrainClaw** AI agent gateway) are **excluded from the ownership transfer** and remain IoTeye intellectual property. Specific terms governing shared code ownership (usage rights, licensing, distribution) will be documented in a separate legal agreement between the parties.
 
 IoTeye continues to host and maintain the platform as a managed service, identical to Option B.
 
@@ -764,7 +764,7 @@ IoTeye continues to host and maintain the platform as a managed service, identic
 
 | Component                                    | Ownership                   |
 | -------------------------------------------- | --------------------------- |
-| Recognition platform (nominations, points, rewards, dashboards, engagement modules) | **The Arc Mercer** |
+| Recognition platform (nominations, points, rewards, dashboards, engagement modules) | **Shared (50/50)** — terms per legal agreement |
 | Database schema & data                       | **The Arc Mercer** |
 | Deployment configuration (AWS IaC)           | **The Arc Mercer** |
 | BrainBook (AI platform)                      | IoTeye Inc.                 |
@@ -780,7 +780,7 @@ IoTeye continues to host and maintain the platform as a managed service, identic
 | Annual Platform Fee        | $30,000                                    | $30,000/year           |
 | **Total**            | **$85,000**                          | **$30,000/year** |
 
-**What you own:** Source code for the recognition platform (nomination engine, point system, rewards marketplace, dashboards, engagement modules), database schema, and deployment configuration. The Arc Mercer can hire other developers to modify or extend the recognition platform independently.
+**What you co-own:** 50/50 shared ownership of the recognition platform source code (nomination engine, point system, rewards marketplace, dashboards, engagement modules) — specific terms (usage rights, licensing, distribution) deferred to legal agreement. **Sole ownership** of database schema, data, and deployment configuration. The Arc Mercer can hire other developers to modify or extend the recognition platform independently.
 
 **What IoTeye retains:** BrainBook, SpringBoard, Guardian, and BrainClaw gateway — these existing products remain IoTeye intellectual property and are not included in the ownership transfer.
 
@@ -797,9 +797,9 @@ IoTeye continues to host and maintain the platform as a managed service, identic
 | 3-Year Total Cost     | \$173,600                           | \$90,000                             | \$145,000                                      |
 | 5-Year Total Cost     | \$216,000                           | \$150,000                            | \$205,000                                      |
 | 10-Year Total Cost    | \$322,000                           | \$300,000                            | \$355,000                                      |
-| Source Code Ownership | ✅ The Arc Mercer owns all code     | ❌ IoTeye retains ownership          | ⚠️ Recognition platform only (excl. BrainBook, SpringBoard, Guardian, BrainClaw) |
-| Vendor Independence   | ✅ Can self-host or hire other devs | ❌ Dependent on IoTeye               | ⚠️ Portable recognition code; IoTeye products require IoTeye |
-| Customization Freedom | ✅ Unlimited modifications          | ⚠️ Customizations by request       | ⚠️ Recognition platform freely modifiable; IoTeye products by request |
+| Source Code Ownership | ✅ The Arc Mercer owns all code     | ❌ IoTeye retains ownership          | ⚠️ 50/50 recognition platform; DB & infra: Arc Mercer sole ownership |
+| Vendor Independence   | ✅ Can self-host or hire other devs | ❌ Dependent on IoTeye               | ⚠️ Shared recognition code; IoTeye products require IoTeye |
+| Customization Freedom | ✅ Unlimited modifications          | ⚠️ Customizations by request       | ⚠️ Recognition platform modifiable per legal terms; IoTeye products by request |
 | Platform Updates      | ⚠️ Paid separately                | ✅ Included in subscription          | ✅ Included in annual fee                      |
 | Best For              | Long-term control & independence    | Lower upfront risk & managed service | Balanced cost & partial ownership              |
 
@@ -860,7 +860,7 @@ All add-ons below are included at **no additional cost** — the only charge is 
 
 - **Option A (Source Ownership):** Year 1 all-in: $131,200; Year 2+: $21,200/year. The Arc Mercer owns the code — no vendor lock-in, no per-user fees.
 - **Option B (IoTeye SaaS):** $0 upfront, $30,000/year fully managed. Lower initial commitment with all maintenance and updates included.
-- **Option C (Shared Ownership):** Year 1 all-in: $85,000; Year 2+: $30,000/year. The Arc Mercer owns the recognition platform code (excludes BrainBook, SpringBoard, Guardian, BrainClaw).
+- **Option C (Shared Ownership):** Year 1 all-in: $85,000; Year 2+: $30,000/year. 50/50 shared ownership of recognition platform code (excludes BrainBook, SpringBoard, Guardian, BrainClaw); DB & deployment config: Arc Mercer sole ownership.
 - All options: no per-user licensing fees — scales with your organization at no additional user cost.
 
 ---

@@ -758,7 +758,7 @@ tf = add_textbox(slide, Inches(7.2), Inches(1.85), Inches(5.5), Inches(2.3),
 add_bullet_list(tf, [
     "Implementation fee: $55,000 (50% of full build)",
     "Annual platform fee: $30,000/year (managed service)",
-    "Arc Mercer owns recognition platform code",
+    "Arc Mercer & IoTeye share recognition platform code (50/50)",
     "Excludes: BrainBook, SpringBoard, Guardian, BrainClaw",
     "Reuse rights deferred to legal agreement",
 ], font_size=14, spacing=Pt(7))
@@ -779,7 +779,7 @@ comp_rows = [
     ("Annual Cost", "$21,200/yr", "$30,000/yr", "$30,000/yr"),
     ("3-Year Total", "$173,600", "$90,000", "$145,000"),
     ("5-Year Total", "$216,000", "$150,000", "$205,000"),
-    ("Code Ownership", "Full", "None", "Recognition only"),
+    ("Code Ownership", "Full", "None", "50/50 recognition"),
 ]
 
 y = Inches(5.4)
