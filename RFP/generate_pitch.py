@@ -766,7 +766,7 @@ add_bullet_list(tf, [
 # Add-ons promo badge
 add_shape_bg(slide, Inches(0.4), Inches(4.4), Inches(12.5), Inches(0.45), GREEN)
 add_textbox(slide, Inches(0.6), Inches(4.43), Inches(12), Inches(0.4),
-            "\u2605  All add-ons INCLUDED at $0 \u2014 only AI LLM usage fee applies (billed at cost, pass-through)  \u2605",
+            "\u2605  AI-assisted add-ons INCLUDED \u2014 LLM usage fee only (pass-through)  |  Major redesigns quoted separately  \u2605",
             font_size=13, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 # 3-column comparison table

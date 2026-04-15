@@ -815,7 +815,9 @@ IoTeye commits to hosting and maintaining the platform as a managed service for 
 
 ### 8.4 Optional Add-Ons (All Options)
 
-All add-ons below are included at **no additional cost** — the only charge is the AI LLM usage fee incurred (billed at cost, pass-through only).
+The following add-ons are available across all pricing options. **AI-assisted enhancements** — tasks that BrainClaw AI agents can perform autonomously or with minimal human oversight — are included at no additional cost beyond the AI LLM usage fee (billed at cost, pass-through only). **Major system redesign or feature rebuilds** that require significant human engineering effort are **not covered** and will be scoped and quoted separately.
+
+#### AI-Assisted Add-Ons (LLM Usage Fee Only)
 
 | Add-On                                                         | Cost                                      |
 | -------------------------------------------------------------- | ----------------------------------------- |
@@ -824,6 +826,14 @@ All add-ons below are included at **no additional cost** — the only charge is 
 | Custom reporting / BI dashboard integration                    | $0 — AI LLM usage fee only (pass-through) |
 | Additional training sessions (per session)                     | $0 — AI LLM usage fee only (pass-through) |
 | Annual feature enhancement package (8 hours/month)             | $0 — AI LLM usage fee only (pass-through) |
+
+#### Not Covered — Quoted Separately
+
+| Scope                                                          | Pricing                                   |
+| -------------------------------------------------------------- | ----------------------------------------- |
+| Major system redesign or architectural overhaul                 | Scoped & quoted per engagement            |
+| New platform modules requiring significant human development    | Scoped & quoted per engagement            |
+| Third-party system integrations beyond Paycom                   | Scoped & quoted per engagement            |
 
 ---
 
