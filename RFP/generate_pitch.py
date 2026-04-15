@@ -730,77 +730,75 @@ add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
             font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
-# ─── SLIDE 14: Pricing — Option B ───
+# ─── SLIDE 14: Pricing — Option B & Option C ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
-section_header_bar(slide, "Pricing — Option B: IoTeye-Hosted SaaS")
+section_header_bar(slide, "Pricing \u2014 Option B (SaaS) & Option C (Shared Ownership)")
 
-add_textbox(slide, Inches(0.8), Inches(1.3), Inches(11), Inches(0.5),
-            "No upfront cost — IoTeye retains platform ownership & offers managed service",
-            font_size=18, color=GREEN, bold=True)
-
-# Option B details
-add_shape_bg(slide, Inches(1.5), Inches(2.0), Inches(4.5), Inches(2.5), LIGHT_BLUE)
-add_textbox(slide, Inches(1.7), Inches(2.1), Inches(4), Inches(0.5),
-            "Pricing", font_size=22, color=DARK_BLUE, bold=True)
-tf = add_textbox(slide, Inches(1.7), Inches(2.7), Inches(4), Inches(1.8),
-                 "", font_size=16, color=DARK_GRAY)
+# Option B (left)
+add_shape_bg(slide, Inches(0.4), Inches(1.3), Inches(5.9), Inches(3.0), LIGHT_BLUE)
+add_textbox(slide, Inches(0.6), Inches(1.35), Inches(5.5), Inches(0.45),
+            "Option B: IoTeye-Hosted SaaS", font_size=20, color=DARK_BLUE, bold=True)
+tf = add_textbox(slide, Inches(0.6), Inches(1.85), Inches(5.5), Inches(2.3),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Implementation fee: $0",
-    "Monthly subscription: $2,500/month",
-    "Annual total: $30,000/year",
-    "Minimum commitment: 3-year term",
-], font_size=16, spacing=Pt(10))
+    "Subscription: $2,500/month ($30,000/year)",
+    "3-year minimum commitment",
+    "IoTeye retains all source code ownership",
+    "Hosting, maintenance, updates all included",
+], font_size=14, spacing=Pt(7))
 
-add_shape_bg(slide, Inches(7), Inches(2.0), Inches(5), Inches(2.5), LIGHT_GRAY)
-add_textbox(slide, Inches(7.2), Inches(2.1), Inches(4.5), Inches(0.5),
-            "What's Included", font_size=22, color=DARK_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7.2), Inches(2.7), Inches(4.5), Inches(1.8),
-                 "", font_size=16, color=DARK_GRAY)
+# Option C (right)
+add_shape_bg(slide, Inches(7.0), Inches(1.3), Inches(5.9), Inches(3.0), LIGHT_GRAY)
+add_textbox(slide, Inches(7.2), Inches(1.35), Inches(5.5), Inches(0.45),
+            "Option C: Shared Ownership (Hybrid)", font_size=20, color=DARK_BLUE, bold=True)
+tf = add_textbox(slide, Inches(7.2), Inches(1.85), Inches(5.5), Inches(2.3),
+                 "", font_size=14, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "All 3 phases (same 36-week timeline)",
-    "Hosting, maintenance, security updates",
-    "Ongoing support & platform updates",
-    "No per-user fees",
-    "All add-ons: $0 (AI LLM usage only)",
-], font_size=15, spacing=Pt(8))
+    "Implementation fee: $55,000 (50% of full build)",
+    "Annual platform fee: $30,000/year (managed service)",
+    "Arc Mercer owns recognition platform code",
+    "Excludes: BrainBook, SpringBoard, Guardian, BrainClaw",
+    "Reuse rights deferred to legal agreement",
+], font_size=14, spacing=Pt(7))
 
 # Add-ons promo badge
-add_shape_bg(slide, Inches(7.0), Inches(4.55), Inches(5.0), Inches(0.5), GREEN)
-add_textbox(slide, Inches(7.15), Inches(4.6), Inches(4.7), Inches(0.4),
-            "★ AI Agents, Reports, Training — all at $0",
-            font_size=14, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
+add_shape_bg(slide, Inches(0.4), Inches(4.4), Inches(12.5), Inches(0.45), GREEN)
+add_textbox(slide, Inches(0.6), Inches(4.43), Inches(12), Inches(0.4),
+            "\u2605  All add-ons INCLUDED at $0 \u2014 only AI LLM usage fee applies (billed at cost, pass-through)  \u2605",
+            font_size=13, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
-# Comparison table
-add_textbox(slide, Inches(0.8), Inches(4.8), Inches(11), Inches(0.5),
-            "Option A vs. Option B — Cost Comparison", font_size=20, color=DARK_BLUE, bold=True)
+# 3-column comparison table
+add_textbox(slide, Inches(0.4), Inches(5.0), Inches(12), Inches(0.4),
+            "Option A vs. B vs. C \u2014 Cost Comparison", font_size=18, color=DARK_BLUE, bold=True)
 
-comp_headers = [("", Inches(2.5)), ("Option A (Own Code)", Inches(3.5)), ("Option B (SaaS)", Inches(3.5))]
+comp_headers = [("", Inches(2.2)), ("A: Own Code", Inches(2.6)), ("B: SaaS", Inches(2.6)), ("C: Shared", Inches(2.6))]
 comp_rows = [
-    ("Upfront Cost", "$110,000", "$0"),
-    ("Annual Cost", "$21,200/year", "$30,000/year"),
-    ("3-Year Total", "$173,600", "$90,000"),
-    ("5-Year Total", "$216,000", "$150,000"),
-    ("Code Ownership", "Yes — you own it", "No — IoTeye retains"),
+    ("Upfront Cost", "$110,000", "$0", "$55,000"),
+    ("Annual Cost", "$21,200/yr", "$30,000/yr", "$30,000/yr"),
+    ("3-Year Total", "$173,600", "$90,000", "$145,000"),
+    ("5-Year Total", "$216,000", "$150,000", "$205,000"),
+    ("Code Ownership", "Full", "None", "Recognition only"),
 ]
 
-y = Inches(5.3)
-x_base = Inches(1.8)
+y = Inches(5.4)
+x_base = Inches(1.2)
 for j, (h, w) in enumerate(comp_headers):
     x = x_base + sum(hw[1] for hw in comp_headers[:j])
-    add_shape_bg(slide, x, y, w, Inches(0.4), ACCENT_BLUE)
-    add_textbox(slide, x + Inches(0.1), y + Inches(0.02), w - Inches(0.2), Inches(0.35),
-                h, font_size=13, color=WHITE, bold=True)
-y += Inches(0.4)
+    add_shape_bg(slide, x, y, w, Inches(0.35), ACCENT_BLUE)
+    add_textbox(slide, x + Inches(0.08), y + Inches(0.01), w - Inches(0.16), Inches(0.32),
+                h, font_size=12, color=WHITE, bold=True)
+y += Inches(0.35)
 
-for i, (label, a, b) in enumerate(comp_rows):
+for i, (label, a, b, c) in enumerate(comp_rows):
     bg = LIGHT_GRAY if i % 2 == 0 else WHITE
-    for j, (val, w) in enumerate(zip([label, a, b], [h[1] for h in comp_headers])):
+    for j, (val, w) in enumerate(zip([label, a, b, c], [h[1] for h in comp_headers])):
         x = x_base + sum(hw[1] for hw in comp_headers[:j])
-        add_shape_bg(slide, x, y, w, Inches(0.35), bg)
-        add_textbox(slide, x + Inches(0.1), y + Inches(0.01), w - Inches(0.2), Inches(0.3),
-                    val, font_size=12, color=DARK_GRAY, bold=(j == 0))
-    y += Inches(0.35)
+        add_shape_bg(slide, x, y, w, Inches(0.32), bg)
+        add_textbox(slide, x + Inches(0.08), y + Inches(0.01), w - Inches(0.16), Inches(0.28),
+                    val, font_size=11, color=DARK_GRAY, bold=(j == 0))
+    y += Inches(0.32)
 
 
 # ─── SLIDE 15: Feature Comparison Summary ───
