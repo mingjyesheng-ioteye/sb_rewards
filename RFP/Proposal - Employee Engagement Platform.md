@@ -822,10 +822,8 @@ The following add-ons are available across all pricing options. **AI-assisted en
 | Add-On                                                         | Cost                                      |
 | -------------------------------------------------------------- | ----------------------------------------- |
 | Recognition AI Agent (BrainClaw skill + BrainBook integration) | $0 — AI LLM usage fee only (pass-through) |
-| Additional Paycom integration fields or custom sync logic      | $0 — AI LLM usage fee only (pass-through) |
-| Custom reporting / BI dashboard integration                    | $0 — AI LLM usage fee only (pass-through) |
+| Additional Paycom integration fields                           | $0 — AI LLM usage fee only (pass-through) |
 | Additional training sessions (per session)                     | $0 — AI LLM usage fee only (pass-through) |
-| Annual feature enhancement package (8 hours/month)             | $0 — AI LLM usage fee only (pass-through) |
 
 ## 9. Evaluation Criteria Alignment
 
