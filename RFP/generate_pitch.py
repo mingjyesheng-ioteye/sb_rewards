@@ -179,17 +179,15 @@ add_bullet_list(tf, [
 
 # \u2500\u2500\u2500 SLIDE 4: Total Agency Services for Special Care \u2500\u2500\u2500
 slide = prs.slides.add_slide(prs.slide_layouts[6])
-add_bg(slide, DARK_BLUE)
-
-add_textbox(slide, Inches(0.8), Inches(0.3), Inches(11), Inches(0.65),
-            "Total Agency Services for Special Care", font_size=30, color=WHITE, bold=True)
+add_bg(slide, WHITE)
+section_header_bar(slide, "Total Agency Services for Special Care")
 
 # Left panel
-add_shape_bg(slide, Inches(0.4), Inches(1.1), Inches(5.9), Inches(5.8), RGBColor(0x12, 0x1D, 0x35))
-add_textbox(slide, Inches(0.65), Inches(1.2), Inches(5.3), Inches(0.45),
+add_shape_bg(slide, Inches(0.4), Inches(1.3), Inches(5.9), Inches(5.5), LIGHT_GRAY)
+add_textbox(slide, Inches(0.65), Inches(1.4), Inches(5.3), Inches(0.45),
             "Special Care Cloud (AWS)", font_size=18, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.65), Inches(1.75), Inches(5.3), Inches(4.8),
-                 "", font_size=13, color=WHITE)
+tf = add_textbox(slide, Inches(0.65), Inches(1.95), Inches(5.3), Inches(4.8),
+                 "", font_size=13, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Market: 6,000+ special care agencies in the USA",
     "Agentic AI Platform \u2014 Cloud, Desktop, Mobile, IoT",
@@ -198,11 +196,11 @@ add_bullet_list(tf, [
     "IoT: OBD, DashCam, Minew Proximity, Home Assistant Green",
     "Samsara App Partner \u2014 fleet telematics",
     "HIPAA-compliant AI inference servers",
-], font_size=13, color=WHITE, spacing=Pt(8))
+], font_size=13, color=DARK_GRAY, spacing=Pt(8))
 
 # Right panel
-add_shape_bg(slide, Inches(7.0), Inches(1.1), Inches(5.9), Inches(5.8), RGBColor(0x12, 0x1D, 0x35))
-add_textbox(slide, Inches(7.25), Inches(1.2), Inches(5.4), Inches(0.45),
+add_shape_bg(slide, Inches(7.0), Inches(1.3), Inches(5.9), Inches(5.5), LIGHT_GRAY)
+add_textbox(slide, Inches(7.25), Inches(1.4), Inches(5.4), Inches(0.45),
             "Platform Products", font_size=18, color=ACCENT_BLUE, bold=True)
 products_info = [
     ("SpringBoard", "Route/Fleet \u2014 paratransit ops, multi-tenant"),
@@ -210,12 +208,12 @@ products_info = [
     ("BrainBook", "AI Platform \u2014 desktop, web, mobile, voice I/O"),
     ("BrainClaw", "AI Agents \u2014 94+ tools, GPT-4.1, Arc Mercer live"),
 ]
-y_p = Inches(1.85)
+y_p = Inches(2.05)
 for pname, pdesc in products_info:
     add_textbox(slide, Inches(7.25), y_p, Inches(5.4), Inches(0.3),
                 pname, font_size=15, color=ACCENT_BLUE, bold=True)
     add_textbox(slide, Inches(7.25), y_p + Inches(0.3), Inches(5.4), Inches(0.35),
-                pdesc, font_size=13, color=WHITE)
+                pdesc, font_size=13, color=DARK_GRAY)
     y_p += Inches(0.85)
 
 
@@ -912,15 +910,13 @@ add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
 
 # ─── SLIDE 16: Why IoTeye & Next Steps ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
-add_bg(slide, DARK_BLUE)
+add_bg(slide, WHITE)
+section_header_bar(slide, "Why IoTeye \u2014 Next Steps")
 
-add_textbox(slide, Inches(0.8), Inches(0.5), Inches(11), Inches(0.7),
-            "Why IoTeye — Next Steps", font_size=36, color=WHITE, bold=True)
-
-add_textbox(slide, Inches(0.8), Inches(1.5), Inches(5.5), Inches(0.5),
+add_textbox(slide, Inches(0.8), Inches(1.3), Inches(5.5), Inches(0.5),
             "Why We're the Right Partner", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.8), Inches(2.1), Inches(5.5), Inches(4.5),
-                 "", font_size=16, color=WHITE)
+tf = add_textbox(slide, Inches(0.8), Inches(1.9), Inches(5.5), Inches(4.5),
+                 "", font_size=16, color=DARK_GRAY)
 add_bullet_list(tf, [
     "5+ years in special care software \u2014 we know your workforce",
     "Arc Mercer is an existing SpringBoard & Guardian customer",
@@ -932,31 +928,31 @@ add_bullet_list(tf, [
     "Dark mode for night-shift staff at group homes",
     "WCAG AAA accessibility \u2014 7:1 contrast, screen reader tested",
     "All add-ons FREE \u2014 pay only AI LLM usage (pass-through)",
-], font_size=14, color=WHITE, spacing=Pt(7))
+], font_size=14, color=DARK_GRAY, spacing=Pt(7))
 
-add_textbox(slide, Inches(7), Inches(1.5), Inches(5.5), Inches(0.5),
+add_textbox(slide, Inches(7), Inches(1.3), Inches(5.5), Inches(0.5),
             "Next Steps", font_size=24, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7), Inches(2.1), Inches(5.5), Inches(3),
-                 "", font_size=16, color=WHITE)
+tf = add_textbox(slide, Inches(7), Inches(1.9), Inches(5.5), Inches(3),
+                 "", font_size=16, color=DARK_GRAY)
 add_bullet_list(tf, [
     "Select pricing option (A or B)",
     "Schedule kickoff & discovery workshop",
     "Initiate Paycom SFTP access setup",
     "Configure Google Workspace SSO + Badge ID mapping",
     "Phase One live in 12 weeks",
-], font_size=16, color=WHITE, spacing=Pt(12))
+], font_size=16, color=DARK_GRAY, spacing=Pt(12))
 
 # Contact box
-add_shape_bg(slide, Inches(7), Inches(4.8), Inches(5), Inches(2), ACCENT_BLUE)
+add_shape_bg(slide, Inches(7), Inches(4.8), Inches(5), Inches(2), LIGHT_BLUE)
 add_textbox(slide, Inches(7.3), Inches(4.9), Inches(4.5), Inches(0.5),
-            "Contact Us", font_size=22, color=WHITE, bold=True)
+            "Contact Us", font_size=22, color=DARK_BLUE, bold=True)
 add_textbox(slide, Inches(7.3), Inches(5.4), Inches(4.5), Inches(1.2),
             "IoTeye Inc.\nBasking Ridge, New Jersey\nmingjye.sheng@ioteyeinc.com\nwww.ioteyeinc.com",
-            font_size=16, color=WHITE)
+            font_size=16, color=DARK_GRAY)
 
 # Thank you
 add_textbox(slide, Inches(0.8), Inches(6.2), Inches(5), Inches(0.8),
-            "Thank You", font_size=40, color=WHITE, bold=True)
+            "Thank You", font_size=40, color=ACCENT_BLUE, bold=True)
 
 
 # Save
