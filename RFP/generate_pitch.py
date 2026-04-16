@@ -760,7 +760,7 @@ add_bullet_list(tf, [
     "Annual platform fee: $30,000/year (managed service)",
     "Arc Mercer & IoTeye share recognition platform code (50/50)",
     "Excludes: BrainBook, SpringBoard, Guardian, BrainClaw",
-    "Reuse rights deferred to legal agreement",
+    "Reuse rights deferred to agreement",
 ], font_size=14, spacing=Pt(7))
 
 # Add-ons promo badge
@@ -933,7 +933,7 @@ add_textbox(slide, Inches(7), Inches(1.3), Inches(5.5), Inches(0.5),
 tf = add_textbox(slide, Inches(7), Inches(1.9), Inches(5.5), Inches(3),
                  "", font_size=16, color=DARK_GRAY)
 add_bullet_list(tf, [
-    "Select pricing option (A or B)",
+    "Select pricing option (A, B, or C)",
     "Schedule kickoff & discovery workshop",
     "Initiate Paycom SFTP access setup",
     "Configure Google Workspace SSO + Badge ID mapping",
