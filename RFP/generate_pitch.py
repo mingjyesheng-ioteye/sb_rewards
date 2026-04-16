@@ -846,10 +846,10 @@ for i, (cat, iot, p1, p2) in enumerate(cat_rows):
     y_t += row_h
 
 # Right side: IoTeye Exclusive Advantages callout
-add_shape_bg(slide, Inches(8.6), Inches(1.8), Inches(4.4), Inches(4.5), LIGHT_BLUE)
+add_shape_bg(slide, Inches(8.6), Inches(1.8), Inches(4.4), Inches(3.78), LIGHT_BLUE)
 add_textbox(slide, Inches(8.8), Inches(1.9), Inches(4.0), Inches(0.45),
             "IoTeye-Exclusive Advantages", font_size=18, color=DARK_BLUE, bold=True)
-tf = add_textbox(slide, Inches(8.8), Inches(2.4), Inches(4.0), Inches(3.7),
+tf = add_textbox(slide, Inches(8.8), Inches(2.4), Inches(4.0), Inches(2.98),
                  "", font_size=13, color=DARK_GRAY)
 add_bullet_list(tf, [
     "BrainClaw AI \u2014 94+ tools already in production at Arc Mercer",
@@ -863,10 +863,10 @@ add_bullet_list(tf, [
 ], font_size=12, spacing=Pt(7))
 
 # Bottom green banner
-add_shape_bg(slide, Inches(0), Inches(6.5), SLIDE_W, Inches(0.7), GREEN)
-add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
+add_shape_bg(slide, Inches(0), Inches(6.2), SLIDE_W, Inches(1.0), GREEN)
+add_textbox(slide, Inches(0.5), Inches(6.3), Inches(12), Inches(0.8),
             "\u2605  36 of 37 features \u2014 Magic Link excluded (Badge ID + PIN better serves frontline staff)  |  10 features added, all within $110K budget  \u2605",
-            font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
+            font_size=20, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
 # ─── SLIDE 15: Why IoTeye & Next Steps ───
