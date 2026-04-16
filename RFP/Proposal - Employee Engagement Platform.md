@@ -67,7 +67,7 @@ IoTeye's portfolio spans multiple domains directly relevant to The Arc Mercer's 
 
 - **SpringBoard** — IoTeye's flagship multi-agency route management and operations platform. SpringBoard provides a comprehensive admin portal for special care transportation organizations, including route optimization, fleet management (OBD and camera integration), vehicle maintenance tracking, scheduling (cron-based automation), and Twilio-powered SMS/conversational communication. The platform features a multi-tenant architecture supporting multiple agencies (e.g., Arc Mercer, Easter Seals), a React-based admin dashboard, REST APIs for mobile and web clients, and a robust security framework with role-based access control. SpringBoard demonstrates IoTeye's proven ability to build and operate complex, data-driven SaaS platforms for the special care sector.
 - **BrainBook** — An AI-powered platform built with Next.js 14 (React/TypeScript), Supabase authentication, and Tauri for cross-platform desktop deployment. BrainBook features local AI model management and inference, an interactive chat interface with streaming responses, AI-driven note generation, voice I/O (text-to-speech and speech-to-text), an agent system with a standalone Node.js agent server, Node-RED workflow automation integration, and OAuth/SSO authentication. The platform runs as both a web application and a native desktop app, demonstrating IoTeye's expertise in React, TypeScript, Supabase, and modern full-stack architecture — the same technology stack proposed for this project.
-- **Guardian** — A multi-agency, multi-department notification and communication system. Guardian provides SMS messaging (via Twilio), mobile push notifications (via Expo), reply tracking, confirmation workflows, and location-aware alerts — all organized by agency and department. The system includes a server backend (Node.js/Docker/Supabase) and a cross-platform mobile app (React Native/Expo) published to both iOS and Android app stores. Guardian's multi-tenant architecture and real-time notification capabilities directly parallel the engagement and notification features required for this project.
+- **Guardian** — A multi-agency, multi-department notification, communication, and authentication system. Guardian provides SMS messaging (via Twilio), mobile push notifications (via Expo), reply tracking, confirmation workflows, and location-aware alerts — all organized by agency and department. The system includes a server backend (Node.js/Docker/Supabase) and a cross-platform mobile app (React Native/Expo) published to both iOS and Android app stores. Guardian's multi-tenant architecture, real-time notification capabilities, and authentication services directly parallel the engagement, notification, and authentication features required for this project.
 - **BrainClaw (AI Agent Gateway)** — IoTeye's production AI agent runtime, built on BrainBook's infrastructure and powered by GPT-4.1 via GitHub Copilot. BrainClaw hosts domain-specific Python skill agents accessed through a structured JSON protocol. Currently running two agents in production for **The Arc Mercer**:
 
   - **SpringBoard Agent (37 tools):** fleet management, route optimization, consumer management, scheduling, SMS/push notifications, real-time GPS telemetry, emergency SOS, and daily manifest/invoice generation. Arc Mercer staff (`arcmercer.ioteyeinc.com`) manage paratransit operations through natural language today.
@@ -769,7 +769,7 @@ IoTeye commits to hosting and maintaining the platform as a managed service for 
 | Deployment configuration (AWS IaC)           | **The Arc Mercer** |
 | BrainBook (AI platform)                      | IoTeye Inc.                 |
 | SpringBoard (route management)               | IoTeye Inc.                 |
-| Guardian (notification system)               | IoTeye Inc.                 |
+| Guardian (notification & authentication system) | IoTeye Inc.                 |
 | BrainClaw AI gateway & agents                | IoTeye Inc.                 |
 
 #### Option C Cost Summary
@@ -815,7 +815,7 @@ IoTeye commits to hosting and maintaining the platform as a managed service for 
 
 ### 8.4 Optional Add-Ons (All Options)
 
-The following add-ons are available across all pricing options. **AI-assisted enhancements** — tasks that BrainClaw AI agents can perform autonomously or with minimal human oversight — are included at no additional cost beyond the AI LLM usage fee (billed at cost, pass-through only). **Major system redesign or feature rebuilds** that require significant engineering effort are **not covered**.
+The following add-ons are available across all pricing options. **AI-assisted enhancements** — tasks that BrainClaw AI agents can perform autonomously or with minimal human oversight — are included at no additional cost beyond the AI LLM usage fee (billed at cost, pass-through only). **Major system redesign or feature rebuilds** that require significant engineering effort are **available upon request** and will be scoped collaboratively.
 
 #### AI-Assisted Add-Ons (LLM Usage Fee Only)
 
