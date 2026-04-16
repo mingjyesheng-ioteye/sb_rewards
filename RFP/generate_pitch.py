@@ -902,7 +902,7 @@ add_bullet_list(tf, [
 # Bottom green banner
 add_shape_bg(slide, Inches(0), Inches(6.5), SLIDE_W, Inches(0.7), GREEN)
 add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
-            "\u2605  IoTeye covers 36 of 37 features \u2014 10 added after competitive analysis, all within the original $110K budget",
+            "\u2605  36 of 37 features \u2014 Magic Link excluded (Badge ID + PIN better serves frontline staff)  |  10 features added, all within $110K budget  \u2605",
             font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
