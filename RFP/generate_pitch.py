@@ -689,7 +689,7 @@ add_textbox(slide, Inches(8.7), Inches(5.5), Inches(3.6), Inches(0.4),
 # Add-ons callout banner
 add_shape_bg(slide, Inches(0), Inches(6.5), SLIDE_W, Inches(0.7), GREEN)
 add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
-            "\u2605  AI-assisted add-ons INCLUDED \u2014 LLM usage fee only (pass-through)  |  Major redesigns not covered  \u2605",
+            "\u2605  AI-assisted add-ons INCLUDED \u2014 LLM usage fee only (pass-through)  |  Custom development available upon request  \u2605",
             font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
@@ -729,7 +729,7 @@ add_bullet_list(tf, [
 # Add-ons promo badge
 add_shape_bg(slide, Inches(0.4), Inches(4.4), Inches(12.5), Inches(0.45), GREEN)
 add_textbox(slide, Inches(0.6), Inches(4.43), Inches(12), Inches(0.4),
-            "\u2605  AI-assisted add-ons INCLUDED \u2014 LLM usage fee only (pass-through)  |  Major redesigns not covered  \u2605",
+            "\u2605  AI-assisted add-ons INCLUDED \u2014 LLM usage fee only (pass-through)  |  Custom development available upon request  \u2605",
             font_size=13, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 # 3-column comparison table
