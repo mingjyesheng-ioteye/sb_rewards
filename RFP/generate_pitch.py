@@ -204,7 +204,7 @@ add_textbox(slide, Inches(7.25), Inches(1.4), Inches(5.4), Inches(0.45),
             "Platform Products", font_size=18, color=ACCENT_BLUE, bold=True)
 products_info = [
     ("SpringBoard", "Route/Fleet \u2014 paratransit ops, multi-tenant"),
-    ("Guardian", "Notifications \u2014 SMS, push, reply tracking"),
+    ("Guardian", "Notifications & authentication \u2014 SMS, push, reply tracking"),
     ("BrainBook", "AI Platform \u2014 desktop, web, mobile, voice I/O"),
     ("BrainClaw", "AI Agents \u2014 94+ tools, GPT-4.1, Arc Mercer live"),
 ]
