@@ -882,7 +882,7 @@ add_bullet_list(tf, [
     "5+ years in special care software \u2014 we know your workforce",
     "Arc Mercer is an existing IoTeye customer (SpringBoard & Guardian)",
     "BrainClaw AI agents already in production at Arc Mercer (37+57 tools)",
-    "Unified vendor \u2014 one partner for operations, engagement",
+    "In-house Paycom & Guardian integration \u2014 already live at Arc Mercer, not a cold start",
     "Three flexible pricing options: full ownership, SaaS, or shared (50/50)",
     "AI-assisted add-ons FREE \u2014 pay only AI LLM usage (pass-through)",
 ], font_size=14, color=DARK_GRAY, spacing=Pt(10))
