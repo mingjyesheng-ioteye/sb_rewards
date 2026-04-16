@@ -518,12 +518,15 @@ add_bullet_list(tf, [
 ], font_size=13, spacing=Pt(4))
 
 # Path 3: Email/Password
-add_shape_bg(slide, Inches(7), Inches(4.85), Inches(5.5), Inches(0.7), LIGHT_GRAY)
+add_shape_bg(slide, Inches(7), Inches(4.85), Inches(5.5), Inches(0.9), LIGHT_GRAY)
 add_textbox(slide, Inches(7.15), Inches(4.9), Inches(5.2), Inches(0.35),
             "\u2782  Email / Password Fallback", font_size=16, color=DARK_BLUE, bold=True)
-add_textbox(slide, Inches(7.15), Inches(5.25), Inches(5.2), Inches(0.3),
-            "For part-time or seasonal staff with email but not on SSO",
-            font_size=13, color=DARK_GRAY)
+tf = add_textbox(slide, Inches(7.15), Inches(5.25), Inches(5.2), Inches(0.5),
+                 "", font_size=13, color=DARK_GRAY)
+add_bullet_list(tf, [
+    "For part-time or seasonal staff with email but not on SSO",
+    "Guardian authentication",
+], font_size=13, spacing=Pt(4))
 
 # Key callout
 add_shape_bg(slide, Inches(7), Inches(5.8), Inches(5.5), Inches(0.8), GREEN)
