@@ -880,16 +880,12 @@ tf = add_textbox(slide, Inches(0.8), Inches(1.9), Inches(5.5), Inches(4.5),
                  "", font_size=16, color=DARK_GRAY)
 add_bullet_list(tf, [
     "5+ years in special care software \u2014 we know your workforce",
-    "Arc Mercer is an existing SpringBoard & Guardian customer",
-    "BrainClaw AI agents already running at Arc Mercer (37+57 tools)",
-    "Badge ID + PIN login for frontline staff without email",
-    "Ranked-choice committee voting \u2014 matching your current process",
-    "Full engagement suite: TAC RSVP, culture groups, volunteering",
-    "Caf\u00e9 cashier screen + in-person store QR redemption",
-    "Dark mode for night-shift staff at group homes",
-    "WCAG AAA accessibility \u2014 7:1 contrast, screen reader tested",
+    "Arc Mercer is an existing IoTeye customer (SpringBoard & Guardian)",
+    "BrainClaw AI agents already in production at Arc Mercer (37+57 tools)",
+    "Unified vendor \u2014 one partner for operations, engagement",
+    "Three flexible pricing options: full ownership, SaaS, or shared (50/50)",
     "AI-assisted add-ons FREE \u2014 pay only AI LLM usage (pass-through)",
-], font_size=14, color=DARK_GRAY, spacing=Pt(7))
+], font_size=14, color=DARK_GRAY, spacing=Pt(10))
 
 add_textbox(slide, Inches(7), Inches(1.3), Inches(5.5), Inches(0.5),
             "Next Steps", font_size=24, color=ACCENT_BLUE, bold=True)
