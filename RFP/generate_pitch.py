@@ -532,47 +532,7 @@ add_textbox(slide, Inches(7.15), Inches(5.85), Inches(5.2), Inches(0.65),
             font_size=14, color=WHITE, bold=True)
 
 
-# ─── SLIDE 10: Accessibility & UX ───
-slide = prs.slides.add_slide(prs.slide_layouts[6])
-add_bg(slide, WHITE)
-section_header_bar(slide, "Accessibility, Dark Mode & Mobile-First Design")
-
-add_textbox(slide, Inches(0.8), Inches(1.3), Inches(11), Inches(0.5),
-            'Design philosophy: "Could someone who only uses their phone for calls and texts do this?"',
-            font_size=18, color=MED_GRAY, bold=True, alignment=PP_ALIGN.CENTER)
-
-# Two columns
-col1_items = [
-    "Large touch targets: 48\u00d748px minimum",
-    "WCAG AAA contrast (7:1 ratio)",
-    "Icon-driven navigation \u2014 not text-dependent",
-    "6th grade reading level for all text",
-    "Progressive disclosure \u2014 one action per screen",
-    "Keyboard navigable, screen reader compatible",
-]
-col2_items = [
-    "Progressive Web App (PWA) \u2014 no app store needed",
-    "Works on any smartphone, 320px+ screens",
-    "Low-bandwidth friendly, lazy-loaded images",
-    "Dark mode / light mode toggle for night shifts",
-    "System preference detection, persisted per user",
-    "Accessibility audit before each phase launch",
-]
-
-add_textbox(slide, Inches(0.8), Inches(2.0), Inches(5.5), Inches(0.5),
-            "Universal Design", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(0.8), Inches(2.6), Inches(5.5), Inches(4),
-                 "", font_size=15, color=DARK_GRAY)
-add_bullet_list(tf, col1_items, font_size=15, spacing=Pt(10))
-
-add_textbox(slide, Inches(7), Inches(2.0), Inches(5.5), Inches(0.5),
-            "Mobile-First PWA", font_size=22, color=ACCENT_BLUE, bold=True)
-tf = add_textbox(slide, Inches(7), Inches(2.6), Inches(5.5), Inches(4),
-                 "", font_size=15, color=DARK_GRAY)
-add_bullet_list(tf, col2_items, font_size=15, spacing=Pt(10))
-
-
-# ─── SLIDE 11: Dashboards ───
+# ─── SLIDE 10: Dashboards ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Dashboards — Employee & Leadership")
@@ -604,7 +564,7 @@ add_textbox(slide, Inches(0.5), Inches(5.6), Inches(12), Inches(0.6),
             font_size=15, color=DARK_BLUE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
-# ─── SLIDE 12: Phased Timeline ───
+# ─── SLIDE 11: Phased Timeline ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Phased Implementation — 36 Weeks")
@@ -661,7 +621,7 @@ for title, items, color in details:
     x_pos += Inches(4.2)
 
 
-# ─── SLIDE 13: Pricing — Option A ───
+# ─── SLIDE 12: Pricing — Option A ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Pricing — Option A: Source-Code Ownership")
@@ -730,7 +690,7 @@ add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
             font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
-# ─── SLIDE 14: Pricing — Option B & Option C ───
+# ─── SLIDE 13: Pricing — Option B & Option C ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Pricing \u2014 Option B (SaaS) & Option C (Shared Ownership)")
@@ -801,7 +761,7 @@ for i, (label, a, b, c) in enumerate(comp_rows):
     y += Inches(0.32)
 
 
-# ─── SLIDE 15: Feature Comparison Summary ───
+# ─── SLIDE 14: Feature Comparison Summary ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Feature Comparison \u2014 How We Stack Up")
@@ -906,7 +866,7 @@ add_textbox(slide, Inches(0.5), Inches(6.55), Inches(12), Inches(0.6),
             font_size=16, color=WHITE, bold=True, alignment=PP_ALIGN.CENTER)
 
 
-# ─── SLIDE 16: Why IoTeye & Next Steps ───
+# ─── SLIDE 15: Why IoTeye & Next Steps ───
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, WHITE)
 section_header_bar(slide, "Why IoTeye \u2014 Next Steps")
