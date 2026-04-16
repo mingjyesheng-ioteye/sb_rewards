@@ -172,7 +172,7 @@ tf = add_textbox(slide, Inches(7), Inches(2.0), Inches(5.8), Inches(4.8),
 add_bullet_list(tf, [
     "SpringBoard: Multi-agency route management & operations (route opt., fleet, Twilio SMS, multi-tenant)",
     "BrainBook: AI platform \u2014 Next.js/React/TypeScript, Supabase, AI agents, voice I/O, desktop & web",
-    "Guardian: Notification system \u2014 SMS, push notifications, reply tracking, iOS & Android",
+    "Guardian: Notification & authentication system \u2014 SMS, push notifications, reply tracking, iOS & Android",
     "BrainClaw: AI agent gateway (GPT-4.1) \u2014 37-tool SpringBoard agent & 57-tool Samsara agent live at Arc Mercer",
 ], font_size=14, bold_prefix=False, spacing=Pt(10))
 
