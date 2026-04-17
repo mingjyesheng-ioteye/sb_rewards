@@ -17,8 +17,7 @@
 6. [Accessibility Statement](#6-accessibility-statement)
 7. [Phased Implementation Plan &amp; Timeline](#7-phased-implementation-plan--timeline)
 8. [Cost Proposal](#8-cost-proposal)
-9. [Evaluation Criteria Alignment](#9-evaluation-criteria-alignment)
-10. [Appendices](#10-appendices)
+9. [Appendices](#9-appendices)
     - [Appendix A: Technology Stack Detail](#appendix-a-technology-stack-detail)
     - [Appendix B: Data Security Summary](#appendix-b-data-security-summary)
     - [Appendix C: Support &amp; Maintenance](#appendix-c-support--maintenance)
@@ -781,7 +780,6 @@ IoTeye commits to hosting and maintaining the platform as a managed service for 
 | Annual Cost           | \$21,200/year                       | \$36,000/year                        | \$36,000/year                                                                    |
 | 3-Year Total Cost     | \$173,600                           | \$108,000                            | \$163,000                                                                        |
 | 5-Year Total Cost     | \$216,000                           | \$180,000                            | \$235,000                                                                        |
-| 10-Year Total Cost    | \$322,000                           | \$360,000                            | \$415,000                                                                        |
 | Source Code Ownership | ✅ The Arc Mercer owns all code     | ❌ IoTeye retains ownership          | ⚠️ 50/50 recognition platform; DB & infra: Arc Mercer sole ownership           |
 | Vendor Independence   | ✅ Can self-host or hire other devs | ❌ Dependent on IoTeye               | ⚠️ Shared recognition code; IoTeye products require IoTeye                     |
 | Customization Freedom | ✅ Unlimited modifications          | ⚠️ Customizations by request       | ⚠️ Recognition platform modifiable per legal terms; IoTeye products by request |
@@ -810,45 +808,7 @@ The following add-ons are available across all pricing options. **AI-assisted en
 | Additional Paycom integration fields                           | $0 — AI LLM usage fee only (pass-through) |
 | Additional training sessions (per session)                     | $0 — AI LLM usage fee only (pass-through) |
 
-## 9. Evaluation Criteria Alignment
-
-### Ease of Use
-
-- Mobile-first PWA — no app download, works on any smartphone.
-- **Badge ID + PIN login for frontline staff** — no email address required, no password to remember.
-- Icon-driven navigation with large touch targets.
-- Step-by-step guided nomination flows.
-- Designed and tested with non-technical frontline staff.
-- One-tap actions for all common tasks.
-- Dark mode for night-shift staff in low-light environments.
-
-### Integration Robustness
-
-- Dual-channel Paycom integration (SFTP primary + REST API optional).
-- Automated user provisioning with discrepancy reporting.
-- **Three authentication paths:** Badge ID + PIN (frontline), Google Workspace SSO (admin), email/password (fallback).
-- Nightly sync with real-time status monitoring.
-
-### Administrative Control
-
-- Full QA queue with approve/return/decline workflow and **formalized revise-and-resubmit loop**.
-- **Selection committee ranked-choice voting** with drag-and-drop ranking, private ballots, and automated tally.
-- Configurable point values — no code changes needed.
-- Comprehensive audit trails for every point transaction.
-- Leader dashboards with participation trends and program-level analytics.
-- Inventory and fulfillment management tools.
-- **Cafeteria cashier-facing redemption screen** and **in-person store QR code scanning**.
-
-### Total Cost of Ownership
-
-- **Option A (Source Ownership):** Year 1 all-in: $131,200; Year 2+: $21,200/year. The Arc Mercer owns the code — no vendor lock-in, no per-user fees.
-- **Option B (IoTeye SaaS):** $0 upfront, $30,000/year fully managed. Lower initial commitment with all maintenance and updates included.
-- **Option C (Shared Ownership):** Year 1 all-in: $85,000; Year 2+: $30,000/year. 50/50 shared ownership of recognition platform code (excludes BrainBook, SpringBoard, Guardian, BrainClaw); DB & deployment config: Arc Mercer sole ownership.
-- All options: no per-user licensing fees — scales with your organization at no additional user cost.
-
----
-
-## 10. Appendices
+## 9. Appendices
 
 ### Appendix A: Technology Stack Detail
 
