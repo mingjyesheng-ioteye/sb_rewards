@@ -1,8 +1,8 @@
-# 0Proposal: Employee Engagement & Recognition Platform
+# Proposal: Employee Engagement & Recognition Platform
 
 **Prepared for:** The Arc Mercer
 **Prepared by:** IoTeye Inc.
-**Date:** April 8, 2026
+**Date:** April 17, 2026
 **In Response To:** Request for Proposal — Employee Engagement & Recognition Platform (February 2026)
 
 ---
@@ -21,8 +21,8 @@
 10. [Appendices](#10-appendices)
     - [Appendix A: Technology Stack Detail](#appendix-a-technology-stack-detail)
     - [Appendix B: Data Security Summary](#appendix-b-data-security-summary)
-    - [Appendix C: Support & Maintenance](#appendix-c-support--maintenance)
-    - [Appendix D: Competitive Feature Matrix & Revision Log](#appendix-d-competitive-feature-matrix--revision-log)
+    - [Appendix C: Support &amp; Maintenance](#appendix-c-support--maintenance)
+    - [Appendix D: Competitive Feature Matrix &amp; Revision Log](#appendix-d-competitive-feature-matrix--revision-log)
 
 ---
 
@@ -35,7 +35,7 @@ Our proposed solution is a custom-built, cloud-hosted SaaS platform leveraging m
 **Key Differentiators:**
 
 - **Custom-Built for Your Workforce:** Unlike off-the-shelf platforms, our solution is designed from the ground up for non-technical, frontline staff — large buttons, intuitive icons, minimal text, and mobile-first design.
-- **Seamless Paycom Integration:** A dedicated Python integration service ensures reliable, automated user provisioning and program assignment syncing with your HRIS.
+- **Seamless Paycom Integration:** A dedicated Python integration service ensures reliable, automated user provisioning and program assignment syncing with your Paycom HRIS.
 - **Phased Delivery with Early Value:** Phase One goes live within 12 weeks of kickoff, delivering nominations, Paycom sync, and manual point support immediately.
 - **Transparent & Auditable:** Every point adjustment is logged with full audit trails, giving leadership complete visibility and control.
 - **Scalable SaaS Architecture:** AWS-hosted infrastructure scales with your organization and ensures 99.9% uptime.
@@ -66,9 +66,9 @@ IoTeye's portfolio spans multiple domains directly relevant to The Arc Mercer's 
 ### Products
 
 - **SpringBoard** — IoTeye's flagship multi-agency route management and operations platform. SpringBoard provides a comprehensive admin portal for special care transportation organizations, including route optimization, fleet management (OBD and camera integration), vehicle maintenance tracking, scheduling (cron-based automation), and Twilio-powered SMS/conversational communication. The platform features a multi-tenant architecture supporting multiple agencies (e.g., Arc Mercer, Easter Seals), a React-based admin dashboard, REST APIs for mobile and web clients, and a robust security framework with role-based access control. SpringBoard demonstrates IoTeye's proven ability to build and operate complex, data-driven SaaS platforms for the special care sector.
-- **BrainBook** — An AI-powered platform built with Next.js 14 (React/TypeScript), Supabase authentication, and Tauri for cross-platform desktop deployment. BrainBook features local AI model management and inference, an interactive chat interface with streaming responses, AI-driven note generation, voice I/O (text-to-speech and speech-to-text), an agent system with a standalone Node.js agent server, Node-RED workflow automation integration, and OAuth/SSO authentication. The platform runs as both a web application and a native desktop app, demonstrating IoTeye's expertise in React, TypeScript, Supabase, and modern full-stack architecture — the same technology stack proposed for this project.
+- **BrainBook** — An AI-powered platform built with Next.js 14 (React/TypeScript), Supabase authentication, and Tauri for cross-platform desktop deployment. BrainBook features local AI model management and inference, an interactive chat interface with streaming responses, AI-driven note generation, voice I/O (text-to-speech and speech-to-text), an agent system with a standalone agent server, workflow automation integration, and OAuth/SSO authentication. The platform runs as both a web application and a native desktop app, demonstrating IoTeye's expertise in React, TypeScript, Supabase, and modern full-stack architecture — the same technology stack proposed for this project.
 - **Guardian** — A multi-agency, multi-department notification, communication, and authentication system. Guardian provides SMS messaging (via Twilio), mobile push notifications (via Expo), reply tracking, confirmation workflows, and location-aware alerts — all organized by agency and department. The system includes a server backend (Node.js/Docker/Supabase) and a cross-platform mobile app (React Native/Expo) published to both iOS and Android app stores. Guardian's multi-tenant architecture, real-time notification capabilities, and authentication services directly parallel the engagement, notification, and authentication features required for this project.
-- **BrainClaw (AI Agent Gateway)** — IoTeye's production AI agent runtime, built on BrainBook's infrastructure and powered by GPT-4.1 via GitHub Copilot. BrainClaw hosts domain-specific Python skill agents accessed through a structured JSON protocol. Currently running two agents in production for **The Arc Mercer**:
+- **BrainClaw (AI Agent Gateway)** — IoTeye's production AI agent runtime, built on BrainBook's infrastructure and powered by LLM models via Microsoft GitHub Copilot. BrainClaw hosts domain-specific skill agents accessed through a structured JSON protocol. Currently running two agents in trials for **The Arc Mercer**:
 
   - **SpringBoard Agent (37 tools):** fleet management, route optimization, consumer management, scheduling, SMS/push notifications, real-time GPS telemetry, emergency SOS, and daily manifest/invoice generation. Arc Mercer staff (`arcmercer.ioteyeinc.com`) manage paratransit operations through natural language today.
   - **Samsara Agent (57 tools):** vehicle telematics, driver management, Hours of Service (HOS) compliance, safety events, Driver Vehicle Inspection Reports (DVIRs), equipment/trailer tracking, geofencing, fuel/energy reporting, and fleet-wide GPS.
@@ -86,7 +86,7 @@ IoTeye's **special care industry expertise** is a direct match for The Arc Merce
 
 Having built and operated SaaS products like SpringBoard, Guardian, and BrainBook, IoTeye brings proven experience in the full lifecycle: design, development, cloud deployment, and ongoing support. **The Arc Mercer is already a SpringBoard and Guardian customer**, giving IoTeye direct familiarity with your organization's operational environment and needs.
 
-> **BrainClaw AI agents are already in production at Arc Mercer today.** IoTeye's SpringBoard Agent (37 tools) and Samsara Agent (57 tools) power Arc Mercer's transportation operations — staff manage routes, fleet, and driver compliance through natural language conversation. The same BrainClaw AI agent framework extends into the recognition platform, giving Arc Mercer a unified AI workspace for operations and employee engagement — a capability no general-purpose recognition vendor can offer.
+> **BrainClaw AI agents are already in trials at Arc Mercer today.** IoTeye's SpringBoard Agent (37 tools) and Samsara Agent (57 tools) power Arc Mercer's transportation operations — staff manage routes, fleet, and driver compliance through natural language conversation. The same BrainClaw AI agent framework extends into the recognition platform, giving Arc Mercer a unified AI workspace for operations and employee engagement — a capability no general-purpose recognition vendor can offer.
 
 ### IoTeye Platform Ecosystem — Total Agency Services for Special Care
 
@@ -94,7 +94,7 @@ IoTeye's platform is purpose-built for the special care industry, serving a U.S.
 
 - **Special Care Cloud (AWS):** All IoTeye services run on HIPAA-compliant AWS infrastructure.
 - **Agentic AI Platform:** IoTeye's unique differentiator — an AI-first platform spanning Cloud, Desktop, Mobile, and IoT, delivering personal assistants for agency workflows.
-- **Apps for Every Stakeholder:** Dedicated applications for Parent/Guardian, Consumer/Patient, and Staff/Driver roles.
+- **Apps for Every Stakeholder:** Dedicated applications for Parent/Guardian, Consumer/Patient, and Staff/Driver/DSP roles.
 - **IoT & Sensor Integration:** OBD devices, DashCams, Minew proximity detection systems, Home Assistant Green, and Samsara App Partner integration for fleet and facility monitoring.
 - **Multi-Form-Factor Delivery:** Desktop, Web, Tablet, Mobile, and ESP Box (Personal Assistants).
 - **HIPAA-Compliant AI Servers:** All AI inference and data processing meets healthcare privacy standards.
@@ -106,7 +106,7 @@ IoTeye's platform is purpose-built for the special care industry, serving a U.S.
 | **React + TypeScript**    | Front-end application                             | Production SaaS applications (SpringBoard, BrainBook) serving 1,000+ users; component-based architecture for maintainability |
 | **Supabase (PostgreSQL)** | Database, authentication, real-time subscriptions | Production deployments leveraging Row Level Security, real-time listeners, and built-in auth                                 |
 | **Python**                | Integration services, business logic, automation  | Extensive experience building API integrations, ETL pipelines, and scheduled jobs across IoTeye's product suite              |
-| **AWS**                   | Cloud infrastructure & deployment                 | Production SaaS deployments using ECS/Fargate, RDS, S3, CloudFront, and Lambda — powering IoTeye's live products            |
+| **AWS**                   | Cloud infrastructure & deployment                 | Production SaaS deployments using EC2/Lightsail, RDS, S3, CloudFront, and Lambda — powering IoTeye's live products          |
 
 ### Commitment to The Arc Mercer's Mission
 
@@ -356,15 +356,6 @@ Beyond attendance tracking for points, the platform provides a full TAC meeting 
 
 ### D. User Experience (UX) & Accessibility
 
-**Universal Design Principles:**
-
-- **Large touch targets:** Minimum 48x48px tap areas (exceeding WCAG 2.1 AA requirements).
-- **High-contrast interface:** WCAG AAA contrast ratios (7:1) for all text and interactive elements.
-- **Icon-driven navigation:** Every action has an accompanying icon — users never rely solely on text labels.
-- **Minimal text-heavy menus:** Bottom navigation bar with 4-5 core actions (Home, Nominate, Store, My Points, Profile).
-- **Progressive disclosure:** Complex features are behind simple entry points, avoiding information overload.
-- **Reading level:** All interface text written at a 6th-grade reading level or below.
-
 **Mobile-First Design:**
 
 - **Progressive Web App (PWA):** Installable on any smartphone home screen without app store download — no high-end hardware required.
@@ -405,7 +396,7 @@ Beyond attendance tracking for points, the platform provides a full TAC meeting 
 
 ### E. AI Agent Assistant (Optional Add-On)
 
-IoTeye's **BrainClaw** AI agent framework — already in production for The Arc Mercer's SpringBoard and Samsara integrations — can be extended to provide a conversational AI assistant directly within the recognition platform.
+IoTeye's **BrainClaw** AI agent framework — already in trials for The Arc Mercer's SpringBoard and Samsara integrations — can be extended to provide a conversational AI assistant directly within the recognition platform.
 
 **Natural language capabilities for HR and leadership:**
 
@@ -421,10 +412,10 @@ IoTeye's **BrainClaw** AI agent framework — already in production for The Arc 
 
 - A new BrainClaw skill (`recognition_agent`) with tools bound to the recognition platform's Supabase database via role-scoped queries.
 - Accessible from the same **BrainBook** interface Arc Mercer already uses for SpringBoard and Samsara — one unified AI workspace.
-- No new infrastructure required — deployed on the existing BrainClaw gateway.
+- Will deployed on top of the existing BrainClaw gateway.
 - Role-aware: HR directors see org-wide data; program managers see their programs only.
 
-**Arc Mercer Advantage:** Arc Mercer staff already use BrainClaw AI agents to manage transportation operations today. Adding a recognition agent gives leadership a single conversational AI interface for fleet operations, driver compliance, and employee engagement — a capability unique to IoTeye.
+**Arc Mercer Advantage:** Arc Mercer staff already experiment BrainClaw AI agents to manage transportation operations today. Adding a recognition agent gives leadership a single conversational AI interface for fleet operations, driver compliance, and employee engagement — a capability unique to IoTeye.
 
 ---
 
@@ -525,12 +516,6 @@ We design for the **least technically experienced user first**. Every interface 
 | Cognitive load              | Progressive disclosure, one primary action per screen, clear success/error messaging |
 | Language diversity          | Simple language (6th grade level), icon-first design reduces language dependency     |
 
-### Standards Compliance
-
-- **WCAG 2.1 Level AA** compliance — with AAA targets for contrast and text sizing.
-- **Keyboard navigable** — full functionality available without a mouse.
-- **Screen reader compatible** — semantic HTML, ARIA labels, and tested with NVDA/VoiceOver.
-
 ### Ongoing Accessibility
 
 - User testing with frontline staff during each phase.
@@ -545,14 +530,14 @@ We design for the **least technically experienced user first**. Every interface 
 
 > *Centralized nominations, selection committee voting, Paycom sync, and manual point support*
 
-| Week  | Milestone                                                                                                                                          |
-| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1–2  | **Kickoff & Discovery** — Requirements workshops with stakeholders, Paycom SFTP access setup, environment provisioning                      |
-| 3–5  | **Core Infrastructure** — AWS deployment pipeline, Supabase schema design, authentication configuration (Badge ID + PIN, Google SSO), Paycom integration development |
+| Week  | Milestone                                                                                                                                                                                            |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1–2  | **Kickoff & Discovery** — Requirements workshops with stakeholders, Paycom SFTP access setup, environment provisioning                                                                        |
+| 3–5  | **Core Infrastructure** — AWS deployment pipeline, Supabase schema design, authentication configuration (Badge ID + PIN, Google SSO), Paycom integration development                          |
 | 6–8  | **Nomination Engine & Voting** — Submission portal, QA queue with revise-and-resubmit workflow, selection committee ranked-choice voting module, program hierarchy, nomination business rules |
-| 9–10 | **Point System (Manual)** — Admin point bestowal, point balance views, audit trail, leadership dashboard                                    |
-| 11    | **User Acceptance Testing (UAT)** — Testing with selected staff across programs, accessibility audit                                        |
-| 12    | **Phase One Launch** — Production deployment, staff onboarding, admin training                                                              |
+| 9–10 | **Point System (Manual)** — Admin point bestowal, point balance views, audit trail, leadership dashboard                                                                                      |
+| 11    | **User Acceptance Testing (UAT)** — Testing with selected staff across programs, accessibility audit                                                                                          |
+| 12    | **Phase One Launch** — Production deployment, staff onboarding, admin training                                                                                                                |
 
 **Phase One Deliverables:**
 
@@ -570,13 +555,13 @@ We design for the **least technically experienced user first**. Every interface 
 
 > *Individual dashboards, automated activity tracking, and community engagement modules*
 
-| Week   | Milestone                                                                                                                 |
-| ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| 13–15 | **Employee Dashboards** — Personalized point history, nomination tracker, activity feed, dark mode toggle          |
-| 16–18 | **Leadership Dashboards** — Participation metrics, trend charts, program comparisons, leaderboards                |
+| Week   | Milestone                                                                                                                                                                                                                                         |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 13–15 | **Employee Dashboards** — Personalized point history, nomination tracker, activity feed, dark mode toggle                                                                                                                                  |
+| 16–18 | **Leadership Dashboards** — Participation metrics, trend charts, program comparisons, leaderboards                                                                                                                                         |
 | 19–21 | **Automated Tracking & Engagement Modules** — TAC meeting RSVP/role sign-ups/attendance, newsletter trivia, birthday/anniversary automation, culture group sign-ups, volunteer/event forms, social media engagement with screenshot upload |
-| 22–23 | **UAT & Refinement** — User testing, performance optimization                                                      |
-| 24     | **Phase Two Launch** — Feature rollout, updated training materials                                                 |
+| 22–23 | **UAT & Refinement** — User testing, performance optimization                                                                                                                                                                              |
+| 24     | **Phase Two Launch** — Feature rollout, updated training materials                                                                                                                                                                         |
 
 **Phase Two Deliverables:**
 
@@ -595,13 +580,13 @@ We design for the **least technically experienced user first**. Every interface 
 
 > *Full Store activation, in-person redemption, and fulfillment workflows*
 
-| Week   | Milestone                                                                                    |
-| ------ | -------------------------------------------------------------------------------------------- |
-| 25–27 | **Storefront Development** — Product catalog, category browsing, point-based checkout |
+| Week   | Milestone                                                                                                                                                                              |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 25–27 | **Storefront Development** — Product catalog, category browsing, point-based checkout                                                                                           |
 | 28–30 | **Fulfillment & In-Person Redemption** — Order management, status tracking, admin inventory tools, cafeteria cashier-facing redemption screen, in-person store QR code scanning |
-| 31–33 | **Gift Card Integration** — Vendor API integration, automated digital delivery        |
-| 34–35 | **UAT & Load Testing** — End-to-end testing, security audit                           |
-| 36     | **Phase Three Launch & Full Platform Go-Live**                                         |
+| 31–33 | **Gift Card Integration** — Vendor API integration, automated digital delivery                                                                                                  |
+| 34–35 | **UAT & Load Testing** — End-to-end testing, security audit                                                                                                                     |
+| 36     | **Phase Three Launch & Full Platform Go-Live**                                                                                                                                   |
 
 **Phase Three Deliverables:**
 
@@ -637,12 +622,12 @@ Under this option, The Arc Mercer **owns the source code and all intellectual pr
 
 #### 8.1 Implementation Fees (One-Time)
 
-| Phase                          | Description                                                                          | Est. Hours           | Cost               |
-| ------------------------------ | ------------------------------------------------------------------------------------ | -------------------- | ------------------ |
+| Phase                          | Description                                                                                                        | Est. Hours           | Cost               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------ | -------------------- | ------------------ |
 | Phase One                      | Nominations, Selection Committee Voting, Paycom Sync, Badge ID + PIN Auth, SSO, Manual Points, Core Infrastructure | ~480 hrs             | $45,000            |
-| Phase Two                      | Dashboards, Engagement Modules (TAC RSVP, Culture Groups, Volunteer, Social Media), Dark Mode, Notifications | ~310 hrs             | $35,000            |
-| Phase Three                    | Rewards Marketplace, Cafeteria Redemption, In-Person QR Store, Gift Card Integration, Fulfillment | ~280 hrs             | $30,000            |
-| **Total Implementation** |                                                                                      | **~1,070 hrs** | **$110,000** |
+| Phase Two                      | Dashboards, Engagement Modules (TAC RSVP, Culture Groups, Volunteer, Social Media), Dark Mode, Notifications       | ~310 hrs             | $35,000            |
+| Phase Three                    | Rewards Marketplace, Cafeteria Redemption, In-Person QR Store, Gift Card Integration, Fulfillment                  | ~280 hrs             | $30,000            |
+| **Total Implementation** |                                                                                                                    | **~1,070 hrs** | **$110,000** |
 
 *Includes: discovery, design, development, testing, deployment, training, and documentation.*
 
@@ -650,38 +635,38 @@ Under this option, The Arc Mercer **owns the source code and all intellectual pr
 
 **Phase One — $45,000 (~480 hours, Weeks 1–12)**
 
-| Task                                                                         | Hours |
-| ---------------------------------------------------------------------------- | ----- |
-| Discovery & requirements workshops                                           | ~35   |
-| AWS infrastructure setup (ECS, CloudFront, CI/CD pipeline)                   | ~35   |
-| Supabase schema design, RLS policies, auth configuration (Badge ID + PIN, Google SSO) | ~50   |
-| Paycom integration service (SFTP + optional API, error handling, monitoring) | ~75   |
+| Task                                                                                                                            | Hours |
+| ------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| Discovery & requirements workshops                                                                                              | ~35   |
+| AWS infrastructure setup (ECS, CloudFront, CI/CD pipeline)                                                                      | ~35   |
+| Supabase schema design, RLS policies, auth configuration (Badge ID + PIN, Google SSO)                                           | ~50   |
+| Paycom integration service (SFTP + optional API, error handling, monitoring)                                                    | ~75   |
 | Nomination engine + selection committee voting (submission portal, ranked-choice drag-and-drop, ballots, tally, business rules) | ~90   |
-| QA queue (admin dashboard, approve/return/decline, revise-and-resubmit workflow) | ~65   |
-| Manual point bestowal + audit trail                                          | ~35   |
-| UI/UX design (mobile-first, WCAG AAA, icon-driven, accessibility)            | ~55   |
-| UAT, accessibility audit, deployment, staff training                         | ~40   |
+| QA queue (admin dashboard, approve/return/decline, revise-and-resubmit workflow)                                                | ~65   |
+| Manual point bestowal + audit trail                                                                                             | ~35   |
+| UI/UX design (mobile-first, WCAG AAA, icon-driven, accessibility)                                                               | ~55   |
+| UAT, accessibility audit, deployment, staff training                                                                            | ~40   |
 
 **Phase Two — $35,000 (~310 hours, Weeks 13–24)**
 
-| Task                                                                   | Hours |
-| ---------------------------------------------------------------------- | ----- |
-| Employee dashboards (point history, nomination tracker, activity feed) | ~70   |
-| Leadership dashboards (analytics, trend charts, program comparisons)   | ~65   |
+| Task                                                                                                                                                                                   | Hours |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| Employee dashboards (point history, nomination tracker, activity feed)                                                                                                                 | ~70   |
+| Leadership dashboards (analytics, trend charts, program comparisons)                                                                                                                   | ~65   |
 | Engagement modules (TAC RSVP/role sign-ups, culture groups, volunteer/event forms, social media engagement with screenshot upload, birthday/anniversary automation, newsletter trivia) | ~100  |
-| Dark mode / light mode (CSS variable theming, system preference detection) | ~10   |
-| Notification system (push + email)                                     | ~35   |
-| UAT & refinement                                                       | ~30   |
+| Dark mode / light mode (CSS variable theming, system preference detection)                                                                                                             | ~10   |
+| Notification system (push + email)                                                                                                                                                     | ~35   |
+| UAT & refinement                                                                                                                                                                       | ~30   |
 
 **Phase Three — $30,000 (~280 hours, Weeks 25–36)**
 
-| Task                                                                    | Hours |
-| ----------------------------------------------------------------------- | ----- |
-| Rewards storefront (catalog, browsing, point-based checkout)            | ~70   |
+| Task                                                                                                                                                         | Hours |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| Rewards storefront (catalog, browsing, point-based checkout)                                                                                                 | ~70   |
 | Fulfillment system + cafeteria redemption + in-person QR store (order queue, status tracking, inventory management, cashier-facing screen, QR code scanning) | ~95   |
-| Gift card vendor API integration + automated delivery                   | ~55   |
-| Load testing, security audit, final deployment                          | ~40   |
-| Documentation & admin training                                          | ~20   |
+| Gift card vendor API integration + automated delivery                                                                                                        | ~55   |
+| Load testing, security audit, final deployment                                                                                                               | ~40   |
+| Documentation & admin training                                                                                                                               | ~20   |
 
 > **Blended rate: ~$103/hr** across ~1,070 hours — well below the $150–$250/hr industry standard for custom SaaS development.
 
@@ -713,11 +698,11 @@ Under this option, **IoTeye Inc. retains ownership of the platform and source co
 
 #### Pricing
 
-| Item                                                | Monthly Cost                                    | Annual Cost |
-| --------------------------------------------------- | ----------------------------------------------- | ----------- |
-| Platform Subscription (all features, all phases)    | $2,500/month | $30,000/year                     |             |
-| Hosting, maintenance, security updates, and support | Included                                        | Included    |
-| **Total**                                     | **$2,500/month** | **$30,000/year** |             |
+| Item                                                | Cost                                                                         | Annual Cost  |
+| --------------------------------------------------- | ---------------------------------------------------------------------------- | ------------ |
+| Platform Subscription (all features, all phases)    | $2,500/month                                    | $30,000/year               | $30,000/year |
+| Hosting, maintenance, security updates, and support | $500/month                                                     | $6,000/year |              |
+| **Total**                                     | **$3,000/month** | **$36,000/year**                              |              |
 
 - **No implementation fee.** IoTeye absorbs the full development cost.
 - **Minimum commitment:** 3-year initial term, renewing annually thereafter.
@@ -728,8 +713,8 @@ Under this option, **IoTeye Inc. retains ownership of the platform and source co
 | Category                                                       | Annual Cost            |
 | -------------------------------------------------------------- | ---------------------- |
 | Implementation Fee                                             | $0                     |
-| Platform Subscription (includes hosting, maintenance, support) | $30,000/year           |
-| **Total**                                                | **$30,000/year** |
+| Platform Subscription (includes hosting, maintenance, support) | $36,000/year           |
+| **Total**                                                | **$36,000/year** |
 
 **What you get:** Fully managed platform with no upfront cost, ongoing updates, and support. IoTeye handles all infrastructure, security, and maintenance.
 
@@ -745,40 +730,40 @@ IoTeye commits to hosting and maintaining the platform as a managed service for 
 
 #### Implementation Fee (One-Time)
 
-| Item                                       | Cost               |
-| ------------------------------------------ | ------------------ |
-| 50% of full implementation ($110,000)      | **$55,000**  |
+| Item                                                          | Cost |
+| ------------------------------------------------------------- | ---- |
+| 50% of full implementation ($110,000)      |**$55,000** |      |
 
 *Covers the same scope as Option A (all three phases, 1,070 hours, 36-week delivery). The reduced fee reflects shared investment — IoTeye absorbs half the development cost in exchange for retaining ownership of its existing product ecosystem.*
 
 #### Annual Platform Fee (Recurring)
 
-| Item                                                               | Annual Cost            |
-| ------------------------------------------------------------------ | ---------------------- |
-| Platform Hosting, Maintenance, Security Updates, and Support       | **$30,000/year** |
+| Item                                                         | Annual Cost            |
+| ------------------------------------------------------------ | ---------------------- |
+| Platform Hosting, Maintenance, Security Updates, and Support | **$36,000/year** |
 
 - **Same managed service as Option B** — IoTeye handles all infrastructure, monitoring, security patches, and support.
 - **Minimum commitment:** 3-year initial term, renewing annually thereafter.
 
 #### Code Ownership Scope
 
-| Component                                    | Ownership                   |
-| -------------------------------------------- | --------------------------- |
+| Component                                                                           | Ownership                |
+| ----------------------------------------------------------------------------------- | ------------------------ |
 | Recognition platform (nominations, points, rewards, dashboards, engagement modules) | **Shared (50/50)** |
-| Database schema & data                       | **The Arc Mercer** |
-| Deployment configuration (AWS IaC)           | **The Arc Mercer** |
-| BrainBook (AI platform)                      | IoTeye Inc.                 |
-| SpringBoard (route management)               | IoTeye Inc.                 |
-| Guardian (notification & authentication system) | IoTeye Inc.                 |
-| BrainClaw AI gateway & agents                | IoTeye Inc.                 |
+| Database schema & data                                                              | **The Arc Mercer** |
+| Deployment configuration (AWS IaC)                                                  | **The Arc Mercer** |
+| BrainBook (AI platform)                                                             | IoTeye Inc.              |
+| SpringBoard (route management)                                                      | IoTeye Inc.              |
+| Guardian (notification & authentication system)                                     | IoTeye Inc.              |
+| BrainClaw AI gateway & agents                                                       | IoTeye Inc.              |
 
 #### Option C Cost Summary
 
-| Category                   | Year 1                                     | Year 2+                |
-| -------------------------- | ------------------------------------------ | ---------------------- |
-| Implementation (50%)       | $55,000                                    | —                     |
-| Annual Platform Fee        | $30,000                                    | $30,000/year           |
-| **Total**            | **$85,000**                          | **$30,000/year** |
+| Category             | Year 1                                                              | Year 2+ |
+| -------------------- | ------------------------------------------------------------------- | ------- |
+| Implementation (50%) | $55,000                                                             | —      |
+| Annual Platform Fee  | $36,000                                    | $36,000/year           |         |
+| **Total**      | **$91,000**                          | **$36,000/year** |         |
 
 **What you co-own:** 50/50 shared ownership of the recognition platform source code (nomination engine, point system, rewards marketplace, dashboards, engagement modules) — specific terms (usage rights, licensing, distribution) deferred to legal agreement. **Sole ownership** of database schema, data, and deployment configuration. IoTeye hosts and maintains the platform for a minimum of 3 years; after the initial term, The Arc Mercer can hire other developers to modify or extend the recognition platform independently.
 
@@ -790,18 +775,18 @@ IoTeye commits to hosting and maintaining the platform as a managed service for 
 
 ### Option A vs. Option B vs. Option C Comparison
 
-| Factor                | Option A (Source Ownership)         | Option B (IoTeye SaaS)               | Option C (Shared Ownership)                    |
-| --------------------- | ----------------------------------- | ------------------------------------ | ---------------------------------------------- |
-| Upfront Cost          | \$110,000                           | \$0                                  | \$55,000                                       |
-| Annual Cost           | \$21,200/year                       | \$30,000/year                        | \$30,000/year                                  |
-| 3-Year Total Cost     | \$173,600                           | \$90,000                             | \$145,000                                      |
-| 5-Year Total Cost     | \$216,000                           | \$150,000                            | \$205,000                                      |
-| 10-Year Total Cost    | \$322,000                           | \$300,000                            | \$355,000                                      |
-| Source Code Ownership | ✅ The Arc Mercer owns all code     | ❌ IoTeye retains ownership          | ⚠️ 50/50 recognition platform; DB & infra: Arc Mercer sole ownership |
-| Vendor Independence   | ✅ Can self-host or hire other devs | ❌ Dependent on IoTeye               | ⚠️ Shared recognition code; IoTeye products require IoTeye |
+| Factor                | Option A (Source Ownership)         | Option B (IoTeye SaaS)               | Option C (Shared Ownership)                                                      |
+| --------------------- | ----------------------------------- | ------------------------------------ | -------------------------------------------------------------------------------- |
+| Upfront Cost          | \$110,000                           | \$0                                  | \$55,000                                                                         |
+| Annual Cost           | \$21,200/year                       | \$36,000/year                        | \$36,000/year                                                                    |
+| 3-Year Total Cost     | \$173,600                           | \$108,000                            | \$163,000                                                                        |
+| 5-Year Total Cost     | \$216,000                           | \$180,000                            | \$235,000                                                                        |
+| 10-Year Total Cost    | \$322,000                           | \$360,000                            | \$415,000                                                                        |
+| Source Code Ownership | ✅ The Arc Mercer owns all code     | ❌ IoTeye retains ownership          | ⚠️ 50/50 recognition platform; DB & infra: Arc Mercer sole ownership           |
+| Vendor Independence   | ✅ Can self-host or hire other devs | ❌ Dependent on IoTeye               | ⚠️ Shared recognition code; IoTeye products require IoTeye                     |
 | Customization Freedom | ✅ Unlimited modifications          | ⚠️ Customizations by request       | ⚠️ Recognition platform modifiable per legal terms; IoTeye products by request |
-| Platform Updates      | ⚠️ Paid separately                | ✅ Included in subscription          | ✅ Included in annual fee                      |
-| Best For              | Long-term control & independence    | Lower upfront risk & managed service | Balanced cost & flexibility              |
+| Platform Updates      | ⚠️ Paid separately                | ✅ Included in subscription          | ✅ Included in annual fee                                                        |
+| Best For              | Long-term control & independence    | Lower upfront risk & managed service | Balanced cost & flexibility                                                      |
 
 ---
 
@@ -819,8 +804,8 @@ The following add-ons are available across all pricing options. **AI-assisted en
 
 #### AI-Assisted Add-Ons (LLM Usage Fee Only)
 
-| Add-On                                                         | Cost                                      |
-| -------------------------------------------------------------- | ----------------------------------------- |
+| Add-On                                                         | Cost                                       |
+| -------------------------------------------------------------- | ------------------------------------------ |
 | Recognition AI Agent (BrainClaw skill + BrainBook integration) | $0 — AI LLM usage fee only (pass-through) |
 | Additional Paycom integration fields                           | $0 — AI LLM usage fee only (pass-through) |
 | Additional training sessions (per session)                     | $0 — AI LLM usage fee only (pass-through) |
@@ -916,75 +901,75 @@ This appendix provides a comprehensive feature-by-feature comparison of the thre
 
 **Nomination & Recognition**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 1 | Peer-to-Peer Nominations | ✅ | ✅ | ✅ | 1 | Core RFP requirement; all vendors include |
-| 2 | Manager / Supervisor Nominations | ✅ | ✅ | ✅ | 1 | Role-based nomination paths |
-| 3 | Category-Based Awards (quarterly, annual, spot) | ✅ | ✅ | ✅ | 1 | IoTeye includes customizable categories with admin controls |
-| 4 | Nomination Templates & Guided Forms | ✅ | ⚠️ Partial | ✅ | 1 | IoTeye offers structured templates; P1 has basic form fields |
-| 5 | Batch QA Queue Operations | ✅ | — | — | 1 | IoTeye-exclusive for high-volume nomination periods |
-| 6 | Formalized Revise-and-Resubmit Loop | 🆕 | ✅ | — | 1 | Status tracking through full revision cycle; previously implicit |
+| # | Feature                                         | IoTeye | Proposal 1   | Proposal 2 | Phase | Notes                                                            |
+| - | ----------------------------------------------- | ------ | ------------ | ---------- | ----- | ---------------------------------------------------------------- |
+| 1 | Peer-to-Peer Nominations                        | ✅     | ✅           | ✅         | 1     | Core RFP requirement; all vendors include                        |
+| 2 | Manager / Supervisor Nominations                | ✅     | ✅           | ✅         | 1     | Role-based nomination paths                                      |
+| 3 | Category-Based Awards (quarterly, annual, spot) | ✅     | ✅           | ✅         | 1     | IoTeye includes customizable categories with admin controls      |
+| 4 | Nomination Templates & Guided Forms             | ✅     | ⚠️ Partial | ✅         | 1     | IoTeye offers structured templates; P1 has basic form fields     |
+| 5 | Batch QA Queue Operations                       | ✅     | —           | —         | 1     | IoTeye-exclusive for high-volume nomination periods              |
+| 6 | Formalized Revise-and-Resubmit Loop             | 🆕     | ✅           | —         | 1     | Status tracking through full revision cycle; previously implicit |
 
 **Selection & Voting**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 7 | Selection Committee Voting | 🆕 | ✅ | ✅ | 1 | Private ballots with configurable committee membership |
-| 8 | Ranked-Choice Drag-and-Drop Voting | 🆕 | ⚠️ Partial | ✅ | 1 | P2 identified Arc Mercer uses ranked-choice today |
-| 9 | Automated Vote Tally & Winner Declaration | 🆕 | ✅ | ✅ | 1 | Ties resolved by committee chair; results audit-logged |
+| # | Feature                                   | IoTeye | Proposal 1   | Proposal 2 | Phase | Notes                                                  |
+| - | ----------------------------------------- | ------ | ------------ | ---------- | ----- | ------------------------------------------------------ |
+| 7 | Selection Committee Voting                | 🆕     | ✅           | ✅         | 1     | Private ballots with configurable committee membership |
+| 8 | Ranked-Choice Drag-and-Drop Voting        | 🆕     | ⚠️ Partial | ✅         | 1     | P2 identified Arc Mercer uses ranked-choice today      |
+| 9 | Automated Vote Tally & Winner Declaration | 🆕     | ✅           | ✅         | 1     | Ties resolved by committee chair; results audit-logged |
 
 **Authentication & Access Control**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 10 | SSO (Google Workspace / Microsoft Entra ID) | ✅ | — | — | 1 | IoTeye includes multi-IDP with zero-downtime migration path |
-| 11 | Email / Password Fallback | ✅ | — | — | 1 | Standard credential-based login |
-| 12 | Badge ID + PIN Login (frontline staff) | 🆕 | — | ✅ | 1 | Critical for DSPs lacking company email addresses |
-| 13 | Magic Link Authentication | — | ✅ | — | — | P1 approach; IoTeye addresses gap via badge ID + PIN instead |
-| 14 | Multi-IDP Migration Path (Google → Microsoft) | ✅ | — | — | 1 | Both providers run in parallel during transition |
+| #  | Feature                                        | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes                                                        |
+| -- | ---------------------------------------------- | ------ | ---------- | ---------- | ----- | ------------------------------------------------------------ |
+| 10 | SSO (Google Workspace / Microsoft Entra ID)    | ✅     | —         | —         | 1     | IoTeye includes multi-IDP with zero-downtime migration path  |
+| 11 | Email / Password Fallback                      | ✅     | —         | —         | 1     | Standard credential-based login                              |
+| 12 | Badge ID + PIN Login (frontline staff)         | 🆕     | —         | ✅         | 1     | Critical for DSPs lacking company email addresses            |
+| 13 | Magic Link Authentication                      | —     | ✅         | —         | —    | P1 approach; IoTeye addresses gap via badge ID + PIN instead |
+| 14 | Multi-IDP Migration Path (Google → Microsoft) | ✅     | —         | —         | 1     | Both providers run in parallel during transition             |
 
 **Engagement & Participation Modules**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 15 | TAC Meeting Attendance Logging & Points | ✅ | ✅ | ⚠️ Partial | 2 | IoTeye: admin check-in or CSV import with auto-points |
-| 16 | TAC RSVP & Role Sign-Ups | 🆕 | ✅ | — | 2 | RSVP workflow with role selection (setup, check-in, cleanup, leadership) |
-| 17 | Culture Group Sign-Ups & Participation | 🆕 | ✅ | — | 2 | Self-service sign-up with attendance tracking and auto-points |
-| 18 | Volunteer / Event Help Forms | 🆕 | ✅ | — | 2 | Form builder for event volunteering with approval workflow |
-| 19 | Social Media Engagement (Screenshot Upload) | 🆕 | ✅ | — | 2 | Upload proof of social media engagement for point awards |
-| 20 | Anniversary & Milestone Automation | ✅ | ✅ | ✅ | 2 | Automated recognition for work anniversaries and tenure milestones |
+| #  | Feature                                     | IoTeye | Proposal 1 | Proposal 2   | Phase | Notes                                                                    |
+| -- | ------------------------------------------- | ------ | ---------- | ------------ | ----- | ------------------------------------------------------------------------ |
+| 15 | TAC Meeting Attendance Logging & Points     | ✅     | ✅         | ⚠️ Partial | 2     | IoTeye: admin check-in or CSV import with auto-points                    |
+| 16 | TAC RSVP & Role Sign-Ups                    | 🆕     | ✅         | —           | 2     | RSVP workflow with role selection (setup, check-in, cleanup, leadership) |
+| 17 | Culture Group Sign-Ups & Participation      | 🆕     | ✅         | —           | 2     | Self-service sign-up with attendance tracking and auto-points            |
+| 18 | Volunteer / Event Help Forms                | 🆕     | ✅         | —           | 2     | Form builder for event volunteering with approval workflow               |
+| 19 | Social Media Engagement (Screenshot Upload) | 🆕     | ✅         | —           | 2     | Upload proof of social media engagement for point awards                 |
+| 20 | Anniversary & Milestone Automation          | ✅     | ✅         | ✅           | 2     | Automated recognition for work anniversaries and tenure milestones       |
 
 **Rewards Marketplace & Redemption**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 21 | Digital Storefront (browse, filter, redeem) | ✅ | ✅ | ✅ | 3 | Points-based online catalog |
-| 22 | Gift Card Integration (Amazon Business) | ✅ | ⚠️ Partial | ✅ | 3 | IoTeye: Amazon Business API; P1 mentions gift cards generically |
-| 23 | Cafeteria Cashier Redemption Screen | 🆕 | ✅ | — | 3 | Dedicated cashier-facing lookup, balance check, and point deduction |
-| 24 | In-Person Store QR Code Scanning | 🆕 | — | ✅ | 3 | QR code scanning for physical reward store redemption |
-| 25 | Swag / Merchandise Fulfillment | ✅ | ✅ | ⚠️ Partial | 3 | Admin order management with shipping tracking |
+| #  | Feature                                     | IoTeye | Proposal 1   | Proposal 2   | Phase | Notes                                                               |
+| -- | ------------------------------------------- | ------ | ------------ | ------------ | ----- | ------------------------------------------------------------------- |
+| 21 | Digital Storefront (browse, filter, redeem) | ✅     | ✅           | ✅           | 3     | Points-based online catalog                                         |
+| 22 | Gift Card Integration (Amazon Business)     | ✅     | ⚠️ Partial | ✅           | 3     | IoTeye: Amazon Business API; P1 mentions gift cards generically     |
+| 23 | Cafeteria Cashier Redemption Screen         | 🆕     | ✅           | —           | 3     | Dedicated cashier-facing lookup, balance check, and point deduction |
+| 24 | In-Person Store QR Code Scanning            | 🆕     | —           | ✅           | 3     | QR code scanning for physical reward store redemption               |
+| 25 | Swag / Merchandise Fulfillment              | ✅     | ✅           | ⚠️ Partial | 3     | Admin order management with shipping tracking                       |
 
 **Analytics, AI & Reporting**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 26 | BrainClaw AI Agent (NLP analytics) | ✅ | — | — | 2 | IoTeye-exclusive; 94+ tools already in production at Arc Mercer |
-| 27 | Leadership Dashboards & Reports | ✅ | ✅ | ✅ | 2 | Department-level participation, point balance, and trend analytics |
-| 28 | Anomaly Detection & Flagging | ✅ | — | — | 2 | Automatic flagging of unusual point bestowals |
-| 29 | Immutable Audit Trail & CSV Export | ✅ | ⚠️ Partial | ⚠️ Partial | 1 | Full field detail: timestamp, actor, action, amount, source |
+| #  | Feature                            | IoTeye | Proposal 1   | Proposal 2   | Phase | Notes                                                              |
+| -- | ---------------------------------- | ------ | ------------ | ------------ | ----- | ------------------------------------------------------------------ |
+| 26 | BrainClaw AI Agent (NLP analytics) | ✅     | —           | —           | 2     | IoTeye-exclusive; 94+ tools already in production at Arc Mercer    |
+| 27 | Leadership Dashboards & Reports    | ✅     | ✅           | ✅           | 2     | Department-level participation, point balance, and trend analytics |
+| 28 | Anomaly Detection & Flagging       | ✅     | —           | —           | 2     | Automatic flagging of unusual point bestowals                      |
+| 29 | Immutable Audit Trail & CSV Export | ✅     | ⚠️ Partial | ⚠️ Partial | 1     | Full field detail: timestamp, actor, action, amount, source        |
 
 **Technical & Infrastructure**
 
-| # | Feature | IoTeye | Proposal 1 | Proposal 2 | Phase | Notes |
-|---|---------|--------|------------|------------|-------|-------|
-| 30 | Dark Mode / Light Mode Toggle | 🆕 | — | ✅ | 2 | Critical for night-shift staff at group homes |
-| 31 | Offline Capability | ✅ | — | — | 1 | Lazy-loaded images, compressed assets for low-connectivity |
-| 32 | Push Notifications (Mobile + Email + SMS) | ✅ | ⚠️ Partial | — | 2 | IoTeye: Twilio SMS + Expo push + email; P1: email + in-app only |
-| 33 | WCAG AAA Accessibility (7:1 contrast) | ✅ | — | ⚠️ Partial | All | IoTeye targets AAA; P2 mentions "high-contrast" generically |
-| 34 | Screen Reader & Keyboard Navigation | ✅ | — | — | All | Semantic HTML, ARIA labels, NVDA/VoiceOver tested |
-| 35 | Severity-Based SLA Tiers | ✅ | — | — | Post | Critical 2hr / High 4hr / Medium 1 day / Low 2 days |
-| 36 | AWS HIPAA-Eligible Infrastructure (99.9% uptime) | ✅ | — | — | All | WAF, VPC isolation, Secrets Manager, CloudWatch |
-| 37 | Source Code Ownership Option | ✅ | ⚠️ Partial | — | — | Option A: full IP and source code transfer to Arc Mercer |
+| #  | Feature                                          | IoTeye | Proposal 1   | Proposal 2   | Phase | Notes                                                           |
+| -- | ------------------------------------------------ | ------ | ------------ | ------------ | ----- | --------------------------------------------------------------- |
+| 30 | Dark Mode / Light Mode Toggle                    | 🆕     | —           | ✅           | 2     | Critical for night-shift staff at group homes                   |
+| 31 | Offline Capability                               | ✅     | —           | —           | 1     | Lazy-loaded images, compressed assets for low-connectivity      |
+| 32 | Push Notifications (Mobile + Email + SMS)        | ✅     | ⚠️ Partial | —           | 2     | IoTeye: Twilio SMS + Expo push + email; P1: email + in-app only |
+| 33 | WCAG AAA Accessibility (7:1 contrast)            | ✅     | —           | ⚠️ Partial | All   | IoTeye targets AAA; P2 mentions "high-contrast" generically     |
+| 34 | Screen Reader & Keyboard Navigation              | ✅     | —           | —           | All   | Semantic HTML, ARIA labels, NVDA/VoiceOver tested               |
+| 35 | Severity-Based SLA Tiers                         | ✅     | —           | —           | Post  | Critical 2hr / High 4hr / Medium 1 day / Low 2 days             |
+| 36 | AWS HIPAA-Eligible Infrastructure (99.9% uptime) | ✅     | —           | —           | All   | WAF, VPC isolation, Secrets Manager, CloudWatch                 |
+| 37 | Source Code Ownership Option                     | ✅     | ⚠️ Partial | —           | —    | Option A: full IP and source code transfer to Arc Mercer        |
 
 **Summary:** IoTeye covers **36 of 37** features (including 10 newly added). Proposal 1 covers 21. Proposal 2 covers 18.
 
@@ -992,18 +977,18 @@ This appendix provides a comprehensive feature-by-feature comparison of the thre
 
 The following 10 features were added to this proposal after competitive analysis. All features are absorbed into the existing **$110,000 budget** (1,070 hours) through redistribution of phase-level estimates. Phase costs remain unchanged at $45,000 / $35,000 / $30,000.
 
-| # | Feature Added | Section(s) Modified | Phase | Competitor Source | Before → After |
-|---|---------------|---------------------|-------|-------------------|----------------|
-| 1 | Selection Committee Voting (ranked-choice drag-and-drop) | 4A, 7, 9 | Phase 1 | P1, P2 | QA queue supported approve/return/decline only → Full committee voting with ranked-choice drag-and-drop ballots, configurable committee membership, and automated tally with tie-breaking |
-| 2 | Formalized Revise-and-Resubmit Loop | 4A, 7 | Phase 1 | P1 | Implicit "Return for Edits" with comment field → Explicit revision workflow with status tracking (Submitted → Under Review → Revisions Requested → Revised → Approved/Declined), revision counter, and full history |
-| 3 | Badge ID + PIN Authentication | 5.2, 7, 9 | Phase 1 | P2 | SSO + email/password only → Three login paths: (1) Paycom badge ID + self-set PIN, (2) Google/Microsoft SSO, (3) email/password. Addresses frontline DSPs lacking company email |
-| 4 | TAC RSVP & Role Sign-Ups | 4B, 7 | Phase 2 | P1 | TAC attendance logging only → Full RSVP workflow with role selection (setup, check-in, cleanup, leadership), automated reminders, and role-based point bonuses |
-| 5 | Culture Group Sign-Ups & Participation | 4B, 7 | Phase 2 | P1 | Not addressed → Self-service group directory, sign-up forms, attendance tracking, and automated participation points |
-| 6 | Volunteer / Event Help Forms | 4B, 7 | Phase 2 | P1 | Not addressed → Configurable volunteer sign-up forms with admin approval workflow, shift management, and participation point awards |
-| 7 | Social Media Engagement (screenshot upload) | 4B, 7 | Phase 2 | P1 | Not addressed → Screenshot upload form for social media engagement proof, admin review queue, and point awards upon approval |
-| 8 | Cafeteria Cashier Redemption Screen | 4C, 7 | Phase 3 | P1 | "Cafeteria meals" listed as reward category with internal tracking → Dedicated cashier-facing interface: employee lookup (name/badge), real-time point balance display, meal item selection, confirmation prompt, and automatic point deduction |
-| 9 | In-Person Store QR Code Scanning | 4C, 7, 9 | Phase 3 | P2 | Digital storefront only → QR code generation per reward item, staff scan via mobile app camera, balance verification, and real-time deduction for physical in-person store |
-| 10 | Dark Mode / Light Mode Toggle | 4D, 7 | Phase 2 | P2 | Not addressed → System-preference-aware dark/light mode toggle, persisted per user, with WCAG AAA contrast maintained in both themes. Supports night-shift staff at group homes |
+| #  | Feature Added                                            | Section(s) Modified | Phase   | Competitor Source | Before → After                                                                                                                                                                                                                                  |
+| -- | -------------------------------------------------------- | ------------------- | ------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1  | Selection Committee Voting (ranked-choice drag-and-drop) | 4A, 7, 9            | Phase 1 | P1, P2            | QA queue supported approve/return/decline only → Full committee voting with ranked-choice drag-and-drop ballots, configurable committee membership, and automated tally with tie-breaking                                                       |
+| 2  | Formalized Revise-and-Resubmit Loop                      | 4A, 7               | Phase 1 | P1                | Implicit "Return for Edits" with comment field → Explicit revision workflow with status tracking (Submitted → Under Review → Revisions Requested → Revised → Approved/Declined), revision counter, and full history                         |
+| 3  | Badge ID + PIN Authentication                            | 5.2, 7, 9           | Phase 1 | P2                | SSO + email/password only → Three login paths: (1) Paycom badge ID + self-set PIN, (2) Google/Microsoft SSO, (3) email/password. Addresses frontline DSPs lacking company email                                                                 |
+| 4  | TAC RSVP & Role Sign-Ups                                 | 4B, 7               | Phase 2 | P1                | TAC attendance logging only → Full RSVP workflow with role selection (setup, check-in, cleanup, leadership), automated reminders, and role-based point bonuses                                                                                  |
+| 5  | Culture Group Sign-Ups & Participation                   | 4B, 7               | Phase 2 | P1                | Not addressed → Self-service group directory, sign-up forms, attendance tracking, and automated participation points                                                                                                                            |
+| 6  | Volunteer / Event Help Forms                             | 4B, 7               | Phase 2 | P1                | Not addressed → Configurable volunteer sign-up forms with admin approval workflow, shift management, and participation point awards                                                                                                             |
+| 7  | Social Media Engagement (screenshot upload)              | 4B, 7               | Phase 2 | P1                | Not addressed → Screenshot upload form for social media engagement proof, admin review queue, and point awards upon approval                                                                                                                    |
+| 8  | Cafeteria Cashier Redemption Screen                      | 4C, 7               | Phase 3 | P1                | "Cafeteria meals" listed as reward category with internal tracking → Dedicated cashier-facing interface: employee lookup (name/badge), real-time point balance display, meal item selection, confirmation prompt, and automatic point deduction |
+| 9  | In-Person Store QR Code Scanning                         | 4C, 7, 9            | Phase 3 | P2                | Digital storefront only → QR code generation per reward item, staff scan via mobile app camera, balance verification, and real-time deduction for physical in-person store                                                                      |
+| 10 | Dark Mode / Light Mode Toggle                            | 4D, 7               | Phase 2 | P2                | Not addressed → System-preference-aware dark/light mode toggle, persisted per user, with WCAG AAA contrast maintained in both themes. Supports night-shift staff at group homes                                                                 |
 
 ---
 
